@@ -1,43 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@700&family=Libre+Caslon+Text:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Libre Caslon Text", serif;
+  --font-display: "Syne", sans-serif;
   --font-sans: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --color-vintage-cream: #fdf9f3;
   --color-deep-teal: #00615f;
-  --color-burnt-orange: #E67E22;
-  --color-rust: #97381d;
-  --color-keyline: #1c1c18;
+  --color-vibrant-orange: #ff8c00;
+  --color-charcoal: #1a1a1a;
+  --color-off-white: #faf8f5;
+  --color-light-sand: #f5f1eb;
+  --color-border-gray: rgba(26,26,26,0.08);
 
-  --radius-collector: 24px;
+  --radius-premium: 32px;
 
-  --shadow-inner-xl: inset 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  /* Custom Easings for Premium Feel */
+  --ease-out-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-premium: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-in-premium: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring-premium: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer base {
   body {
-    @apply bg-vintage-cream text-keyline font-sans;
+    @apply bg-off-white text-charcoal font-sans text-base leading-relaxed;
+    font-size: clamp(1rem, 2vw, 1.0625rem);
+  }
+  
+  h1 {
+    @apply font-display font-extrabold tracking-tighter leading-[1.1];
+    font-size: clamp(2.125rem, 8vw, 5rem);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply font-display font-bold tracking-tighter leading-[1.15];
+    font-size: clamp(1.75rem, 6vw, 3.5rem);
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    @apply font-display font-bold tracking-tighter leading-[1.3];
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    letter-spacing: -0.02em;
+  }
+
+  h4 {
+    @apply font-sans font-semibold leading-[1.4];
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   }
 }
 
 @layer components {
-  .btn-tactical {
-    @apply transition-all duration-200 border-2 border-keyline active:scale-95;
-    box-shadow: 3px 3px 0 theme('colors.keyline');
-  }
-  .btn-tactical:hover {
-    @apply -translate-x-0.5 -translate-y-0.5;
-    box-shadow: 6px 6px 0 theme('colors.burnt-orange');
+  .btn-premium {
+    @apply transition-all duration-500 transform-gpu active:scale-95 flex items-center justify-center;
+    transition-timing-function: var(--ease-out-premium);
+    min-height: 48px;
   }
   
-  .card-tactical {
-    @apply transition-all duration-300 border-2 border-keyline rounded-collector;
+  .card-premium {
+    @apply transition-all duration-700 transform-gpu bg-white border border-border-gray rounded-premium;
+    transition-timing-function: var(--ease-out-premium);
   }
-  .card-tactical:hover {
-    @apply -translate-x-0.5 -translate-y-0.5;
-    box-shadow: 6px 6px 0 theme('colors.deep-teal');
+
+  .shadow-soft {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .shadow-premium {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  }
+
+  .glass-premium {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .tap-target-min {
+    min-width: 48px;
+    min-height: 48px;
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
