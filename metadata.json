@@ -1,6 +1,6 @@
 {
   "name": "UGH - Urban Gliding Hyderabad",
-  "description": "Premium skateboarding coaching concierge in Hyderabad by Coach Leela.",
+  "description": "India's elite skating community. Premium doorstep coaching and IOC-certified training by Coach Leela.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

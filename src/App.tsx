@@ -100,7 +100,7 @@ export default function App() {
 
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
               <a href="#programs" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Programs</a>
-              <a href="#leaderboard" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Summer Camp</a>
+              <a href="#leaderboard" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Leaderboard</a>
               <a href="#about" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">About</a>
               
               <div className="h-4 w-[1px] bg-charcoal/10"></div>
@@ -158,7 +158,7 @@ export default function App() {
             </div>
 
             <div className="flex flex-col gap-6 flex-grow">
-              {['Programs', 'Summer Camp', 'About'].map((item, i) => (
+              {['Programs', 'Leaderboard', 'About'].map((item, i) => (
                 <motion.a 
                   key={item}
                   initial={{ opacity: 0, y: 20 }}
@@ -219,11 +219,11 @@ export default function App() {
               >
                   <span className="inline-flex items-center gap-2 py-2 px-5 bg-deep-teal/5 text-deep-teal font-sans text-[10px] md:text-xs uppercase tracking-[0.3em] rounded-full mb-6 font-bold border border-deep-teal/10">
                   <span className="w-1.5 h-1.5 bg-deep-teal rounded-full animate-pulse" />
-                  Elite Hydeabad Community
+                  Elite Hyderabad Community
                 </span>
                 <h1 className="text-balance mb-6">
-                  Master the <br />
-                  <span className="text-vibrant-orange italic">Concrete</span> Wave.
+                  Command the <br />
+                  <span className="text-vibrant-orange italic">Urban</span> Terrain.
                 </h1>
               </motion.div>
               
@@ -233,7 +233,7 @@ export default function App() {
                 transition={{ delay: 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="font-sans text-base md:text-lg text-charcoal/50 max-w-lg mb-10 leading-relaxed font-medium text-balance"
               >
-                The premium skating concierge. IOC-certified instructors delivering mastery directly to your doorstep.
+                India's elite skating concierge. IOC-certified instructors delivering mastery directly to your doorstep.
               </motion.p>
 
               <motion.div 
@@ -451,19 +451,19 @@ export default function App() {
         <section id="leaderboard" className="py-20 md:py-28 px-6 bg-white overflow-hidden text-center">
           <div className="max-w-4xl mx-auto">
             <div className="mb-16 px-4">
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Global Pulse</span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Community Impact</span>
               <h2 className="mb-4 text-charcoal">UGH Leaderboard</h2>
-              <p className="font-sans text-base md:text-lg text-charcoal/40 font-medium text-balance">Live performance metrics of elite operatives across our mission.</p>
+              <p className="font-sans text-base md:text-lg text-charcoal/40 font-medium text-balance">Live performance metrics of talented skaters across our training modules.</p>
             </div>
 
             <div className="glass-premium rounded-[28px] md:rounded-[40px] overflow-hidden border border-border-gray shadow-xl mx-2 md:mx-0 text-left">
               <div className="bg-charcoal text-white px-6 md:px-10 py-5 flex justify-between items-center font-sans text-[9px] font-bold uppercase tracking-[0.34em]">
                 <div className="flex items-center gap-3">
                   <ShieldCheck size={16} />
-                  <span className="hidden sm:inline">Operative Designation</span>
-                  <span className="sm:hidden">Operative</span>
+                  <span className="hidden sm:inline">Skater Recognition</span>
+                  <span className="sm:hidden">Skater</span>
                 </div>
-                <span>XP Status</span>
+                <span>Points</span>
               </div>
               <div className="divide-y divide-border-gray">
                 {content.leaderboard.rankings.map((rank, idx) => (
@@ -629,7 +629,7 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <p className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em]">© 2026 Urban Gliding Hyderabad. Professional Coaching Ops.</p>
+            <p className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em]">© 2026 Urban Gliding Hyderabad. Professional Coaching.</p>
             <div className="flex gap-8">
               <a href="#" className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em] hover:text-white transition-colors">Terms</a>
               <a href="#" className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em] hover:text-white transition-colors">Privacy</a>
