@@ -105,11 +105,11 @@
   "leaderboard": {
     "lastUpdated": "2026-05-12T00:00:00Z",
     "rankings": [
-      { "name": "Aman R.", "points": 1450, "change": "up" },
-      { "name": "Sarah K.", "points": 1320, "change": "down" },
-      { "name": "Vikram S.", "points": 1280, "change": "up" },
-      { "name": "Meera J.", "points": 1150, "change": "same" },
-      { "name": "Rohan D.", "points": 1020, "change": "up" }
+      { "name": "Kabir.", "points": 25, "change": "up" },
+      { "name": "Mahir.", "points": 25, "change": "up" },
+      { "name": "Aarohi.", "points": 25, "change": "up" },
+      { "name": "Mahika.", "points": 25, "change": "up" },
+      { "name": "Ikshaan.", "points": 25, "change": "up" }
     ]
   }
 }
