@@ -1,45 +1,25 @@
-# UGH - Urban Gliding Hyderabad
+# Urban Gliding Hyderabad (UGH)
 
-Premium skateboarding coaching concierge in Hyderabad.
+India's elite skating community. Premium doorstep coaching and IOC-certified training.
 
-## 🚀 Quick Start (Local Development)
+## Architecture & Deployment
 
-1. **Clone the repository**
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-3. **Set up Environment Variables**:
-   Copy `.env.example` to `.env` and fill in your keys.
-   ```bash
-   cp .env.example .env
-   ```
-4. **Run Development Server**:
-   ```bash
-   npm run dev
-   ```
+This application follows a **Global Standard Architecture** for modern web applications:
 
-## 🌐 Hosting on GitHub Pages (Recommended)
+1.  **Framework**: React 19 + Vite (High-performance SPA).
+2.  **Styling**: Tailwind CSS 4 (Utility-first, minimal footprint).
+3.  **Authentication**: Clerk Integration for secure user sessions.
+4.  **Typography**: Inter (Body) & Space Grotesk (Display) for a clean, technical feel.
+5.  **Single Source of Truth**: All pages (About, Leaderboard) are consolidated into the main React application.
 
-This project is pre-configured for GitHub Pages.
+### Important: Hosting Your Domain
 
-1. **Push to GitHub**:
-   Create a new repository and push your code.
-2. **Enable GitHub Actions**:
-   The workflow in `.github/workflows/deploy.yml` will automatically build and deploy your site to the `gh-pages` branch whenever you push to `main`.
-3. **Configure Repository Settings**:
-   - Go to **Settings > Pages**.
-   - Under **Build and deployment > Source**, select **GitHub Actions**.
+The "old design" you might see on your domain is likely because your hosting is pointing to the previous `static-export` files. We have removed those redundant files to ensure a "crisp and simple" architecture.
 
-## 🛠️ Full-Stack Backend (Optional)
+**To update your website:**
+1.  **Build**: Run `npm run build`. This generates a `dist/` folder.
+2.  **Deploy**: Upload the **entire contents of the `dist/` folder** to your hosting root.
+3.  **Pathing**: Ensure your domain is pointed to `index.html` inside that `dist` output.
 
-If you wish to use the enrollment email system:
-- Deploy the project to a platform that supports Node.js (e.g., Railway, Render, Vercel).
-- Set the `RESEND_API_KEY` and `ADMIN_SECRET_KEY` environment variables.
-- Run using `npm run dev:server`.
-
-## 🎨 Architecture
-- **Frontend**: React + Vite + Tailwind CSS + Framer Motion
-- **Auth**: Clerk
-- **Icons**: Lucide React
-- **Data**: Static JSON in `public/assets/content.json`
+## Mission protocol
+Stay Tactical. Command the Urban Terrain.

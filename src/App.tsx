@@ -5,7 +5,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import ughLogo from "./assets/images/regenerated_image_1778853711229.png";
 import { 
   Instagram, 
   Mail, 
@@ -93,10 +92,12 @@ export default function App() {
           <div className={`flex items-center justify-between px-4 md:px-8 py-2 md:py-4 rounded-full transition-all duration-700 ${
             scrolled ? "glass-premium shadow-premium" : "bg-transparent"
           }`}>
-            <div className="flex items-center gap-2 md:gap-3">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-deep-teal flex items-center justify-center text-white font-display font-black text-[10px] md:text-xs shrink-0">UGH</div>
-              <a href="./" className="font-display text-sm md:text-xl font-extrabold text-charcoal tracking-tighter whitespace-nowrap">URBAN GLIDING <span className="hidden sm:inline">HYDERABAD</span></a>
-            </div>
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white overflow-hidden border border-border-gray flex items-center justify-center shrink-0 shadow-sm">
+                  <img src="https://lh3.googleusercontent.com/aida/ADBb0ui6K99eXFqSU6cl268hCSbrgfOAXdOfBdCrVFkqqH-6NvZ4N66OTbJwgkfodGmPiTaysIlbLIxZH6NwPsgiC7h5zmXSY5Q3xmzi1-fQcJlNM7xFAhSUINTvlVFEvooi8G7CNHYKsm1IC7MCd0MJlpB0AJAhRlkP1QywmITpc9gBQTKRoLOWseAxZWByrtIltlr2fqCAkPpqYij0TbAUoKPU2e0cGiyKKXr9Vv9pfZ-hqwUcXKydHBzCARlKTLW7vtDhDIE05btu" alt="Logo" className="w-full h-full object-cover p-1" />
+                </div>
+                <a href="./" className="font-display text-sm md:text-xl font-extrabold text-charcoal tracking-tighter whitespace-nowrap">URBAN GLIDING <span className="hidden sm:inline">HYDERABAD</span></a>
+              </div>
 
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
               <a href="#programs" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Programs</a>
@@ -266,9 +267,9 @@ export default function App() {
                 <div className="absolute inset-0 bg-gradient-to-br from-deep-teal/5 to-vibrant-orange/5 rounded-[60px] blur-3xl opacity-50 transition-all duration-1000 scale-110" />
                 <div className="relative w-full h-full rounded-[60px] border border-border-gray bg-white/40 backdrop-blur-xl p-10 md:p-12 shadow-xl overflow-hidden shadow-charcoal/5">
                   <img 
-                    src={ughLogo} 
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ui6K99eXFqSU6cl268hCSbrgfOAXdOfBdCrVFkqqH-6NvZ4N66OTbJwgkfodGmPiTaysIlbLIxZH6NwPsgiC7h5zmXSY5Q3xmzi1-fQcJlNM7xFAhSUINTvlVFEvooi8G7CNHYKsm1IC7MCd0MJlpB0AJAhRlkP1QywmITpc9gBQTKRoLOWseAxZWByrtIltlr2fqCAkPpqYij0TbAUoKPU2e0cGiyKKXr9Vv9pfZ-hqwUcXKydHBzCARlKTLW7vtDhDIE05btu" 
                     alt="UGH Logo" 
-                    className="w-full h-full object-contain transition-transform duration-[3s] group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-[3s] group-hover:scale-105 p-6"
                   />
                 </div>
                 
@@ -517,7 +518,7 @@ export default function App() {
               </div>
               <div className="hidden lg:block relative">
                 <div className="aspect-[4/3] rounded-[40px] bg-charcoal/5 border border-border-gray overflow-hidden flex items-center justify-center p-16 opacity-30">
-                  <img src={ughLogo} alt="UGH Branding" className="w-full h-full object-contain grayscale" />
+                  <img src="https://lh3.googleusercontent.com/aida/ADBb0ui6K99eXFqSU6cl268hCSbrgfOAXdOfBdCrVFkqqH-6NvZ4N66OTbJwgkfodGmPiTaysIlbLIxZH6NwPsgiC7h5zmXSY5Q3xmzi1-fQcJlNM7xFAhSUINTvlVFEvooi8G7CNHYKsm1IC7MCd0MJlpB0AJAhRlkP1QywmITpc9gBQTKRoLOWseAxZWByrtIltlr2fqCAkPpqYij0TbAUoKPU2e0cGiyKKXr9Vv9pfZ-hqwUcXKydHBzCARlKTLW7vtDhDIE05btu" alt="UGH Branding" className="w-full h-full object-contain grayscale" />
                 </div>
               </div>
             </div>
@@ -590,7 +591,9 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 md:mb-28">
             <div className="lg:col-span-3">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-charcoal font-display font-black text-[9px] shrink-0">UGH</div>
+                <div className="w-10 h-10 rounded-full bg-white overflow-hidden border border-white/10 flex items-center justify-center shrink-0">
+                  <img src="https://lh3.googleusercontent.com/aida/ADBb0ui6K99eXFqSU6cl268hCSbrgfOAXdOfBdCrVFkqqH-6NvZ4N66OTbJwgkfodGmPiTaysIlbLIxZH6NwPsgiC7h5zmXSY5Q3xmzi1-fQcJlNM7xFAhSUINTvlVFEvooi8G7CNHYKsm1IC7MCd0MJlpB0AJAhRlkP1QywmITpc9gBQTKRoLOWseAxZWByrtIltlr2fqCAkPpqYij0TbAUoKPU2e0cGiyKKXr9Vv9pfZ-hqwUcXKydHBzCARlKTLW7vtDhDIE05btu" alt="Logo" className="w-full h-full object-cover p-1" />
+                </div>
                 <span className="font-display text-xl md:text-2xl font-extrabold tracking-tighter">URBAN GLIDING HYDERABAD</span>
               </div>
               <p className="font-sans text-base md:text-lg text-white/40 max-w-sm leading-relaxed font-medium mb-8">
