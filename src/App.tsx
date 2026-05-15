@@ -42,7 +42,8 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    fetch("assets/content.json")
+    // Add a cache-buster to ensure we always get the freshest content
+    fetch(`assets/content.json?t=${new Date().getTime()}`)
       .then((res) => res.json())
       .then((data) => setContent(data))
       .catch((err) => console.error("Failed to load content", err));
