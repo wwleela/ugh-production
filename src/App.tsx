@@ -202,15 +202,13 @@ export default function App() {
 
       <main>
         {/* Hero Strategic Zone */}
-        <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-12 overflow-hidden bg-off-white">
-          {/* Refined Background Elements */}
+        <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-12 overflow-hidden bg-white">
+          {/* Crisp Background Elements */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-deep-teal/[0.02] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
-            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-vibrant-orange/[0.02] rounded-full blur-[120px] translate-y-1/4 -translate-x-1/4" />
-            <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#1a1a1a 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1a1a1a 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="text-left">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -300,9 +298,9 @@ export default function App() {
         </section>
 
         {/* Training Modules */}
-        <section id="programs" className="py-20 md:py-28 px-6 bg-white relative overflow-hidden">
+        <section id="programs" className="py-16 md:py-24 px-6 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-8">
               <div className="max-w-2xl">
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-3 font-extrabold block">Expert Coaching</span>
                 <h2 className="mb-4 text-charcoal">Active Modules</h2>
@@ -314,7 +312,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {(Object.values(content.programs) as Program[]).map((program, idx) => (
                 <motion.div 
                   key={program.id}
@@ -322,11 +320,11 @@ export default function App() {
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: idx * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  className={`card-premium p-10 flex flex-col relative group hover:-translate-y-4 hover:shadow-[0_40px_100px_-20px_rgba(0,97,95,0.1)] ${
+                  className={`card-premium p-6 md:p-10 flex flex-col relative group hover:-translate-y-4 hover:shadow-[0_40px_100px_-20px_rgba(0,97,95,0.1)] ${
                     program.id === "summer_camp" ? "bg-light-sand border-none" : ""
                   }`}
                 >
-                  <div className="flex justify-between items-start mb-10">
+                  <div className="flex justify-between items-start mb-8 md:mb-10">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-700 ${
                       program.id === "summer_camp" ? "bg-vibrant-orange text-white border-vibrant-orange" : "bg-deep-teal/5 text-deep-teal border-deep-teal/10 group-hover:bg-deep-teal group-hover:text-white"
                     }`}>
@@ -376,7 +374,7 @@ export default function App() {
         </section>
 
         {/* Enrollment Protocol */}
-        <section id="enroll" className="py-20 md:py-28 px-6 bg-light-sand relative overflow-hidden">
+        <section id="enroll" className="py-16 md:py-24 px-6 bg-light-sand relative overflow-hidden">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative z-10">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Activation</span>
@@ -448,9 +446,9 @@ export default function App() {
         </section>
 
         {/* Leaderboard Section */}
-        <section id="leaderboard" className="py-20 md:py-28 px-6 bg-white overflow-hidden text-center">
+        <section id="leaderboard" className="py-16 md:py-24 px-6 bg-white overflow-hidden text-center">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-16 px-4">
+            <div className="mb-12 md:mb-16 px-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Community Impact</span>
               <h2 className="mb-4 text-charcoal">UGH Leaderboard</h2>
               <p className="font-sans text-base md:text-lg text-charcoal/40 font-medium text-balance">Live performance metrics of talented skaters across our training modules.</p>
@@ -507,9 +505,9 @@ export default function App() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-20 md:py-28 px-6 bg-off-white relative overflow-hidden">
+        <section id="about" className="py-16 md:py-24 px-6 bg-off-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-20 lg:mb-28">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16 lg:mb-24">
             <div className="lg:col-span-1">
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Framework</span>
                 <h2 className="mb-6 text-charcoal">About UGH</h2>
@@ -524,14 +522,14 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mb-20 lg:mb-28">
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 md:mb-16 gap-4">
-                 <h3 className="tracking-tighter">Mission <span className="text-vibrant-orange italic">Syllabus</span></h3>
+            <div className="mb-20 lg:mb-24">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 md:mb-12 gap-4">
+                 <h3 className="tracking-tighter">Our <span className="text-vibrant-orange italic">Curriculum</span></h3>
                  <div className="h-px bg-border-gray flex-grow mx-8 hidden lg:block"></div>
-                 <div className="bg-charcoal px-5 py-2 rounded-full text-white font-sans text-[9px] font-bold uppercase tracking-widest self-start md:self-auto">v2.6 Stable</div>
+                 <div className="bg-charcoal px-4 py-1.5 rounded-full text-white font-sans text-[8px] font-bold uppercase tracking-widest self-start md:self-auto">v2.6 Stable</div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {content.about.curriculum.map((item, idx) => (
                   <motion.div 
                     key={idx}
@@ -568,11 +566,11 @@ export default function App() {
             >
                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:60px_60px]"></div>
                <div className="relative z-10 max-w-3xl mx-auto">
-                  <h3 className="mb-8 md:mb-12 italic leading-[1.1] tracking-tighter text-balance text-white md:text-5xl">
+                  <h3 className="mb-8 md:mb-10 italic leading-[1] tracking-tighter text-balance text-white md:text-5xl">
                     &quot;We don&apos;t just glide; <br />
                     we command the <span className="text-vibrant-orange">urban</span> terrain.&quot;
                   </h3>
-                  <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.4em] text-white/30 font-extrabold mb-12">- LEELA MADHAV, IOC CHIEF</p>
+                  <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.4em] text-white/30 font-extrabold mb-8">- LEELA MADHAV, IOC CHIEF</p>
                   <button 
                     onClick={handleTrial}
                     className="bg-vibrant-orange text-white font-sans text-[10px] md:text-xs uppercase tracking-[0.25em] px-10 md:px-14 py-4 md:py-5 rounded-full font-extrabold hover:scale-105 transition-all duration-700 shadow-xl shadow-vibrant-orange/30 btn-premium mx-auto"
