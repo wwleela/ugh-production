@@ -76,7 +76,6 @@ async function startServer() {
           const { data, error } = await resend.emails.send({
             from: 'UGH Mission 2026 <onboarding@resend.dev>', // Should be a verified domain in prod
             to: [studentEmail],
-            cc: ['worldwide.leelamadhav@gmail.com'],
             subject: `✅ Welcome to UGH — ${programType}`,
             html: `
               <div style="font-family: sans-serif; padding: 20px; max-width: 600px; border: 1px solid #00615f;">
