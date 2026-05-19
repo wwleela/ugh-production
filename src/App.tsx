@@ -536,9 +536,31 @@ export default function App() {
             <div className="lg:col-span-1">
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Framework</span>
                 <h2 className="mb-6 text-charcoal dark:text-off-white">About UGH</h2>
-                <p className="font-sans text-lg md:text-2xl font-medium text-charcoal/50 dark:text-off-white/50 leading-[1.5] text-balance">
-                  {content.about.description}
+                
+                <p className="font-sans text-xl md:text-2xl font-medium text-charcoal/50 dark:text-off-white/50 leading-[1.5] text-balance mb-12">
+                  Skate education, delivered to your doorstep. Under Coach Leela's direction, UGH transforms Hyderabad’s residential complexes into private training grounds using IOC-certified methodologies.
                 </p>
+
+                <div className="space-y-8">
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-charcoal dark:text-off-white tracking-tight mb-2">IOC-Certified Precision</h4>
+                    <p className="font-sans text-sm md:text-base text-charcoal/50 dark:text-off-white/50 font-medium leading-relaxed">
+                      Olympic-grade standards with zero safety compromise. We bring professional frameworks directly to your pavement.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-charcoal dark:text-off-white tracking-tight mb-2">Exclusive Society Access</h4>
+                    <p className="font-sans text-sm md:text-base text-charcoal/50 dark:text-off-white/50 font-medium leading-relaxed">
+                      No commutes. No crowded rinks. On-site coaching strictly within your residence for ages 5 to 50.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-lg font-bold text-charcoal dark:text-off-white tracking-tight mb-2">The Hybrid Advantage</h4>
+                    <p className="font-sans text-sm md:text-base text-charcoal/50 dark:text-off-white/50 font-medium leading-relaxed">
+                      Two physical sessions. Two digital breakdowns as homework.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className="hidden lg:block relative">
                 <div className="aspect-[4/3] rounded-[40px] bg-charcoal/5 border border-border-gray overflow-hidden flex items-center justify-center p-16 opacity-30">
@@ -557,17 +579,21 @@ export default function App() {
             >
                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:60px_60px]"></div>
                <div className="relative z-10 max-w-3xl mx-auto">
-                  <h3 className="mb-8 md:mb-10 italic leading-[1] tracking-tighter text-balance text-white md:text-5xl">
-                    &quot;We don&apos;t just glide; <br />
-                    we command the <span className="text-vibrant-orange">urban</span> terrain.&quot;
+                  <h3 className="mb-8 md:mb-10 italic leading-[1] tracking-tighter text-balance text-white md:text-4xl lg:text-5xl">
+                    Start your journey with <span className="text-vibrant-orange">UGH</span>
                   </h3>
-                  <p className="font-sans text-[10px] md:text-xs uppercase tracking-[0.4em] text-white/30 font-extrabold mb-8">- LEELA MADHAV, IOC CHIEF</p>
-                  <button 
-                    onClick={handleTrial}
-                    className="bg-vibrant-orange text-white font-sans text-[10px] md:text-xs uppercase tracking-[0.25em] px-10 md:px-14 py-4 md:py-5 rounded-full font-extrabold hover:scale-105 transition-all duration-700 shadow-xl shadow-vibrant-orange/30 btn-premium mx-auto"
+                  <p className="font-sans text-sm md:text-lg text-white/70 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
+                    By clicking on the video about the SB series to start your journey. Share and tag UGH to get on our leaderboard! For any inquiries, feel free to DM us.
+                  </p>
+                  <a 
+                    href="https://www.instagram.com/reel/DYYldtwB0ze/?igsh=MWJuZmU0b3RjNHN1eg=="
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-vibrant-orange text-white font-sans text-[10px] md:text-xs uppercase tracking-[0.25em] px-10 md:px-14 py-4 md:py-5 rounded-full font-extrabold hover:scale-105 transition-all duration-700 shadow-xl shadow-vibrant-orange/30 btn-premium mx-auto"
                   >
-                    Elevate Your Skillset
-                  </button>
+                    <Instagram size={18} />
+                    Watch SB Series
+                  </a>
                </div>
             </motion.div>
           </div>
@@ -587,7 +613,7 @@ export default function App() {
                 <span className="font-display text-xl md:text-2xl font-extrabold tracking-tighter">URBAN GLIDING HYDERABAD</span>
               </div>
               <p className="font-sans text-base md:text-lg text-white/40 max-w-sm leading-relaxed font-medium mb-8">
-                The leading skating community in Hyderabad, India. Elite doorstep coaching for children and adults.
+                Making sports accessible for all.
               </p>
               <div className="flex gap-5">
                 <a href="https://www.instagram.com/urbangliding.hyd?igsh=MWJubGk3OG42eHI2Zw==" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-charcoal transition-all duration-700">
@@ -620,7 +646,7 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
-            <p className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em]">© 2026 Urban Gliding Hyderabad. Professional Coaching.</p>
+            <p className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em]">© 2026 Urban Gliding Hyderabad. All rights reserved.</p>
             <div className="flex gap-8">
               <a href="#" className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em] hover:text-white transition-colors">Terms</a>
               <a href="#" className="font-sans text-[9px] font-bold text-white/10 uppercase tracking-[0.3em] hover:text-white transition-colors">Privacy</a>
