@@ -370,7 +370,7 @@ export default function App() {
                   transition={{ delay: 0.6, duration: 1 }}
                   className="absolute -bottom-6 -left-6 glass-premium p-6 rounded-2xl shadow-xl border border-border-gray max-w-[200px]"
                 >
-                  <p className="font-display text-3xl font-black text-deep-teal leading-none mb-1">160+</p>
+                  <p className="font-display text-3xl font-black text-deep-teal leading-none mb-1">250+</p>
                   <p className="font-sans text-[9px] uppercase tracking-widest text-charcoal/50 dark:text-off-white/50 font-bold">Active Students</p>
                 </motion.div>
                 
@@ -471,7 +471,6 @@ export default function App() {
             <div className="mb-12 md:mb-16 px-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Community Impact</span>
               <h2 className="mb-4 text-charcoal dark:text-off-white">UGH Leaderboard</h2>
-              <p className="font-sans text-base md:text-lg text-charcoal/50 dark:text-off-white/50 font-medium text-balance">Live performance metrics of talented skaters across our training modules.</p>
             </div>
 
             <div className="glass-premium rounded-[28px] md:rounded-[40px] overflow-hidden border border-border-gray shadow-xl mx-2 md:mx-0 text-left">
