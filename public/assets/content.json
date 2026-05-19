@@ -105,11 +105,12 @@
   "leaderboard": {
     "lastUpdated": "2026-05-15T00:00:00Z",
     "rankings": [
-      { "name": "Kabir.", "points": 25, "change": "up" },
-      { "name": "Mahir.", "points": 25, "change": "up" },
-      { "name": "Aarohi.", "points": 25, "change": "up" },
-      { "name": "Mahika.", "points": 25, "change": "up" },
-      { "name": "Ikshaan.", "points": 25, "change": "up" }
+      { "name": "Kabir.", "points": 55, "change": "up" },
+      { "name": "Mahir.", "points": 35, "change": "down" },
+      { "name": "Aarohi.", "points": 55, "change": "up" },
+      { "name": "Mahika.", "points": 55, "change": "up" },
+      { "name": "Ikshaan.", "points": 55, "change": "up" }
+      { "name": "Bhooni.", "points": 55, "change": "up" }
     ]
   }
 }
