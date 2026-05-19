@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence, animate } from "motion/react";
 import heroImage from "./assets/images/regenerated_image_1778859272387.png";
 import navLogo from "./assets/images/regenerated_image_1778859275982.png";
 import footerLogo from "./assets/images/regenerated_image_1778859278835.png";
@@ -20,7 +20,9 @@ import {
   ShieldCheck,
   Star,
   QrCode,
-  Globe
+  Globe,
+  Sun,
+  Moon
 } from "lucide-react";
 import { 
   SignedIn, 
@@ -30,10 +32,47 @@ import {
 } from "@clerk/clerk-react";
 import { ContentData, Program } from "./types";
 
+function AnimatedPoints({ points, change }: { points: number, change: string }) {
+  const [currentPoints, setCurrentPoints] = useState(points);
+  const [flashColor, setFlashColor] = useState("");
+  const prevPointsRef = useRef(points);
+
+  useEffect(() => {
+    if (prevPointsRef.current !== points) {
+      if (points > prevPointsRef.current) {
+        setFlashColor("text-green-500 scale-110 !font-black drop-shadow-[0_0_8px_rgba(34,197,94,0.5)]");
+      } else if (points < prevPointsRef.current) {
+        setFlashColor("text-red-500 scale-90 opacity-75");
+      }
+
+      const controls = animate(prevPointsRef.current, points, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate: (val) => {
+          setCurrentPoints(Math.round(val));
+        },
+        onComplete: () => {
+          setFlashColor("");
+        }
+      });
+      
+      prevPointsRef.current = points;
+      return controls.stop;
+    }
+  }, [points]);
+
+  return (
+    <span className={`inline-block transition-all duration-700 ${flashColor}`}>
+      {currentPoints.toLocaleString()}
+    </span>
+  );
+}
+
 export default function App() {
   const [content, setContent] = useState<ContentData | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -42,11 +81,41 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // Add a cache-buster to ensure we always get the freshest content
-    fetch(`assets/content.json?t=${new Date().getTime()}`)
-      .then((res) => res.json())
-      .then((data) => setContent(data))
-      .catch((err) => console.error("Failed to load content", err));
+    const isDark = localStorage.getItem("theme") === "dark" || 
+      (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setIsDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => {
+      const next = !prev;
+      if (next) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+      return next;
+    });
+  };
+
+  useEffect(() => {
+    const fetchContent = () => {
+      fetch(`assets/content.json?t=${new Date().getTime()}`)
+        .then((res) => res.json())
+        .then((data) => setContent(data))
+        .catch((err) => console.error("Failed to load content", err));
+    };
+    
+    fetchContent();
+    const interval = setInterval(fetchContent, 10000); // Check for updates every 10 seconds
+    return () => clearInterval(interval);
   }, []);
 
   const handleEnroll = (program: Program) => {
@@ -97,22 +166,29 @@ export default function App() {
             scrolled ? "glass-premium shadow-premium" : "bg-transparent"
           }`}>
               <div className="flex items-center gap-2 md:gap-3">
-                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white overflow-hidden border border-border-gray flex items-center justify-center shrink-0 shadow-sm">
+                <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white dark:bg-zinc-800 overflow-hidden border border-border-gray dark:border-white/10 flex items-center justify-center shrink-0 shadow-sm">
                   <img src={navLogo} alt="Logo" className="w-full h-full object-cover p-1" />
                 </div>
-                <a href="./" className="font-display text-sm md:text-xl font-extrabold text-charcoal tracking-tighter whitespace-nowrap">URBAN GLIDING <span className="hidden sm:inline">HYDERABAD</span></a>
+                <a href="./" className="font-display text-sm md:text-xl font-extrabold text-charcoal dark:text-off-white tracking-tighter whitespace-nowrap">URBAN GLIDING <span className="hidden sm:inline">HYDERABAD</span></a>
               </div>
 
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
-              <a href="#programs" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Programs</a>
-              <a href="#leaderboard" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">Leaderboard</a>
-              <a href="#about" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/60 hover:text-vibrant-orange transition-colors">About</a>
+              <a href="#programs" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors">Programs</a>
+              <a href="#leaderboard" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors">Leaderboard</a>
+              <a href="#about" className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors">About</a>
               
-              <div className="h-4 w-[1px] bg-charcoal/10"></div>
+              <div className="h-4 w-[1px] bg-charcoal/10 dark:bg-white/10"></div>
+              
+              <button
+                onClick={toggleDarkMode}
+                className="w-10 h-10 rounded-full border border-border-gray dark:border-white/20 flex items-center justify-center text-charcoal dark:text-off-white hover:bg-charcoal dark:hover:bg-off-white dark:hover:text-charcoal hover:text-white transition-all transform-gpu hover:scale-105 active:scale-95"
+              >
+                {isDarkMode ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
 
               <SignedOut>
                 <SignInButton mode="modal">
-                  <button className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal hover:text-vibrant-orange transition-all">
+                  <button className="font-sans text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal dark:text-off-white hover:text-vibrant-orange transition-all">
                     Sign In
                   </button>
                 </SignInButton>
@@ -129,12 +205,20 @@ export default function App() {
               </button>
             </div>
 
-            <button 
-              className="md:hidden tap-target-min bg-vibrant-orange text-white rounded-full shadow-lg active:scale-95 transition-all flex items-center justify-center" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                onClick={toggleDarkMode}
+                className="w-10 h-10 rounded-full border border-border-gray dark:border-white/20 flex items-center justify-center text-charcoal dark:text-off-white tap-target-min hover:bg-charcoal dark:hover:bg-off-white dark:hover:text-charcoal hover:text-white transition-all transform-gpu"
+              >
+                {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+              <button 
+                className="tap-target-min bg-vibrant-orange text-white rounded-full shadow-lg active:scale-95 transition-all flex items-center justify-center" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -147,14 +231,14 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 120 }}
-            className="fixed inset-0 z-[60] bg-white p-6 flex flex-col"
+            className="fixed inset-0 z-[60] bg-white dark:bg-zinc-950 p-6 flex flex-col transition-colors duration-500"
           >
             <div className="flex justify-between items-center mb-12">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white overflow-hidden border border-border-gray flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-white dark:bg-zinc-800 overflow-hidden border border-border-gray dark:border-white/10 flex items-center justify-center shrink-0">
                   <img src={navLogo} alt="Logo" className="w-full h-full object-cover p-1" />
                 </div>
-                <span className="font-display text-xl font-extrabold text-charcoal tracking-tighter">URBAN GLIDING</span>
+                <span className="font-display text-xl font-extrabold text-charcoal dark:text-off-white tracking-tighter">URBAN GLIDING</span>
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
@@ -173,7 +257,7 @@ export default function App() {
                   transition={{ delay: 0.2 + i * 0.1 }}
                   href={`#${item.toLowerCase().replace(' ', '')}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="font-display text-4xl font-black text-charcoal tracking-tighter hover:text-vibrant-orange transition-colors"
+                  className="font-display text-4xl font-black text-charcoal dark:text-off-white tracking-tighter hover:text-vibrant-orange transition-colors"
                 >
                   {item}
                 </motion.a>
@@ -184,14 +268,14 @@ export default function App() {
               <div className="h-px bg-border-gray" />
               <div className="flex justify-between items-center">
                  <div>
-                   <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-charcoal/40 mb-2">Primary Hub</p>
-                   <p className="font-sans text-sm font-bold text-charcoal">Hyderabad, Telangana</p>
+                   <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-charcoal/50 dark:text-off-white/50 mb-2">Primary Hub</p>
+                   <p className="font-sans text-sm font-bold text-charcoal dark:text-off-white">Hyderabad, Telangana</p>
                  </div>
                  <div className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full border border-border-gray flex items-center justify-center text-charcoal">
+                    <div className="w-10 h-10 rounded-full border border-border-gray flex items-center justify-center text-charcoal dark:text-off-white">
                       <Instagram size={18} />
                     </div>
-                    <div className="w-10 h-10 rounded-full border border-border-gray flex items-center justify-center text-charcoal">
+                    <div className="w-10 h-10 rounded-full border border-border-gray flex items-center justify-center text-charcoal dark:text-off-white">
                       <Globe size={18} />
                     </div>
                  </div>
@@ -209,7 +293,7 @@ export default function App() {
 
       <main>
         {/* Hero Strategic Zone */}
-        <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-12 overflow-hidden bg-white">
+        <section className="relative min-h-[85vh] flex items-center justify-center pt-24 pb-12 overflow-hidden bg-white dark:bg-zinc-900 transition-colors duration-500">
           {/* Crisp Background Elements */}
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1a1a1a 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
@@ -222,13 +306,13 @@ export default function App() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               >
-                  <span className="inline-flex items-center gap-2 py-2 px-5 bg-deep-teal/5 text-deep-teal font-sans text-[10px] md:text-xs uppercase tracking-[0.3em] rounded-full mb-6 font-bold border border-deep-teal/10">
+                <span className="inline-flex items-center gap-2 py-2 px-5 bg-deep-teal/5 dark:bg-deep-teal/10 text-deep-teal dark:text-deep-teal/90 font-sans text-[10px] md:text-xs uppercase tracking-[0.3em] rounded-full mb-6 font-bold border border-deep-teal/10">
                   <span className="w-1.5 h-1.5 bg-deep-teal rounded-full animate-pulse" />
-                  Elite Hyderabad Community
+                  IOC Certified · Hyderabad's Premier Skate Community
                 </span>
                 <h1 className="text-balance mb-6">
-                  Command the <br />
-                  <span className="text-vibrant-orange italic">Urban</span> Terrain.
+                  Master the <br />
+                  <span className="text-vibrant-orange italic">Pavement</span>
                 </h1>
               </motion.div>
               
@@ -236,9 +320,9 @@ export default function App() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="font-sans text-base md:text-lg text-charcoal/50 max-w-lg mb-10 leading-relaxed font-medium text-balance"
+                className="font-sans text-base md:text-lg text-charcoal/50 dark:text-off-white/50 max-w-lg mb-10 leading-relaxed font-medium text-balance"
               >
-                India's elite skating concierge. IOC-certified instructors delivering mastery directly to your doorstep.
+                World-class skate education delivered to your doorstep. Join 250+ gliders progressing across 6+ residential societies with IOC-certified coaching.
               </motion.p>
 
               <motion.div 
@@ -256,7 +340,7 @@ export default function App() {
                 </button>
                 <a 
                   href="#programs"
-                  className="bg-white text-charcoal font-sans text-xs md:text-sm uppercase tracking-[0.2em] px-8 md:px-10 py-5 rounded-full border border-border-gray hover:border-charcoal hover:bg-charcoal hover:text-white transition-all text-center font-bold shadow-soft flex items-center justify-center w-full sm:w-auto min-h-[52px]"
+                  className="bg-white dark:bg-transparent text-charcoal dark:text-off-white font-sans text-xs md:text-sm uppercase tracking-[0.2em] px-8 md:px-10 py-5 rounded-full border border-border-gray dark:border-white/10 hover:border-charcoal dark:hover:border-white hover:bg-charcoal dark:hover:bg-white hover:text-white dark:hover:text-charcoal transition-all text-center font-bold shadow-soft flex items-center justify-center w-full sm:w-auto min-h-[52px]"
                 >
                   Curriculum
                 </a>
@@ -271,7 +355,7 @@ export default function App() {
                 className="relative w-full max-w-[440px] aspect-square group"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-deep-teal/5 to-vibrant-orange/5 rounded-[60px] blur-3xl opacity-50 transition-all duration-1000 scale-110" />
-                <div className="relative w-full h-full rounded-[60px] border border-border-gray bg-white/40 backdrop-blur-xl p-10 md:p-12 shadow-xl overflow-hidden shadow-charcoal/5">
+                <div className="relative w-full h-full rounded-[60px] border border-border-gray dark:border-white/10 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl p-10 md:p-12 shadow-xl overflow-hidden shadow-charcoal/5">
                   <img 
                     src={heroImage} 
                     alt="UGH Logo" 
@@ -287,7 +371,7 @@ export default function App() {
                   className="absolute -bottom-6 -left-6 glass-premium p-6 rounded-2xl shadow-xl border border-border-gray max-w-[200px]"
                 >
                   <p className="font-display text-3xl font-black text-deep-teal leading-none mb-1">160+</p>
-                  <p className="font-sans text-[9px] uppercase tracking-widest text-charcoal/40 font-bold">Active Students</p>
+                  <p className="font-sans text-[9px] uppercase tracking-widest text-charcoal/50 dark:text-off-white/50 font-bold">Active Students</p>
                 </motion.div>
                 
                 {/* floating badge */}
@@ -297,7 +381,7 @@ export default function App() {
                   className="absolute -top-4 -right-4 glass-premium px-5 py-3 rounded-xl shadow-xl border border-border-gray flex items-center gap-2"
                 >
                   <Star size={14} className="text-vibrant-orange fill-vibrant-orange" />
-                  <p className="font-sans text-[9px] font-bold uppercase tracking-widest">IOC Certified</p>
+                  <p className="font-sans text-[9px] font-bold uppercase tracking-widest text-charcoal dark:text-off-white">IOC Certified</p>
                 </motion.div>
               </motion.div>
             </div>
@@ -305,17 +389,17 @@ export default function App() {
         </section>
 
         {/* Training Modules */}
-        <section id="programs" className="py-16 md:py-24 px-6 bg-white relative overflow-hidden">
+        <section id="programs" className="py-16 md:py-24 px-6 bg-white dark:bg-zinc-900 relative overflow-hidden transition-colors duration-500">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-16 gap-8">
               <div className="max-w-2xl">
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-3 font-extrabold block">Expert Coaching</span>
-                <h2 className="mb-4 text-charcoal">Active Modules</h2>
-                <p className="font-sans text-base md:text-lg text-charcoal/40 font-medium text-balance">Specialized training systems designed for rapid progression across all skill levels.</p>
+                <h2 className="mb-4 text-charcoal dark:text-off-white">Active Modules</h2>
+                <p className="font-sans text-base md:text-lg text-charcoal/50 dark:text-off-white/50 font-medium text-balance">Specialized training systems designed for rapid progression across all skill levels.</p>
               </div>
-              <div className="flex items-center gap-2 bg-light-sand p-1.5 rounded-full border border-border-gray w-full sm:w-auto overflow-x-auto no-scrollbar">
+              <div className="flex items-center gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 w-full sm:w-auto overflow-x-auto no-scrollbar">
                 <button className="px-6 py-2.5 rounded-full bg-charcoal text-white font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px]">Monthly Mastery</button>
-                <button className="px-6 py-2.5 rounded-full text-charcoal/40 font-sans text-[10px] font-bold uppercase tracking-widest hover:text-charcoal transition-colors whitespace-nowrap min-h-[40px]">Seasonal Camps</button>
+                <button className="px-6 py-2.5 rounded-full text-charcoal/50 dark:text-off-white/50 font-sans text-[10px] font-bold uppercase tracking-widest hover:text-charcoal dark:hover:text-off-white transition-colors whitespace-nowrap min-h-[40px]">Seasonal Camps</button>
               </div>
             </div>
 
@@ -328,7 +412,7 @@ export default function App() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ delay: idx * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className={`card-premium p-6 md:p-10 flex flex-col relative group hover:-translate-y-4 hover:shadow-[0_40px_100px_-20px_rgba(0,97,95,0.1)] ${
-                    program.id === "summer_camp" ? "bg-light-sand border-none" : ""
+                    program.id === "summer_camp" ? "bg-light-sand dark:bg-zinc-800 border-none" : ""
                   }`}
                 >
                   <div className="flex justify-between items-start mb-8 md:mb-10">
@@ -346,7 +430,7 @@ export default function App() {
 
                   <div className="mb-8 flex-grow">
                     <h3 className="mb-3 transition-colors group-hover:text-deep-teal text-2xl">{program.displayName}</h3>
-                    <p className="font-sans text-[15px] text-charcoal/40 leading-relaxed font-medium">
+                    <p className="font-sans text-[15px] text-charcoal/50 dark:text-off-white/50 leading-relaxed font-medium">
                       {program.description}
                     </p>
                   </div>
@@ -355,20 +439,20 @@ export default function App() {
                     {program.features.slice(0, 4).map((feature, fidx) => (
                       <div key={fidx} className="flex items-center gap-3">
                         <div className="w-1 h-1 rounded-full bg-charcoal/20 group-hover:bg-vibrant-orange transition-colors" />
-                        <span className="text-[12px] font-bold text-charcoal/60 group-hover:text-charcoal transition-colors tracking-tight">{feature}</span>
+                        <span className="text-[12px] font-bold text-charcoal/50 dark:text-off-white/50 group-hover:text-charcoal dark:text-off-white transition-colors tracking-tight">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <div className="mt-auto pt-8 border-t border-border-gray">
                     <div className="mb-6 flex items-baseline gap-2">
-                       <span className="text-3xl font-display font-black text-charcoal tracking-tighter italic">₹{program.price.toLocaleString("en-IN")}</span>
-                       <span className="text-[9px] text-charcoal/30 font-sans uppercase tracking-[0.2em] font-bold">/ {program.period}</span>
+                       <span className="text-3xl font-display font-black text-charcoal dark:text-off-white tracking-tighter italic">₹{program.price.toLocaleString("en-IN")}</span>
+                       <span className="text-[9px] text-charcoal/50 dark:text-off-white/50 font-sans uppercase tracking-[0.2em] font-bold">/ {program.period}</span>
                     </div>
                     <button 
                       onClick={() => handleEnroll(program)}
                       className={`w-full font-sans text-[10px] uppercase tracking-[0.2em] py-3.5 rounded-full border transition-all duration-700 font-extrabold btn-premium
-                        ${program.id === "summer_camp" ? "bg-deep-teal text-white border-deep-teal" : "bg-transparent border-charcoal text-charcoal hover:bg-charcoal hover:text-white"}
+                        ${program.id === "summer_camp" ? "bg-deep-teal text-white border-deep-teal" : "bg-transparent border-charcoal dark:border-white text-charcoal dark:text-off-white hover:bg-charcoal dark:hover:bg-off-white hover:text-white dark:hover:text-charcoal"}
                       `}
                     >
                       {program.ctaText}
@@ -380,85 +464,14 @@ export default function App() {
           </div>
         </section>
 
-        {/* Enrollment Protocol */}
-        <section id="enroll" className="py-16 md:py-24 px-6 bg-light-sand relative overflow-hidden">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative z-10">
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Activation</span>
-              <h2 className="mb-6 text-charcoal">Frictionless <br />Concierge Entry</h2>
-              <p className="font-sans text-base md:text-lg text-charcoal/40 mb-10 leading-relaxed font-medium text-balance">Direct activation path via Coach Leela for precision tactical support. No complex forms—just pure service.</p>
-              
-              <div className="space-y-8">
-                {content.paymentInstructions.steps.map((step, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex gap-6 group"
-                  >
-                    <div className="font-display text-lg bg-charcoal text-white w-12 h-12 rounded-xl flex items-center justify-center shrink-0 font-black shadow-lg group-hover:bg-vibrant-orange transition-colors duration-500">
-                      0{idx + 1}
-                    </div>
-                    <div className="pt-2">
-                      <p className="font-sans text-[14px] md:text-base font-bold leading-relaxed text-charcoal/70">
-                        {step.replace("{{price}}", "Your Module Fee")}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <motion.div 
-                initial={{ y: 30, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white p-6 md:p-16 rounded-[40px] md:rounded-[50px] shadow-xl border border-border-gray text-center relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-deep-teal to-vibrant-orange" />
-                <div className="w-14 h-14 md:w-16 md:h-16 bg-deep-teal/5 rounded-xl md:rounded-2xl flex items-center justify-center text-deep-teal mx-auto mb-8">
-                  <QrCode size={28} className="md:w-8 md:h-8" />
-                </div>
-                <h3 className="font-display text-lg md:text-xl font-bold mb-3 tracking-tighter uppercase tracking-[0.2em]">Authorized Gateway</h3>
-                <p className="font-sans text-[9px] text-charcoal/30 uppercase tracking-[0.3em] font-bold mb-6">Verification: ~30min</p>
-                
-                <div className="px-4 py-4 rounded-xl bg-light-sand/40 border border-border-gray mb-8 group transition-all hover:bg-white hover:shadow-lg overflow-hidden text-ellipsis">
-                  <span className="font-display text-xs md:text-lg font-extrabold text-deep-teal select-all cursor-pointer tracking-tighter block truncate">
-                    {content.paymentInstructions.upiId}
-                  </span>
-                </div>
-
-                <a 
-                  href="upi://pay?pa=worldwide.leelamadhav@oksbi&pn=UGH%20Hyderabad&cu=INR"
-                  className="w-full inline-flex md:w-auto bg-vibrant-orange text-white px-8 md:px-12 py-4 rounded-full font-sans text-[10px] uppercase tracking-[0.3em] font-extrabold flex items-center justify-center gap-3 hover:bg-charcoal transition-all duration-700 shadow-xl shadow-vibrant-orange/10 group btn-premium min-h-[52px]"
-                >
-                  Initiate Secure Pay
-                  <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform duration-500 hidden sm:block" />
-                </a>
-
-                <div className="mt-12 flex items-center justify-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-charcoal/40">Secure Transaction Channel</p>
-                </div>
-              </motion.div>
-              
-              {/* Decorative side element */}
-              <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-40 h-80 bg-vibrant-orange/5 blur-[100px] pointer-events-none" />
-            </div>
-          </div>
-        </section>
 
         {/* Leaderboard Section */}
-        <section id="leaderboard" className="py-16 md:py-24 px-6 bg-white overflow-hidden text-center">
+        <section id="leaderboard" className="py-16 md:py-24 px-6 bg-white dark:bg-zinc-900 overflow-hidden text-center transition-colors duration-500">
           <div className="max-w-4xl mx-auto">
             <div className="mb-12 md:mb-16 px-4">
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Community Impact</span>
-              <h2 className="mb-4 text-charcoal">UGH Leaderboard</h2>
-              <p className="font-sans text-base md:text-lg text-charcoal/40 font-medium text-balance">Live performance metrics of talented skaters across our training modules.</p>
+              <h2 className="mb-4 text-charcoal dark:text-off-white">UGH Leaderboard</h2>
+              <p className="font-sans text-base md:text-lg text-charcoal/50 dark:text-off-white/50 font-medium text-balance">Live performance metrics of talented skaters across our training modules.</p>
             </div>
 
             <div className="glass-premium rounded-[28px] md:rounded-[40px] overflow-hidden border border-border-gray shadow-xl mx-2 md:mx-0 text-left">
@@ -470,26 +483,29 @@ export default function App() {
                 </div>
                 <span>Points</span>
               </div>
-              <div className="divide-y divide-border-gray">
-                {content.leaderboard.rankings.map((rank, idx) => (
+              <div className="divide-y divide-border-gray/50 dark:divide-white/10">
+                {[...content.leaderboard.rankings]
+                  .sort((a, b) => b.points - a.points)
+                  .map((rank, idx) => (
                   <motion.div 
-                    key={idx}
+                    layout
+                    key={rank.name}
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.04 }}
-                    className="px-6 md:px-10 py-4 md:py-6 flex items-center justify-between hover:bg-light-sand transition-all duration-500 group"
+                    className="px-6 md:px-10 py-4 md:py-6 flex items-center justify-between hover:bg-light-sand dark:hover:bg-white/5 transition-all duration-500 group"
                   >
                     <div className="flex items-center gap-4 md:gap-10">
                       <div className="relative shrink-0">
-                        <span className={`font-display text-xl md:text-2xl font-black ${idx < 3 ? "text-vibrant-orange" : "text-charcoal/5"} transition-colors group-hover:text-vibrant-orange w-6 md:w-10 block`}>
+                        <span className={`font-display text-xl md:text-2xl font-black ${idx < 3 ? "text-vibrant-orange" : "text-charcoal/50 dark:text-off-white/50"} transition-colors group-hover:text-vibrant-orange w-6 md:w-10 block`}>
                           0{idx + 1}
                         </span>
                       </div>
                       <div>
-                        <p className="font-display text-lg md:text-xl font-bold tracking-tighter text-charcoal mb-0.5 md:mb-1 group-hover:translate-x-1 transition-transform duration-500">{rank.name}</p>
+                        <p className="font-display text-lg md:text-xl font-bold tracking-tighter text-charcoal dark:text-off-white mb-0.5 md:mb-1 group-hover:translate-x-1 transition-transform duration-500">{rank.name}</p>
                         <div className={`inline-flex items-center gap-2 px-2 py-0.5 rounded-full border font-sans text-[8px] uppercase tracking-widest font-bold ${
-                          rank.change === "up" ? "bg-green-500/5 border-green-500/10 text-green-600" : rank.change === "down" ? "bg-red-500/5 border-red-500/10 text-red-600" : "bg-gray-50 border-gray-100 text-gray-400"
+                          rank.change === "up" ? "bg-green-500/5 border-green-500/10 text-green-600 dark:text-green-400" : rank.change === "down" ? "bg-red-500/5 border-red-500/10 text-red-600 dark:text-red-400" : "bg-gray-50 dark:bg-white/5 border-gray-100 dark:border-white/10 text-gray-400"
                         }`}>
                           {rank.change === "up" ? <ArrowRight size={10} className="-rotate-45" /> : rank.change === "down" ? <ArrowRight size={10} className="rotate-45" /> : <div className="w-2 h-0.5 bg-gray-400" />}
                           {rank.change === "stable" ? "Constant" : rank.change.toUpperCase()}
@@ -497,7 +513,9 @@ export default function App() {
                       </div>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className="font-display text-xl md:text-3xl font-black text-deep-teal tracking-tighter transition-all duration-700 group-hover:scale-105">{rank.points.toLocaleString()}</p>
+                      <p className="font-display text-xl md:text-3xl font-black text-deep-teal tracking-tighter transition-all duration-700 group-hover:scale-105">
+                        <AnimatedPoints points={rank.points} change={rank.change} />
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -506,19 +524,19 @@ export default function App() {
             
             <div className="mt-10 flex justify-center items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-vibrant-orange animate-pulse" />
-              <p className="font-sans text-[9px] font-extrabold uppercase tracking-widest text-charcoal/20">Sync Cycle: 24h Protocol</p>
+              <p className="font-sans text-[9px] font-extrabold uppercase tracking-widest text-charcoal/50 dark:text-off-white/50">Sync Cycle: 24h Protocol</p>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-24 px-6 bg-off-white relative overflow-hidden">
+        <section id="about" className="py-16 md:py-24 px-6 bg-off-white dark:bg-zinc-950 relative overflow-hidden transition-colors duration-500">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-16 lg:mb-24">
             <div className="lg:col-span-1">
                 <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">Framework</span>
-                <h2 className="mb-6 text-charcoal">About UGH</h2>
-                <p className="font-sans text-lg md:text-2xl font-medium text-charcoal/40 leading-[1.5] text-balance">
+                <h2 className="mb-6 text-charcoal dark:text-off-white">About UGH</h2>
+                <p className="font-sans text-lg md:text-2xl font-medium text-charcoal/50 dark:text-off-white/50 leading-[1.5] text-balance">
                   {content.about.description}
                 </p>
               </div>
@@ -529,41 +547,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mb-20 lg:mb-24">
-              <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 md:mb-12 gap-4">
-                 <h3 className="tracking-tighter">Our <span className="text-vibrant-orange italic">Curriculum</span></h3>
-                 <div className="h-px bg-border-gray flex-grow mx-8 hidden lg:block"></div>
-                 <div className="bg-charcoal px-4 py-1.5 rounded-full text-white font-sans text-[8px] font-bold uppercase tracking-widest self-start md:self-auto">v2.6 Stable</div>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {content.about.curriculum.map((item, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="card-premium p-10 relative overflow-hidden group hover:-translate-y-1.5"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-charcoal/5 flex items-center justify-center text-charcoal mb-6 group-hover:bg-vibrant-orange group-hover:text-white transition-all duration-700">
-                      <ShieldCheck size={18} />
-                    </div>
-                    <span className="font-sans text-[9px] uppercase tracking-[0.4em] text-charcoal/20 mb-4 block font-bold">MODULE-0{idx+1}</span>
-                    <h4 className="mb-6 leading-tight text-xl">{item.title}</h4>
-                    <ul className="space-y-3">
-                      {item.points.map((p, pidx) => (
-                        <li key={pidx} className="flex items-start gap-3 text-[13px] font-bold leading-relaxed text-charcoal/50 group-hover:text-charcoal transition-colors">
-                          <div className="w-1.5 h-1.5 rounded-full bg-vibrant-orange mt-1.5 shrink-0" />
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            
+
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}

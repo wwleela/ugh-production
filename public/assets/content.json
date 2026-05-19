@@ -103,14 +103,14 @@
     ]
   },
   "leaderboard": {
-    "lastUpdated": "2026-19-15T00:00:00Z",
+    "lastUpdated": "2026-05-19T00:00:00Z",
     "rankings": [
       { "name": "Kabir.", "points": 55, "change": "up" },
       { "name": "Mahir.", "points": 35, "change": "down" },
       { "name": "Aarohi.", "points": 55, "change": "up" },
       { "name": "Mahika.", "points": 55, "change": "up" },
-      { "name": "Ikshaan.", "points": 55, "change": "up" }
-      { "name": "Bhooni.", "points": 55, "change": "up" }
+      { "name": "Ikshaan.", "points": 55, "change": "up" },
+      { "name": "Bhoomi.", "points": 55, "change": "up" }
     ]
   }
 }
