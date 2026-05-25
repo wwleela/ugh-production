@@ -79,6 +79,7 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<"kids" | "adults">("kids");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -602,9 +603,32 @@ export default function App() {
               <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-4 font-extrabold block">
                 Community Impact
               </span>
-              <h2 className="mb-4 text-charcoal dark:text-off-white">
+              <h2 className="mb-8 text-charcoal dark:text-off-white">
                 UGH Leaderboard
               </h2>
+              
+              <div className="inline-flex items-center gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 m-auto mt-4">
+                <button
+                  onClick={() => setActiveCategory("kids")}
+                  className={`px-6 py-2.5 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px] transition-all duration-300 ${
+                    activeCategory === "kids" 
+                      ? "bg-charcoal text-white shadow-md" 
+                      : "text-charcoal/50 dark:text-off-white/50 hover:text-charcoal dark:hover:text-off-white"
+                  }`}
+                >
+                  Kids Category
+                </button>
+                <button
+                  onClick={() => setActiveCategory("adults")}
+                  className={`px-6 py-2.5 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px] transition-all duration-300 ${
+                    activeCategory === "adults" 
+                      ? "bg-charcoal text-white shadow-md" 
+                      : "text-charcoal/50 dark:text-off-white/50 hover:text-charcoal dark:hover:text-off-white"
+                  }`}
+                >
+                  Adults Category
+                </button>
+              </div>
             </div>
 
             <div className="glass-premium rounded-[28px] md:rounded-[40px] overflow-hidden border border-border-gray shadow-xl mx-2 md:mx-0 text-left">
@@ -617,7 +641,7 @@ export default function App() {
                 <span>Points</span>
               </div>
               <div className="divide-y divide-border-gray/50 dark:divide-white/10">
-                {[...content.leaderboard.rankings]
+                {[...content.leaderboard.rankings[activeCategory]]
                   .sort((a, b) => b.points - a.points)
                   .map((rank, idx) => (
                     <motion.div

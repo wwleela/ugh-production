@@ -102,14 +102,19 @@
     ]
   },
   "leaderboard": {
-    "lastUpdated": "2026-05-19T00:00:00Z",
-    "rankings": [
-      { "name": "Kabir.", "points": 55, "change": "up" },
-      { "name": "Mahir.", "points": 35, "change": "down" },
-      { "name": "Aarohi.", "points": 55, "change": "up" },
-      { "name": "Mahika.", "points": 55, "change": "up" },
-      { "name": "Ikshaan.", "points": 55, "change": "up" },
-      { "name": "Bhoomi.", "points": 55, "change": "up" }
-    ]
+    "lastUpdated": "2026-05-25T00:00:00Z",
+    "rankings": {
+      "kids": [
+        { "name": "Kabir.", "points": 95, "change": "up" },
+        { "name": "Mahir.", "points": 75, "change": "up" },
+        { "name": "Aarohi.", "points": 55, "change": "down" },
+        { "name": "Mahika.", "points": 95, "change": "up" },
+        { "name": "Ikshaan.", "points": 95, "change": "up" },
+        { "name": "Bhoomi.", "points": 95, "change": "up" }
+      ],
+      "adults": [
+        { "name": "Emmanuel", "points": 45, "change": "up" }
+      ]
+    }
   }
 }

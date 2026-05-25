@@ -47,9 +47,16 @@ export interface ContentData {
   leaderboard: {
     lastUpdated: string;
     rankings: {
-      name: string;
-      points: number;
-      change: "up" | "down" | "same";
-    }[];
+      kids: {
+        name: string;
+        points: number;
+        change: "up" | "down" | "same";
+      }[];
+      adults: {
+        name: string;
+        points: number;
+        change: "up" | "down" | "same";
+      }[];
+    };
   };
 }
