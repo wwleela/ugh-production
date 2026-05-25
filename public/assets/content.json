@@ -110,7 +110,9 @@
         { "name": "Aarohi.", "points": 55, "change": "down" },
         { "name": "Mahika.", "points": 95, "change": "up" },
         { "name": "Ikshaan.", "points": 95, "change": "up" },
-        { "name": "Bhoomi.", "points": 95, "change": "up" }
+        { "name": "Bhoomi.", "points": 95, "change": "up" },
+        { "name": "Aanvi", "points": 65, "change": "up" },
+        { "name": "Arnav", "points": 25, "change": "up" }
       ],
       "adults": [
         { "name": "Emmanuel", "points": 45, "change": "up" }
