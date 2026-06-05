@@ -8,7 +8,8 @@
     "coachName": "Coach Leela",
     "phone": "916304895686",
     "whatsappGroup": "https://chat.whatsapp.com/CeSGQhqpUMX8XamdJ7Uf2N",
-    "googleBusiness": "https://g.page/r/CfY_cWATiwNdEBM/review"
+    "googleBusiness": "https://g.page/r/CfY_cWATiwNdEBM/review",
+    "googleBusinessProfileURL": "YOUR_GOOGLE_BUSINESS_PROFILE_URL"
   },
   
   "programs": {
@@ -102,16 +103,17 @@
     ]
   },
   "leaderboard": {
-    "lastUpdated": "2026-05-25T00:00:00Z",
+    "lastUpdated": "2026-06-05T00:00:00Z",
     "rankings": {
       "kids": [
-        { "name": "Kabir.", "points": 95, "change": "up" },
-        { "name": "Mahir.", "points": 75, "change": "up" },
-        { "name": "Aarohi.", "points": 55, "change": "down" },
-        { "name": "Mahika.", "points": 95, "change": "up" },
+        { "name": "Mahika.", "points": 155, "change": "up" },
+        { "name": "Kabir.", "points": 135, "change": "up" },
+        { "name": "Aarohi.", "points": 135, "change": "up" },
+        { "name": "Aanvi", "points": 125, "change": "up" },
+        { "name": "Mihir.", "points": 115, "change": "up" },
         { "name": "Ikshaan.", "points": 95, "change": "up" },
         { "name": "Bhoomi.", "points": 95, "change": "up" },
-        { "name": "Aanvi", "points": 65, "change": "up" },
+        { "name": "Anvi", "points": 75, "change": "up" },
         { "name": "Arnav", "points": 25, "change": "up" }
       ],
       "adults": [

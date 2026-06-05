@@ -827,7 +827,7 @@ export default function App() {
               <p className="font-sans text-base md:text-lg text-white/40 max-w-sm leading-relaxed font-medium mb-8">
                 Making sports accessible for all.
               </p>
-              <div className="flex gap-5">
+              <div className="flex items-center gap-5 mb-8">
                 <a
                   href="https://www.instagram.com/urbangliding.hyd?igsh=MWJubGk3OG42eHI2Zw=="
                   target="_blank"
@@ -845,6 +845,15 @@ export default function App() {
                   <MessageCircle size={18} />
                 </a>
               </div>
+              <a
+                href={content.contact.googleBusinessProfileURL || "#"}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white hover:text-charcoal transition-all duration-500 font-sans text-xs font-bold uppercase tracking-widest text-white"
+              >
+                <Star size={16} className="text-vibrant-orange" />
+                Review our Community
+              </a>
             </div>
 
             <div>

@@ -22,6 +22,7 @@ export interface ContentData {
     email: string;
     whatsappGroup: string;
     googleBusiness: string;
+    googleBusinessProfileURL: string;
   };
   programs: Record<string, Program>;
   whatsapp: {
