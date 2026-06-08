@@ -157,7 +157,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen selection:bg-vibrant-orange selection:text-white overflow-x-hidden">
+    <div className="min-h-screen selection:bg-vibrant-orange selection:text-white overflow-x-hidden bg-white dark:bg-zinc-900 transition-colors duration-500">
       {/* Google Analytics */}
       <script
         async
@@ -408,13 +408,16 @@ export default function App() {
               >
                 <button
                   onClick={handleTrial}
-                  className="bg-vibrant-orange text-white font-sans text-xs md:text-sm uppercase tracking-[0.2em] px-8 md:px-10 py-5 rounded-full btn-premium shadow-xl shadow-vibrant-orange/10 font-bold flex items-center justify-center gap-3 group w-full sm:w-auto"
+                  className="bg-vibrant-orange text-white font-sans text-xs md:text-sm uppercase tracking-[0.2em] px-8 md:px-10 py-5 rounded-full btn-premium shadow-xl shadow-vibrant-orange/20 font-bold flex items-center justify-center gap-3 group w-full sm:w-auto relative overflow-hidden animate-shimmer"
                 >
-                  Book Private Trial
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-2 transition-transform duration-500"
-                  />
+                  <div className="absolute inset-0 w-full h-full bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 rounded-full" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Book Private Trial
+                    <ArrowRight
+                      size={18}
+                      className="group-hover:translate-x-2 transition-transform duration-500"
+                    />
+                  </span>
                 </button>
                 <a
                   href="#programs"
@@ -444,9 +447,17 @@ export default function App() {
                 {/* Floating Stats */}
                 <motion.div
                   initial={{ x: 30, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.6, duration: 1 }}
-                  className="absolute -bottom-6 -left-6 glass-premium p-6 rounded-2xl shadow-xl border border-border-gray max-w-[200px]"
+                  animate={{ x: 0, opacity: 1, y: [0, -10, 0] }}
+                  transition={{ 
+                    delay: 0.6, 
+                    duration: 1,
+                    y: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+                  }}
+                  className="absolute -bottom-2 md:-bottom-6 left-2 md:-left-6 glass-premium p-4 md:p-6 rounded-2xl shadow-xl border border-border-gray max-w-[160px] md:max-w-[200px]"
                 >
                   <p className="font-display text-3xl font-black text-deep-teal leading-none mb-1">
                     250+
@@ -464,7 +475,7 @@ export default function App() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute -top-4 -right-4 glass-premium px-5 py-3 rounded-xl shadow-xl border border-border-gray flex items-center gap-2"
+                  className="absolute -top-2 md:-top-4 right-2 md:-right-4 glass-premium px-4 md:px-5 py-2 md:py-3 rounded-xl shadow-xl border border-border-gray flex items-center gap-2"
                 >
                   <Star
                     size={14}
@@ -498,11 +509,11 @@ export default function App() {
                   across all skill levels.
                 </p>
               </div>
-              <div className="flex items-center gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 w-full sm:w-auto overflow-x-auto no-scrollbar">
-                <button className="px-6 py-2.5 rounded-full bg-charcoal text-white font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px]">
+              <div className="grid grid-cols-2 sm:flex sm:items-center p-1.5 sm:p-2 rounded-full border border-border-gray dark:border-white/10 bg-white/50 dark:bg-black/20 backdrop-blur-md shadow-sm w-full sm:w-auto gap-1 sm:gap-0">
+                <button className="relative w-full px-2 sm:px-8 py-3 rounded-full bg-charcoal text-white font-sans text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.1em] sm:tracking-[0.2em] whitespace-nowrap transition-transform duration-300 hover:scale-[1.02] sm:hover:scale-105 shadow-md text-center">
                   Monthly Mastery
                 </button>
-                <button className="px-6 py-2.5 rounded-full text-charcoal/50 dark:text-off-white/50 font-sans text-[10px] font-bold uppercase tracking-widest hover:text-charcoal dark:hover:text-off-white transition-colors whitespace-nowrap min-h-[40px]">
+                <button className="relative w-full px-2 sm:px-8 py-3 rounded-full text-charcoal/50 dark:text-off-white/50 font-sans text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.1em] sm:tracking-[0.2em] hover:text-charcoal dark:hover:text-white transition-colors duration-300 whitespace-nowrap hover:bg-black/5 dark:hover:bg-white/5 text-center">
                   Seasonal Camps
                 </button>
               </div>
@@ -569,21 +580,25 @@ export default function App() {
                     </div>
 
                     <div className="mt-auto pt-8 border-t border-border-gray">
-                      <div className="mb-6 flex items-baseline gap-2">
-                        <span className="text-3xl font-display font-black text-charcoal dark:text-off-white tracking-tighter italic">
+                      <div className="mb-8 flex items-baseline gap-2">
+                        <span className={`text-4xl font-display font-black tracking-tighter italic transition-colors duration-500 ${program.id === "summer_camp" ? "text-vibrant-orange" : "text-charcoal dark:text-off-white group-hover:text-deep-teal"}`}>
                           ₹{program.price.toLocaleString("en-IN")}
                         </span>
-                        <span className="text-[9px] text-charcoal/50 dark:text-off-white/50 font-sans uppercase tracking-[0.2em] font-bold">
+                        <span className="text-[10px] text-charcoal/40 dark:text-off-white/40 font-sans uppercase tracking-[0.25em] font-extrabold">
                           / {program.period}
                         </span>
                       </div>
                       <button
                         onClick={() => handleEnroll(program)}
-                        className={`w-full font-sans text-[10px] uppercase tracking-[0.2em] py-3.5 rounded-full border transition-all duration-700 font-extrabold btn-premium
-                        ${program.id === "summer_camp" ? "bg-deep-teal text-white border-deep-teal" : "bg-transparent border-charcoal dark:border-white text-charcoal dark:text-off-white hover:bg-charcoal dark:hover:bg-off-white hover:text-white dark:hover:text-charcoal"}
+                        className={`w-full font-sans text-[10px] uppercase tracking-[0.25em] py-4 rounded-full border transition-all duration-700 font-black btn-premium group/btn overflow-hidden relative flex justify-center items-center gap-2
+                        ${program.id === "summer_camp" ? "bg-deep-teal text-white border-deep-teal hover:shadow-xl hover:shadow-deep-teal/20" : "bg-transparent border-charcoal/20 dark:border-white/20 text-charcoal dark:text-off-white hover:border-charcoal hover:bg-charcoal dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-charcoal"}
                       `}
                       >
-                        {program.ctaText}
+                        <span className="relative z-10">{program.ctaText}</span>
+                        {program.id === "summer_camp" && (
+                          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 rounded-full" />
+                        )}
+                        <ArrowRight size={14} className={`relative z-10 transition-transform duration-500 ${program.id === "summer_camp" ? "group-hover/btn:translate-x-1" : "opacity-0 -translate-x-4 group-hover/btn:opacity-100 group-hover/btn:translate-x-0"}`} />
                       </button>
                     </div>
                   </motion.div>
@@ -607,10 +622,10 @@ export default function App() {
                 UGH Leaderboard
               </h2>
               
-              <div className="inline-flex items-center gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 m-auto mt-4">
+              <div className="grid grid-cols-2 sm:inline-flex sm:items-center justify-center gap-1 sm:gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 m-auto mt-4 w-full sm:w-auto">
                 <button
                   onClick={() => setActiveCategory("kids")}
-                  className={`px-6 py-2.5 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px] transition-all duration-300 ${
+                  className={`w-full px-2 sm:px-6 py-2.5 rounded-full font-sans text-[9px] sm:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.2em] whitespace-nowrap min-h-[40px] transition-all duration-300 text-center ${
                     activeCategory === "kids" 
                       ? "bg-charcoal text-white shadow-md" 
                       : "text-charcoal/50 dark:text-off-white/50 hover:text-charcoal dark:hover:text-off-white"
@@ -620,7 +635,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setActiveCategory("adults")}
-                  className={`px-6 py-2.5 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest whitespace-nowrap min-h-[40px] transition-all duration-300 ${
+                  className={`w-full px-2 sm:px-6 py-2.5 rounded-full font-sans text-[9px] sm:text-[10px] font-bold uppercase tracking-widest sm:tracking-[0.2em] whitespace-nowrap min-h-[40px] transition-all duration-300 text-center ${
                     activeCategory === "adults" 
                       ? "bg-charcoal text-white shadow-md" 
                       : "text-charcoal/50 dark:text-off-white/50 hover:text-charcoal dark:hover:text-off-white"
@@ -778,8 +793,8 @@ export default function App() {
               <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px]"></div>
 
               {/* Highlight Orbs */}
-              <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-vibrant-orange/20 blur-[120px] rounded-full pointer-events-none" />
-              <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-deep-teal/30 blur-[120px] rounded-full pointer-events-none" />
+              <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-vibrant-orange/20 blur-[120px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '4s' }} />
+              <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-deep-teal/30 blur-[120px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
 
               <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
                 <h3 className="mb-6 italic leading-[1] tracking-tighter text-balance text-white md:text-5xl lg:text-5xl">
@@ -795,7 +810,7 @@ export default function App() {
                   href="https://www.instagram.com/reel/DYYldtwB0ze/?igsh=MWJuZmU0b3RjNHN1eg=="
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-vibrant-orange text-white font-sans text-[10px] md:text-xs uppercase tracking-[0.25em] px-10 md:px-14 py-4 md:py-5 rounded-full font-extrabold hover:scale-105 transition-all duration-700 shadow-xl shadow-vibrant-orange/30 btn-premium"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-vibrant-orange text-white font-sans text-[10px] md:text-xs uppercase tracking-[0.25em] px-10 md:px-14 py-4 md:py-5 rounded-full font-extrabold hover:scale-105 transition-all duration-700 shadow-xl shadow-vibrant-orange/30 btn-premium animate-shimmer"
                 >
                   <Instagram size={18} />
                   Watch SB Series
@@ -849,9 +864,9 @@ export default function App() {
                 href={content.contact.googleBusinessProfileURL || "#"}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white hover:text-charcoal transition-all duration-500 font-sans text-xs font-bold uppercase tracking-widest text-white"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 hover:bg-white hover:text-charcoal transition-all duration-500 font-sans text-xs font-bold uppercase tracking-widest text-white group"
               >
-                <Star size={16} className="text-vibrant-orange" />
+                <Star size={16} className="text-vibrant-orange group-hover:fill-vibrant-orange transition-colors duration-500" />
                 Review our Community
               </a>
             </div>

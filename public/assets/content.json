@@ -103,18 +103,18 @@
     ]
   },
   "leaderboard": {
-    "lastUpdated": "2026-06-05T00:00:00Z",
+    "lastUpdated": "2026-06-08T00:00:00Z",
     "rankings": {
       "kids": [
-        { "name": "Mahika.", "points": 155, "change": "up" },
-        { "name": "Kabir.", "points": 135, "change": "up" },
-        { "name": "Aarohi.", "points": 135, "change": "up" },
-        { "name": "Aanvi", "points": 125, "change": "up" },
-        { "name": "Mihir.", "points": 115, "change": "up" },
-        { "name": "Ikshaan.", "points": 95, "change": "up" },
-        { "name": "Bhoomi.", "points": 95, "change": "up" },
-        { "name": "Anvi", "points": 75, "change": "up" },
-        { "name": "Arnav", "points": 25, "change": "up" }
+        { "name": "Mahika.", "points": 195, "change": "same" },
+        { "name": "Aarohi.", "points": 175, "change": "up" },
+        { "name": "Aanvi", "points": 165, "change": "up" },
+        { "name": "Kabir.", "points": 155, "change": "down" },
+        { "name": "Mihir.", "points": 125, "change": "same" },
+        { "name": "Ikshaan.", "points": 95, "change": "same" },
+        { "name": "Bhoomi.", "points": 95, "change": "same" },
+        { "name": "Anvi", "points": 75, "change": "same" },
+        { "name": "Arnav", "points": 25, "change": "same" }
       ],
       "adults": [
         { "name": "Emmanuel", "points": 45, "change": "up" }
