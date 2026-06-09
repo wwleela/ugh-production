@@ -533,7 +533,7 @@ export default function App() {
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     className={`card-premium p-6 md:p-10 flex flex-col relative group hover:-translate-y-4 hover:shadow-[0_40px_100px_-20px_rgba(0,97,95,0.1)] ${
-                      program.id === "summer_camp"
+                      program.id === "group_training"
                         ? "bg-light-sand dark:bg-zinc-800 border-none"
                         : ""
                     }`}
@@ -541,12 +541,12 @@ export default function App() {
                     <div className="flex justify-between items-start mb-8 md:mb-10">
                       <div
                         className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-700 ${
-                          program.id === "summer_camp"
+                          program.id === "group_training"
                             ? "bg-vibrant-orange text-white border-vibrant-orange"
                             : "bg-deep-teal/5 text-deep-teal border-deep-teal/10 group-hover:bg-deep-teal group-hover:text-white"
                         }`}
                       >
-                        {program.id === "summer_camp" ? (
+                        {program.id === "group_training" ? (
                           <Star size={20} />
                         ) : (
                           <ShieldCheck size={20} />
@@ -581,7 +581,7 @@ export default function App() {
 
                     <div className="mt-auto pt-8 border-t border-border-gray">
                       <div className="mb-8 flex items-baseline gap-2">
-                        <span className={`text-4xl font-display font-black tracking-tighter italic transition-colors duration-500 ${program.id === "summer_camp" ? "text-vibrant-orange" : "text-charcoal dark:text-off-white group-hover:text-deep-teal"}`}>
+                        <span className={`text-4xl font-display font-black tracking-tighter italic transition-colors duration-500 ${program.id === "group_training" ? "text-vibrant-orange" : "text-charcoal dark:text-off-white group-hover:text-deep-teal"}`}>
                           ₹{program.price.toLocaleString("en-IN")}
                         </span>
                         <span className="text-[10px] text-charcoal/40 dark:text-off-white/40 font-sans uppercase tracking-[0.25em] font-extrabold">
@@ -591,14 +591,14 @@ export default function App() {
                       <button
                         onClick={() => handleEnroll(program)}
                         className={`w-full font-sans text-[10px] uppercase tracking-[0.25em] py-4 rounded-full border transition-all duration-700 font-black btn-premium group/btn overflow-hidden relative flex justify-center items-center gap-2
-                        ${program.id === "summer_camp" ? "bg-deep-teal text-white border-deep-teal hover:shadow-xl hover:shadow-deep-teal/20" : "bg-transparent border-charcoal/20 dark:border-white/20 text-charcoal dark:text-off-white hover:border-charcoal hover:bg-charcoal dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-charcoal"}
+                        ${program.id === "group_training" ? "bg-deep-teal text-white border-deep-teal hover:shadow-xl hover:shadow-deep-teal/20" : "bg-transparent border-charcoal/20 dark:border-white/20 text-charcoal dark:text-off-white hover:border-charcoal hover:bg-charcoal dark:hover:bg-white dark:hover:border-white hover:text-white dark:hover:text-charcoal"}
                       `}
                       >
                         <span className="relative z-10">{program.ctaText}</span>
-                        {program.id === "summer_camp" && (
+                        {program.id === "group_training" && (
                           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500 rounded-full" />
                         )}
-                        <ArrowRight size={14} className={`relative z-10 transition-transform duration-500 ${program.id === "summer_camp" ? "group-hover/btn:translate-x-1" : "opacity-0 -translate-x-4 group-hover/btn:opacity-100 group-hover/btn:translate-x-0"}`} />
+                        <ArrowRight size={14} className={`relative z-10 transition-transform duration-500 ${program.id === "group_training" ? "group-hover/btn:translate-x-1" : "opacity-0 -translate-x-4 group-hover/btn:opacity-100 group-hover/btn:translate-x-0"}`} />
                       </button>
                     </div>
                   </motion.div>

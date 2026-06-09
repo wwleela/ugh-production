@@ -13,10 +13,10 @@
   },
   
   "programs": {
-    "summer_camp": {
-      "id": "summer_camp",
-      "name": "Summer Camp",
-      "displayName": "Summer Camp 2026",
+    "group_training": {
+      "id": "group_training",
+      "name": "Group Training",
+      "displayName": "Group Training",
       "price": 2999,
       "currency": "INR",
       "period": "per participant",
@@ -26,13 +26,13 @@
         "Group learning motivation",
         "Ages 5+ welcome"
       ],
-      "badge": "Summer Special",
+      "badge": "Group Training",
       "ctaText": "Register Now →"
     },
     "elite_1on1": {
       "id": "elite_1on1",
       "name": "Elite 1-on-1",
-      "displayName": "Elite 1-on-1 Coaching",
+      "displayName": "Elite 1-on-1",
       "price": 5999,
       "currency": "INR",
       "period": "per month",
@@ -48,7 +48,7 @@
     "elite_duo": {
       "id": "elite_duo",
       "name": "Elite Duo",
-      "displayName": "Elite Duo Training",
+      "displayName": "Elite Duo",
       "price": 8999,
       "currency": "INR",
       "period": "per month · shared",
