@@ -15,15 +15,14 @@
   "programs": {
     "group_training": {
       "id": "group_training",
-      "name": "Group Training",
-      "displayName": "Group Training",
-      "price": 2999,
+      "name": "Weekend/Drop-in Session",
+      "displayName": "Weekend/Drop-in Session",
+      "price": 499,
       "currency": "INR",
-      "period": "per participant",
-      "description": "Group workshop at your society introducing fundamentals under certified supervision.",
+      "period": "session (7Am to 9Am)",
+      "description": "Worksop/session at WallRide Park introducing fundamentals under certified supervision.",
       "features": [
         "IOC-certified coaching at your venue",
-        "Group learning motivation",
         "Ages 5+ welcome"
       ],
       "badge": "Group Training",
@@ -31,15 +30,15 @@
     },
     "elite_1on1": {
       "id": "elite_1on1",
-      "name": "Elite 1-on-1",
-      "displayName": "Elite 1-on-1",
-      "price": 5999,
+      "name": "UGH WRP",
+      "displayName": "UGH WRP",
+      "price": 4999,
       "currency": "INR",
-      "period": "per month",
+      "period": "month",
       "description": "Personalized curriculum with dedicated sessions and custom video analysis.",
       "features": [
         "2 physical sessions per week",
-        "2 custom video guides per week",
+        "video guide",
         "Personal progression roadmap"
       ],
       "badge": "Most Popular",
@@ -47,16 +46,15 @@
     },
     "elite_duo": {
       "id": "elite_duo",
-      "name": "Elite Duo",
-      "displayName": "Elite Duo",
-      "price": 8999,
+      "name": "UGH Duo WRP",
+      "displayName": "UGH Duo WRP",
+      "price": 4499,
       "currency": "INR",
-      "period": "per month · shared",
+      "period": "month",
       "description": "Train with a partner — same quality, competitive energy, split investment.",
       "features": [
-        "2 physical + 2 video guides",
-        "Competitive partner dynamic",
-        "₹4,499.50 per person"
+        "2 sessions + video guide",
+        "Competitive partner dynamic"
       ],
       "badge": null,
       "ctaText": "Book Duo →"
