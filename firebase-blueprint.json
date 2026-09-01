@@ -1,0 +1,39 @@
+{
+  "schema": {
+    "workshops": {
+      "type": "collection",
+      "description": "Available training sessions",
+      "fields": {
+        "title": { "type": "string" },
+        "date_time": { "type": "timestamp" },
+        "venue": { "type": "string" },
+        "discipline": { "type": "string" },
+        "max_slots": { "type": "number" },
+        "booked_count": { "type": "number" },
+        "price_inr": { "type": "number" },
+        "is_active": { "type": "boolean" }
+      }
+    },
+    "bookings": {
+      "type": "collection",
+      "description": "User workshop bookings",
+      "fields": {
+        "user_uid": { "type": "string" },
+        "workshop_id": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string" },
+        "timestamp": { "type": "timestamp" }
+      }
+    },
+    "users": {
+      "type": "collection",
+      "description": "User profiles",
+      "fields": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "discipline_pref": { "type": "string" }
+      }
+    }
+  }
+}

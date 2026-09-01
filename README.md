@@ -1,6 +1,6 @@
 # Urban Gliding Hyderabad (UGH)
 
-Hyderabad's favourite doorstep skating coach. Premium doorstep coaching and IOC-certified training.
+Hyderabad's favourite doorstep skating coach. Premium doorstep coaching and MSME registered training.
 
 ## Architecture & Deployment
 

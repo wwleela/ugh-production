@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "^(?!ugh\\.co\\.in$).*"
+        }
+      ],
+      "destination": "https://ugh.co.in/$1",
+      "permanent": true
+    }
+  ]
+}

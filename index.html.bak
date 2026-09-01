@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Urban Gliding Hyderabad (UGH) - Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops, plus vibrant community events across residential complexes." />
+    <link rel="canonical" href="https://ugh.co.in/" />
+    <title>UGH - Urban Gliding Hyderabad</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#1A1A1A',
+              'ugh-teal': '#008491',
+              'ugh-orange': '#C86733',
+              'ugh-mustard': '#F0C05A',
+              'border-gray': '#E0E0E0',
+              'off-white': '#FDFDFD'
+            },
+            fontFamily: {
+              display: ['Oswald', 'sans-serif'],
+              body: ['Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+      
+      .tab-content { display: none; }
+      .tab-content.active { display: grid; animation: fadeIn 0.4s ease-out forwards; }
+      .tab-btn.active { border-bottom-color: #008491; color: #008491; }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .hero-bg {
+        background-color: #1A1A1A;
+        background-image: radial-gradient(circle at center, #2A2A2A 0%, #1A1A1A 100%);
+      }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SportsActivityLocation",
+          "name": "Urban Gliding Hyderabad (UGH)",
+          "description": "Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops.",
+          "url": "https://ugh.co.in/",
+          "telephone": "+916304895686",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "name": "MSME Udyam Registration",
+            "value": "UDYAM-TS-09-0222985"
+          },
+          "areaServed": [
+            "Gachibowli",
+            "Kokapet",
+            "Financial District",
+            "Narsingi",
+            "Tellapur",
+            "Peerancheru",
+            "Kondapur",
+            "Nallagandla",
+            "Madhapur"
+          ]
+        },
+        {
+          "@type": "Event",
+          "name": "Sunday Skateboarding Workshop",
+          "startDate": "2026-08-30T07:00:00+05:30",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Workshop Venue",
+            "address": "[VENUE ADDRESS — CONFIRM]"
+          },
+          "description": "Weekly recurring skateboarding workshop for all skill levels."
+        },
+        {
+          "@type": "Event",
+          "name": "Fam Jam",
+          "startDate": "2026-08-29T16:00:00+05:30",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Workshop Venue",
+            "address": "[VENUE ADDRESS — CONFIRM]"
+          },
+          "description": "Monthly skateboarding competition, beginner workshop, and youth culture event."
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-off-white text-charcoal antialiased">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-border-gray">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#" class="text-3xl font-display font-bold tracking-tighter">UGH<span class="text-ugh-orange">.</span></a>
+        <nav class="hidden md:flex gap-8 font-bold text-sm uppercase tracking-widest font-display">
+          <a href="#community" class="hover:text-ugh-teal transition-colors">Impact</a>
+          <a href="#events" class="hover:text-ugh-teal transition-colors">Events</a>
+          <a href="#programs" class="hover:text-ugh-teal transition-colors">Pricing</a>
+          <a href="#venues" class="hover:text-ugh-teal transition-colors">Venues</a>
+        </nav>
+        <button onclick="window.open('https://wa.me/916304895686', '_blank')" class="bg-ugh-teal text-white px-6 py-3 rounded font-display font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:bg-[#006a75] transition-colors">
+          Chat on WhatsApp
+        </button>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      
+      <!-- Hero -->
+      <section class="hero-bg text-white py-32 px-6 text-center">
+        <div class="max-w-5xl mx-auto">
+          <span class="inline-block px-4 py-1.5 border border-ugh-teal text-ugh-teal text-xs font-bold uppercase tracking-widest rounded-full mb-8 font-display">
+            Hyderabad's Skate Community
+          </span>
+          <h1 class="text-6xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight">
+            Learn <br>
+            <span class="text-ugh-orange italic">Skateboarding, Inline Skating & BMX</span><br>
+            in Hyderabad
+          </h1>
+          <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Professional coaching built on international action sports frameworks, administered by verified sports leaders.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button onclick="window.open('https://wa.me/916304895686', '_blank')" class="bg-ugh-orange text-white px-10 py-5 rounded font-display font-bold uppercase tracking-widest text-sm hover:bg-[#b0572a] transition-colors">
+              Book on WhatsApp
+            </button>
+            <a href="#programs" class="px-10 py-5 rounded border-2 border-gray-600 font-display font-bold uppercase tracking-widest text-sm hover:border-white transition-colors text-center">
+              View Pricing
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disciplines -->
+      <section id="disciplines" class="py-24 px-6 border-b border-border-gray">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="text-ugh-teal font-bold uppercase tracking-widest text-xs font-display">Core Disciplines</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">What We Teach</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white border border-border-gray hover:border-ugh-teal transition-colors">
+              <h3 class="text-2xl font-display font-bold mb-4">Skateboarding</h3>
+              <p class="text-gray-600 leading-relaxed">Master the concrete waves. From static balance to ollies, flip tricks, and transition carving.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray hover:border-ugh-teal transition-colors">
+              <h3 class="text-2xl font-display font-bold mb-4">Inline Skating</h3>
+              <p class="text-gray-600 leading-relaxed">Speed, agility, and precision. Learn strides, crossovers, stopping mechanics, and freestyle slalom.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray hover:border-ugh-teal transition-colors">
+              <h3 class="text-2xl font-display font-bold mb-4">BMX</h3>
+              <p class="text-gray-600 leading-relaxed">Two-wheeled progression. From basic pump track rhythm to bunny hops and manual control.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Leadership -->
+      <section id="leadership" class="py-24 px-6 bg-light-sand">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="text-ugh-orange font-bold uppercase tracking-widest text-xs font-display">Founded by Leela</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-10">Leadership</h2>
+          <div class="bg-white p-10 border-l-4 border-ugh-teal shadow-sm text-left">
+            <p class="text-lg text-charcoal leading-relaxed font-medium mb-4">
+              Tribhuvan Kokkula — Vice-Chairman, Skateboarding Sub-Committee, Roller Skating Federation of India (RSFI), 2026–2027 term. RSFI-certified National Referee and Technical Official.
+            </p>
+            <p class="text-sm text-gray-500">
+              Urban Gliding Hyderabad is an MSME registered sports enterprise (UDYAM-TS-09-0222985).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Impact -->
+      <section id="community" class="py-24 px-6 border-b border-border-gray">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="text-ugh-teal font-bold uppercase tracking-widest text-xs font-display">Where We've Coached</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-6">Community Impact</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">Delivering structured doorstep coaching across premium residential communities in Hyderabad.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">Aparna Serene Park</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Kondapur/Gachibowli</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Conducted introductory skateboarding and inline skating workshops in this expansive ~19-acre community. Our coaching sessions brought action sports directly to the ~1,680 units, providing convenient doorstep learning.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">Aparna Sarovar Zenith</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Nallagandla</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Ran dedicated coaching sessions across this ~24.6-acre residential space. We introduced safe, structured inline skating and skateboarding fundamentals to the community.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">Aparna Sarovar Grande</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Nallagandla</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Led active youth workshops in this ~10.5-acre property. Our focus on certified safety gear and progressive learning helped residents master the concrete safely.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">Aparna Hights I</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Kondapur</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Conducted action sports clinics for the residents, bringing our doorstep coaching model to life. Sessions focused on balance, agility, and fundamental skate mechanics.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">PBEL City</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Peerancheru</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Ran summer camp clinics and recurring coaching batches for residents. We transformed the community spaces into active learning zones for skateboarding and inline skating.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">Ananda Bay Hills</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Narsingi</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Provided structured doorstep coaching within this ~5.29-acre community. We introduced fundamental ramp transitions and flat-ground skills to the youth.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">My Home Tarkshya</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Kokapet</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Conducted safe, structured skating sessions for residents of this ~5.82-acre, 660-unit community. Our coaches focused on foundational skills and proper safety protocols.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <h3 class="text-xl font-display font-bold mb-2">My Home Navadweepa</h3>
+              <p class="text-xs text-ugh-orange font-bold uppercase tracking-widest mb-4">Madhapur/HITEC City</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Ran introductory and progression workshops for the community. We delivered professional action sports instruction directly to the residents' doorsteps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alliances & Experience -->
+      <section id="alliances" class="py-24 px-6 bg-light-sand">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="text-ugh-teal font-bold uppercase tracking-widest text-xs font-display">Ecosystem</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Alliances & Experience</h2>
+          </div>
+          
+          <div class="flex justify-center border-b border-border-gray mb-10">
+            <button class="tab-btn active px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-ugh-teal transition-colors" data-target="brands">Brands & Partners</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-ugh-teal transition-colors text-gray-500" data-target="events-hosted">Events Hosted</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-ugh-teal transition-colors text-gray-500" data-target="media">Media & Features</button>
+          </div>
+
+          <div id="brands" class="tab-content active grid-cols-2 md:grid-cols-4 gap-6">
+            <!-- Placeholders for media -->
+            <div class="aspect-video bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            </div>
+            <div class="aspect-video bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            </div>
+            <div class="aspect-video bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            </div>
+            <div class="aspect-video bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            </div>
+          </div>
+
+          <div id="events-hosted" class="tab-content grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+            </div>
+            <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+            </div>
+            <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+            </div>
+          </div>
+
+          <div id="media" class="tab-content grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="aspect-square bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+            </div>
+            <div class="aspect-square bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+            </div>
+            <div class="aspect-square bg-gray-200 flex items-center justify-center border border-gray-300">
+              <span class="text-gray-400 font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monthly Events Block -->
+      <section id="events" class="py-24 px-6 border-b border-border-gray">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="text-ugh-orange font-bold uppercase tracking-widest text-xs font-display">Culture & Progression</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Upcoming Events</h2>
+          </div>
+          <div id="events-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="p-8 bg-white border-2 border-charcoal shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 hover:shadow-[12px_12px_0px_#1A1A1A] transition-all flex flex-col">
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="inline-block px-3 py-1 bg-ugh-teal text-white text-[10px] font-bold uppercase tracking-widest font-display">Weekly, Sundays</span>
+                <span class="inline-block px-3 py-1 border border-border-gray text-gray-600 text-[10px] font-bold uppercase tracking-widest font-display">Morning Sessions</span>
+              </div>
+              <h3 class="text-3xl font-display font-bold mb-3">Sunday Skateboarding Workshop</h3>
+              <p class="text-sm font-bold text-ugh-orange mb-4 uppercase tracking-wider font-display">📍 [VENUE ADDRESS — CONFIRM]</p>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">Our recurring weekend action sports clinic. Focused on fundamental skateboarding and progressive ramp skills for all levels.</p>
+              <button onclick="window.open('https://wa.me/916304895686?text=Hi%2C%20I%20want%20to%20inquire%20about%20the%20Sunday%20Skateboarding%20Workshop%20event.', '_blank')" class="w-full py-4 bg-charcoal text-white font-display font-bold uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors">
+                Inquire / RSVP
+              </button>
+            </div>
+            
+            <div class="p-8 bg-white border-2 border-charcoal shadow-[8px_8px_0px_#1A1A1A] hover:-translate-y-1 hover:shadow-[12px_12px_0px_#1A1A1A] transition-all flex flex-col">
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="inline-block px-3 py-1 bg-ugh-teal text-white text-[10px] font-bold uppercase tracking-widest font-display">August 29, 2026</span>
+                <span class="inline-block px-3 py-1 border border-border-gray text-gray-600 text-[10px] font-bold uppercase tracking-widest font-display">4:00 PM onwards</span>
+              </div>
+              <h3 class="text-3xl font-display font-bold mb-3">Fam Jam</h3>
+              <p class="text-sm font-bold text-ugh-orange mb-4 uppercase tracking-wider font-display">📍 [VENUE ADDRESS — CONFIRM]</p>
+              <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-1">Monthly skateboarding competition, beginner workshop, and youth culture event. This month featuring local musicians and breakdance performances.</p>
+              <button onclick="window.open('https://wa.me/916304895686?text=Hi%2C%20I%20want%20to%20inquire%20about%20the%20Fam%20Jam%20event.', '_blank')" class="w-full py-4 bg-charcoal text-white font-display font-bold uppercase tracking-widest text-xs hover:bg-gray-800 transition-colors">
+                Inquire / RSVP
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programs / Pricing -->
+      <section id="programs" class="py-24 px-6 bg-charcoal text-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-display font-bold">Pricing & Plans</h2>
+            <p class="text-gray-400 mt-4 text-lg">Choose the structure that fits your progression path.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="pricing-grid">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety -->
+      <section id="safety" class="py-24 px-6 text-center border-b border-border-gray">
+        <div class="max-w-4xl mx-auto">
+          <span class="text-ugh-orange font-bold uppercase tracking-widest text-xs font-display">No Gear, No Skate</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-6">Safety & Protection</h2>
+          <p class="text-gray-600 text-lg mb-12 leading-relaxed">We strictly enforce a mandatory 4-point CE/EN certified protection policy. All skaters must use non-marking PU wheels (82A-86A) to protect court surfaces.</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="p-6 bg-white border border-border-gray"><div class="text-4xl mb-4">⛑️</div><h4 class="font-display font-bold">Helmet</h4></div>
+            <div class="p-6 bg-white border border-border-gray"><div class="text-4xl mb-4">🧤</div><h4 class="font-display font-bold">Wrist Guards</h4></div>
+            <div class="p-6 bg-white border border-border-gray"><div class="text-4xl mb-4">🦾</div><h4 class="font-display font-bold">Elbow Pads</h4></div>
+            <div class="p-6 bg-white border border-border-gray"><div class="text-4xl mb-4">🦿</div><h4 class="font-display font-bold">Knee Pads</h4></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Venues -->
+      <section id="venues" class="py-24 px-6 bg-light-sand border-b border-border-gray">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="text-ugh-teal font-bold uppercase tracking-widest text-xs font-display">Where We Teach</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Our Public Venues</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white border border-border-gray">
+              <span class="inline-block px-3 py-1 bg-gray-100 text-charcoal text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-gray-200">Public Access</span>
+              <h3 class="text-2xl font-display font-bold mb-1">Decathlon Atrium</h3>
+              <p class="text-ugh-orange text-xs font-bold uppercase tracking-widest mb-4 font-display">Gachibowli</p>
+              <p class="text-gray-600 text-sm">Introductory workshops, equipment trials, and agility sessions.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <span class="inline-block px-3 py-1 bg-gray-100 text-charcoal text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-gray-200">Public Access</span>
+              <h3 class="text-2xl font-display font-bold mb-1">Wall Ride Park</h3>
+              <p class="text-ugh-orange text-xs font-bold uppercase tracking-widest mb-4 font-display">[VENUE ADDRESS — CONFIRM]</p>
+              <p class="text-gray-600 text-sm">Skate park ramps, bowls, and pump track progression.</p>
+            </div>
+            <div class="p-8 bg-white border border-border-gray">
+              <span class="inline-block px-3 py-1 bg-gray-100 text-charcoal text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-gray-200">Public Access</span>
+              <h3 class="text-2xl font-display font-bold mb-1">Primo Skatepark</h3>
+              <p class="text-ugh-orange text-xs font-bold uppercase tracking-widest mb-4 font-display">Hyderabad</p>
+              <p class="text-gray-600 text-sm">Street plaza elements and mini ramps.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-display font-bold">FAQs</h2>
+          </div>
+          <div class="space-y-4">
+            <details class="p-6 bg-white border border-border-gray cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What gear is mandatory? <span class="text-ugh-orange text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-gray-600 text-sm leading-relaxed">A certified helmet, wrist guards, elbow pads, and knee pads are non-negotiable for every class. No exceptions.</p>
+            </details>
+            <details class="p-6 bg-white border border-border-gray cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What is the age limit? <span class="text-ugh-orange text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-gray-600 text-sm leading-relaxed">We teach Junior (5-12 yrs), Senior (13-17 yrs), and Adult gliders. Everyone is welcome to learn.</p>
+            </details>
+            <details class="p-6 bg-white border border-border-gray cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What happens if it rains? <span class="text-ugh-orange text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-gray-600 text-sm leading-relaxed">In case of rain, sessions will be rescheduled to a make-up day, ensuring you don't miss out on your training.</p>
+            </details>
+            <details class="p-6 bg-white border border-border-gray cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What should I bring to my first session? <span class="text-ugh-orange text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-gray-600 text-sm leading-relaxed">Please wear comfortable athletic clothing and closed-toe shoes. All necessary protective gear is provided, or you must bring your own per our mandatory safety policy.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12 px-6 border-t border-gray-800 text-center md:text-left">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <h2 class="text-2xl font-display font-bold tracking-tighter mb-2">UGH<span class="text-ugh-orange">.</span></h2>
+          <p class="text-gray-400 text-sm mb-1">Urban Gliding Hyderabad</p>
+          <p class="text-gray-500 text-xs">MSME Registered: UDYAM-TS-09-0222985</p>
+        </div>
+        <div class="text-sm text-gray-400">
+          <p class="mb-2">Call / WhatsApp: <a href="https://wa.me/916304895686" class="text-white hover:text-ugh-teal transition-colors font-bold">+916304895686</a></p>
+          <p>&copy; 2026 Urban Gliding Hyderabad. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Sticky Nav -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-xl border-t border-border-gray p-4 flex gap-3 z-50">
+      <a href="#programs" class="flex-1 text-center py-3.5 bg-gray-100 rounded font-display font-bold text-xs uppercase tracking-widest border border-border-gray text-charcoal">View Pricing</a>
+      <button onclick="window.open('https://wa.me/916304895686', '_blank')" class="flex-1 text-center py-3.5 bg-ugh-teal text-white rounded font-display font-bold text-xs uppercase tracking-widest shadow-lg">WhatsApp</button>
+    </div>
+
+    <!-- Initialization Scripts -->
+    <script>
+      // Tab interaction
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => { t.classList.remove('active'); t.classList.add('text-gray-500'); });
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          tab.classList.remove('text-gray-500');
+          document.getElementById(tab.dataset.target).classList.add('active');
+        });
+      });
+
+      // Pricing Data & Rendering
+      const programs = [
+        { name: "Drop-in Session", price: "599", period: "session", desc: "Single coached session, no commitment.", features: ["Introduction to fundamentals", "Ages 5+ welcome"], badge: null },
+        { name: "Monthly Academy", price: "5,999", period: "month", desc: "8 coached classes + unlimited monthly access to skate parks.", features: ["8 coached classes", "Unlimited park access", "Personal progression roadmap"], badge: "Featured" },
+        { name: "Apartment/Society — Standard", price: "4,999", period: "month", desc: "8 classes per month, at your society.", features: ["8 on-site society classes", "Group learning dynamics", "Convenient doorstep coaching"], badge: null },
+        { name: "Apartment/Society — Plus", price: "6,999", period: "month", desc: "8 classes + 3 skate park sessions per month.", features: ["8 on-site society classes", "3 skate park sessions", "Best of both worlds"], badge: "Comprehensive" },
+        { name: "UGH VIP Skate Plan", price: "26,000 (Month 1) / 20,000 (Renewal)", period: "flagship", desc: "Month 1: 10 classes + 3 park sessions. Renewal: recurring monthly batch. Includes doorstep mobile skatepark, VIP kit, and a personalized journey video.", features: ["Doorstep mobile skatepark van", "Curated board + full armor kit", "Personalized video vlog"], badge: "VIP" }
+      ];
+
+      const grid = document.getElementById('pricing-grid');
+      programs.forEach(p => {
+        const msg = encodeURIComponent(`Hi Coach Leela, I want to enroll in ${p.name}. I'll send payment confirmation shortly.`);
+        const isFeatured = p.badge === 'Featured';
+        const isVIP = p.badge === 'VIP';
+        
+        let cardClass = 'bg-[#2A2A2A] text-white border border-gray-700';
+        let btnClass = 'border border-gray-600 hover:bg-gray-700 text-white';
+        let badgeClass = 'bg-gray-600 text-white';
+        let checkClass = 'text-ugh-orange';
+        
+        if (isFeatured) {
+          cardClass = 'bg-ugh-teal text-white border-none shadow-[8px_8px_0px_#00555d] scale-105';
+          btnClass = 'bg-charcoal text-white border-none hover:bg-gray-800';
+          badgeClass = 'bg-charcoal text-white';
+          checkClass = 'text-white';
+        } else if (isVIP) {
+          cardClass = 'bg-gradient-to-br from-[#2a2410] to-[#1a170a] text-white border-2 border-ugh-mustard shadow-[0_0_30px_rgba(240,192,90,0.15)] lg:col-span-4 md:col-span-2 mx-auto w-full max-w-3xl scale-105 mt-8';
+          btnClass = 'bg-ugh-mustard text-charcoal border-none hover:bg-[#d8a846] font-black shadow-md';
+          badgeClass = 'bg-ugh-mustard text-charcoal';
+          checkClass = 'text-ugh-mustard';
+        }
+        
+        grid.innerHTML += `
+          <div class="p-8 ${cardClass} relative flex flex-col">
+            ${p.badge ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 ${badgeClass} text-[10px] font-bold uppercase tracking-widest font-display">${p.badge}</span>` : ''}
+            <h3 class="text-2xl font-display font-bold mb-2">${p.name}</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-display font-bold">${p.price.includes('Month') ? `₹${p.price}` : `₹${p.price}`}</span>
+              ${p.period !== 'flagship' ? `<span class="text-sm opacity-70">/${p.period}</span>` : ''}
+            </div>
+            <p class="text-sm opacity-80 mb-8 min-h-[40px] leading-relaxed">${p.desc}</p>
+            <ul class="space-y-3 mb-8 flex-1">
+              ${p.features.map(f => `<li class="flex items-start gap-3 text-sm"><span class="${checkClass} text-lg leading-none">✓</span> <span class="opacity-80">${f}</span></li>`).join('')}
+            </ul>
+            <button onclick="window.open('https://wa.me/916304895686?text=${msg}', '_blank')" class="w-full py-4 font-display font-bold uppercase tracking-widest text-xs transition-colors ${btnClass}">
+              Book on WhatsApp
+            </button>
+          </div>
+        `;
+      });
+    </script>
+  </body>
+</html>
