@@ -156,7 +156,25 @@
         color: var(--kinetic-text);
         border: 1px solid var(--kinetic-border);
       }
-    </style>
+    
+      @keyframes float-icon {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        33% { transform: translateY(-8px) rotate(2deg); }
+        66% { transform: translateY(-4px) rotate(-2deg); }
+      }
+      .animate-float-icon {
+        animation: float-icon 5s ease-in-out infinite;
+        transform-origin: center center;
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.4));
+      }
+      .dark .animate-float-icon {
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.6));
+      }
+      .discipline-card:hover .animate-float-icon {
+        animation-duration: 2s;
+        filter: drop-shadow(0px 12px 24px rgba(216, 91, 45, 0.7));
+      }
+</style>
     
     <script type="application/ld+json">
     {
@@ -232,7 +250,7 @@
       <div class="pointer-events-auto max-w-[1440px] mx-auto flex items-center justify-between bg-kinetic-surface/95 backdrop-blur-md border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-full border h-16 md:h-20 px-3 md:px-6">
         <a href="#home" class="tab-link flex items-center gap-3" data-tab="home">
           <img src="src/assets/images/2_social_media_square.png" alt="UGH Logo" width="40" height="40" class="border-kinetic-border shadow-[2px_2px_0px_var(--kinetic-shadow)] h-10 w-10 rounded-lg border-2">
-          <span class="text-fluid-h2 font-display font-bold tracking-tighter uppercase hidden sm:block">UGH</span>
+          
         </a>
                 <nav class="hidden md:flex gap-fluid-md font-bold text-sm uppercase tracking-widest font-mono">
           <a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="impact">Impact</a>
@@ -240,8 +258,16 @@
           <a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="pricing">Pricing</a>
           <a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="venues">Venues</a>
           <button id="theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">dark_mode</button>
+          <button id="wizard-cta" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer ml-2">
+            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.2rem;">search</span> Search
+          </button>
         </nav>
-        <button id="mobile-menu-btn" class="md:hidden material-symbols-outlined hover:text-kinetic-accent transition-colors ml-2">more_vert</button>
+        <div class="flex items-center md:hidden">
+          <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer mr-3 font-mono font-bold text-xs uppercase tracking-widest">
+            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.1rem;">search</span> Search
+          </button>
+          <button id="mobile-menu-btn" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">more_vert</button>
+        </div>
       <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
     </header>
 
@@ -263,23 +289,26 @@
             <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">What We Teach</h2>
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <div class="discipline-card relative p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
-              <h3 class="text-fluid-h2 font-display font-bold mb-4 uppercase">Skateboarding</h3>
-              <!-- Skateboard SVG -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" class="discipline-icon absolute -top-8 -right-4 w-20 h-20 text-kinetic-accent opacity-0 z-10 pointer-events-none drop-shadow-lg" style="opacity: 0;"><path d="M54 28H10c-3.3 0-6 2.7-6 6s2.7 6 6 6h44c3.3 0 6-2.7 6-6s-2.7-6-6-6zM14 44c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm36 0c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"></path></svg>
-              <p class="text-kinetic-muted leading-relaxed">Master the concrete waves. From static balance to ollies, flip tricks, and transition carving.</p>
+            <!-- Wall Ride Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
             </div>
-            <div class="discipline-card relative p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
-              <h3 class="text-fluid-h2 font-display font-bold mb-4 uppercase">Inline Skating</h3>
-              <!-- Inline Skate SVG -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" class="discipline-icon absolute -top-8 -right-4 w-20 h-20 text-kinetic-accent opacity-0 z-10 pointer-events-none drop-shadow-lg" style="opacity: 0;"><path d="M46 36H24V14c0-3.3-2.7-6-6-6h-6c-3.3 0-6 2.7-6 6v28c0 4.4 3.6 8 8 8h32c4.4 0 8-3.6 8-8v-4c0-3.3-2.7-6-6-6zM12 58c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm16 0c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm16 0c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm16 0c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"></path></svg>
-              <p class="text-kinetic-muted leading-relaxed">Speed, agility, and precision. Learn strides, crossovers, stopping mechanics, and freestyle slalom.</p>
+            <!-- Emptyhead Skate Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
             </div>
-            <div class="discipline-card relative p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
-              <h3 class="text-fluid-h2 font-display font-bold mb-4 uppercase">BMX</h3>
-              <!-- BMX SVG -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="discipline-icon absolute -top-8 -right-4 w-20 h-20 text-kinetic-accent opacity-0 z-10 pointer-events-none drop-shadow-lg" style="opacity: 0;"><circle cx="16" cy="46" r="12"></circle><circle cx="48" cy="46" r="12"></circle><path d="M16 46l12-18h14l6 18M34 28l-4-14h-6M42 28l-2-8h6"></path></svg>
-              <p class="text-kinetic-muted leading-relaxed">Two-wheeled progression. From basic pump track rhythm to bunny hops and manual control.</p>
+            <!-- Primo Skatepark -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
             </div>
           </div>
         </div>
@@ -290,7 +319,52 @@
             <h2 class="text-4xl md:text-5xl font-display font-bold uppercase">Skate Coaches</h2>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-fluid-md max-w-5xl mx-auto"><div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center md:items-start text-left"><div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div><div class="min-w-0 flex-1"><div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mb-1"><h3 class="text-lg md:text-xl font-display font-bold uppercase truncate">Coach Leela</h3><span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs truncate max-w-full border-kinetic-border text-kinetic-text px-2 py-1">Founder / Experienced Skater</span></div><p class="text-kinetic-muted text-sm leading-snug font-body break-words line-clamp-3 mt-1">Making action sports accessible at the doorstep.</p></div></div><div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center md:items-start text-left"><div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div><div class="min-w-0 flex-1"><div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mb-1"><h3 class="text-lg md:text-xl font-display font-bold uppercase truncate">Tribhuvan Kokkula</h3><span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs truncate max-w-full border-kinetic-border text-kinetic-text px-2 py-1">Vice-Chairman</span></div><p class="text-kinetic-muted text-sm leading-snug font-body break-words line-clamp-3 mt-1">Vice-Chairman of the Skateboarding Sub-Committee (2026–2027 term).</p></div></div><div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center md:items-start text-left"><div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div><div class="min-w-0 flex-1"><div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mb-1"><h3 class="text-lg md:text-xl font-display font-bold uppercase truncate">Ronnie</h3><span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs truncate max-w-full border-kinetic-border text-kinetic-text px-2 py-1">Park Manager</span></div><p class="text-kinetic-muted text-sm leading-snug font-body break-words line-clamp-3 mt-1">Wallride Park Manager, pro skateboarder, and experienced coach.</p></div></div><div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center md:items-start text-left"><div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div><div class="min-w-0 flex-1"><div class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 mb-1"><h3 class="text-lg md:text-xl font-display font-bold uppercase truncate">Pixie</h3><span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs truncate max-w-full border-kinetic-border text-kinetic-text px-2 py-1">Pro Skater</span></div><p class="text-kinetic-muted text-sm leading-snug font-body break-words line-clamp-3 mt-1">Pro skateboarder and founder of GirlsSk8Hyd, empowering women in action sports.</p></div></div></div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-fluid-md max-w-5xl mx-auto">
+            <!-- Coach 1 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Coach Leela</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Founder / Experienced Skater</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Making action sports accessible at the doorstep.</p>
+              </div>
+            </div>
+            <!-- Coach 2 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Tribhuvan Kokkula</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Vice-Chairman</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Vice-Chairman of the Skateboarding Sub-Committee (2026–2027 term).</p>
+              </div>
+            </div>
+            <!-- Coach 3 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Ronnie</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Park Manager</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Wallride Park Manager, pro skateboarder, and experienced coach.</p>
+              </div>
+            </div>
+            <!-- Coach 4 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Pixie</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Pro Skater</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Pro skateboarder and founder of GirlsSk8Hyd, empowering women in action sports.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section><section id="community" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
         <div class="max-w-[1440px] mx-auto">
@@ -300,69 +374,26 @@
             <p class="mt-4 text-kinetic-muted max-w-2xl mx-auto font-body">Where we've coached across Hyderabad's premier residential complexes.</p>
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <!-- Hub Cards -->
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">Aparna Serene Park</h3>
-                <span class="pill-tag">Kondapur</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
+            <!-- Wall Ride Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
             </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">Aparna Sarovar Zenith</h3>
-                <span class="pill-tag">Nallagandla</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
+            <!-- Emptyhead Skate Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
             </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">Aparna Sarovar Grande</h3>
-                <span class="pill-tag">Nallagandla</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
-            </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">Aparna Hights I</h3>
-                <span class="pill-tag">Kondapur</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
-            </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">PBEL City</h3>
-                <span class="pill-tag">Peeramcheruvu</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Tribhoovan</p>
-            </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">My Home Tarkshya</h3>
-                <span class="pill-tag">Kokapet</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
-            </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">My Home Navadweepa</h3>
-                <span class="pill-tag">Madhapur</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Leela</p>
-            </div>
-            
-            <div class="brutal-card p-6">
-              <div class="flex justify-between items-start mb-4">
-                <h3 class="text-xl font-display font-bold uppercase">Ananda Bay Hills</h3>
-                <span class="pill-tag">Tellapur</span>
-              </div>
-              <p class="font-mono text-xs text-kinetic-muted uppercase mb-4">Coach Tribhoovan</p>
+            <!-- Primo Skatepark -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
             </div>
           </div>
         </div>
@@ -515,11 +546,21 @@
           <span class="text-kinetic-accent font-bold uppercase tracking-widest text-xs font-display">No Gear, No Skate</span>
           <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-fluid-sm">Safety &amp; Protection</h2>
           <p class="text-kinetic-muted text-lg mb-fluid-md leading-relaxed">We strictly enforce a mandatory 4-point CE/EN certified protection policy. All skaters must use non-marking PU wheels (82A-86A) to protect court surfaces.</p>
-          <div class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-fluid-md">
-            <div class="p-6 bg-kinetic-surface border border-kinetic-border"><div class="text-4xl mb-4">⛑️</div><h4 class="font-display font-bold">Helmet</h4></div>
-            <div class="p-6 bg-kinetic-surface border border-kinetic-border"><div class="text-4xl mb-4">🧤</div><h4 class="font-display font-bold">Wrist Guards</h4></div>
-            <div class="p-6 bg-kinetic-surface border border-kinetic-border"><div class="text-4xl mb-4">🦾</div><h4 class="font-display font-bold">Elbow Pads</h4></div>
-            <div class="p-6 bg-kinetic-surface border border-kinetic-border"><div class="text-4xl mb-4">🦿</div><h4 class="font-display font-bold">Knee Pads</h4></div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-8">
+            <div class="p-6 md:p-8 bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-2xl flex flex-col items-center text-center h-full transition-transform hover:-translate-y-1">
+              <div class="flex-1 flex items-center justify-center min-h-[180px] md:min-h-[220px] w-full mb-6">
+                <img src="src/assets/images/regenerated_image_1788371653081.jpg" alt="Skating Helmet" class="max-h-[180px] md:max-h-[220px] w-auto object-contain drop-shadow-md mix-blend-multiply dark:mix-blend-normal rounded-lg">
+              </div>
+              <h4 class="font-display font-bold text-2xl mb-2 uppercase tracking-tight">Helmet</h4>
+              <p class="text-kinetic-muted text-sm md:text-base leading-relaxed">A certified, well-fitted helmet is required to protect against impacts.</p>
+            </div>
+            <div class="p-6 md:p-8 bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-2xl flex flex-col items-center text-center h-full transition-transform hover:-translate-y-1">
+              <div class="flex-1 flex items-center justify-center min-h-[180px] md:min-h-[220px] w-full mb-6">
+                <img src="src/assets/images/regenerated_image_1788371655775.jpg" alt="Safety Kit Pads" class="max-h-[180px] md:max-h-[220px] w-auto object-contain drop-shadow-md mix-blend-multiply dark:mix-blend-normal rounded-lg">
+              </div>
+              <h4 class="font-display font-bold text-2xl mb-2 uppercase tracking-tight">Full Pad Kit</h4>
+              <p class="text-kinetic-muted text-sm md:text-base leading-relaxed">Wrist guards, elbow pads, and knee pads are essential to prevent scrapes and fractures.</p>
+            </div>
           </div>
         </div>
       </section><section id="venues" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface-alt border-b border-kinetic-border">
@@ -529,23 +570,26 @@
             <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Our Public Venues</h2>
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <div class="p-8 bg-kinetic-surface border border-kinetic-border">
-              <span class="inline-block px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border">Public Access</span>
-              <h3 class="text-fluid-h2 font-display font-bold mb-1">Decathlon Atrium</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display">Gachibowli</p>
-              <p class="text-kinetic-muted text-sm">Introductory workshops, equipment trials, and agility sessions.</p>
+            <!-- Wall Ride Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
             </div>
-            <div class="p-8 bg-kinetic-surface border border-kinetic-border">
-              <span class="inline-block px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border">Public Access</span>
-              <h3 class="text-fluid-h2 font-display font-bold mb-1">Wall Ride Park</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display">[VENUE ADDRESS — CONFIRM]</p>
-              <p class="text-kinetic-muted text-sm">Skate park ramps, bowls, and pump track progression.</p>
+            <!-- Emptyhead Skate Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
             </div>
-            <div class="p-8 bg-kinetic-surface border border-kinetic-border">
-              <span class="inline-block px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border">Public Access</span>
-              <h3 class="text-fluid-h2 font-display font-bold mb-1">Primo Skatepark</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm">Street plaza elements and mini ramps.</p>
+            <!-- Primo Skatepark -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
             </div>
           </div>
         </div>
@@ -589,9 +633,9 @@
       // Pricing Data & Rendering
       const programs = [
         { name: "Drop-in Session", price: "599", period: "session", desc: "Single coached session, no commitment.", features: ["Introduction to fundamentals", "Ages 5+ welcome"], badge: null },
-        { name: "Monthly Academy", price: "5,999", period: "month", desc: "8 coached classes + unlimited monthly access to skate parks.", features: ["8 coached classes", "Unlimited park access", "Personal progression roadmap"], badge: "Featured" },
-        { name: "Apartment/Society — Standard", price: "4,999", period: "month", desc: "8 classes per month, at your society.", features: ["8 on-site society classes", "Group learning dynamics", "Convenient doorstep coaching"], badge: null },
-        { name: "Apartment/Society — Plus", price: "6,999", period: "month", desc: "8 classes + 3 skate park sessions per month.", features: ["8 on-site society classes", "3 skate park sessions", "Best of both worlds"], badge: "Comprehensive" },
+        { name: "Month-in Session", price: "5,999", period: "month", desc: "8 coached classes + unlimited monthly access to skate parks.", features: ["8 coached classes", "Unlimited park access", "Personal progression roadmap"], badge: "Featured" },
+        { name: "Residential — Standard", price: "4,999", period: "month", desc: "8 classes per month, at your society.", features: ["8 on-site society classes", "Group learning dynamics", "Convenient doorstep coaching"], badge: null },
+        { name: "Residential — Plus", price: "6,999", period: "month", desc: "8 classes + 3 skate park sessions per month.", features: ["8 on-site society classes", "3 skate park sessions", "Best of both worlds"], badge: "Comprehensive" },
         { name: "UGH VIP Skate Plan", price: "26,000 (M1)", period: "flagship", desc: "Month 1: 10 classes + 3 park sessions. Renewal: 20k. Includes mobile skatepark & VIP kit.", features: ["Doorstep mobile skatepark van", "Curated board + armor kit", "Personalized video vlog"], badge: "VIP" }
       ];
 
@@ -622,9 +666,9 @@
         grid.innerHTML += `
           <div class="${cardClass}">
             ${p.badge ? `<span class="${badgeClass}">${p.badge}</span>` : ''}
-            <h3 class="text-fluid-h2 font-display font-bold mb-2 uppercase">${p.name}</h3>
+            <h3 class="text-2xl sm:text-3xl font-display font-bold mb-2 uppercase break-words">${p.name}</h3>
             <div class="mb-4">
-              <span class="text-fluid-h2 font-display font-bold">₹${p.price}</span>
+              <span class="text-3xl sm:text-4xl font-display font-bold break-words">₹${p.price}</span>
               ${p.period !== 'flagship' ? `<span class="text-sm font-mono text-kinetic-muted">/${p.period}</span>` : ''}
             </div>
             <p class="text-sm font-body opacity-80 mb-8 min-h-[40px] leading-relaxed">${p.desc}</p>
@@ -639,11 +683,7 @@
       });
     </script>
   
-    <!-- Floating CTA -->
-    <button id="wizard-cta" class="fixed z-50 flex items-center gap-2 bottom-6 left-1/2 -translate-x-1/2 bg-kinetic-text text-kinetic-bg px-4 py-2 md:px-5 md:py-2.5 rounded-full font-display font-medium text-xs md:text-sm shadow-2xl hover:scale-105 transition-transform">
-      <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.1rem;">bolt</span> 
-      <span>Book Session</span>
-    </button>
+    
 
     <!-- Booking Wizard Modal -->
     <div id="wizard-modal" class="fixed inset-0 z-[100] hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
@@ -664,7 +704,7 @@
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Skateboarding">Skateboarding</button>
                 <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Inline">Inline</button>
-                <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Quad">Quad</button>
+                <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="BMX">BMX</button>
               </div>
             </div>
             <div id="level-container" class="hidden opacity-0 transition-opacity duration-300">
