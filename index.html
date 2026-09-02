@@ -271,16 +271,34 @@
       <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
     </header>
 
-    <main class="pt-32"><div id="tab-home" class="block main-tab-content"><section class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border">
-        <div class="max-w-5xl mx-auto">
-          <span class="pill-tag mb-8">Elevate Your Flow</span>
-          <h1 class="text-6xl md:text-8xl font-display font-bold mb-8 leading-tight tracking-tight uppercase"><span class="text-kinetic-accent" style="text-shadow: 2px 2px 0px var(--kinetic-shadow), -2px -2px 0px var(--kinetic-shadow), 2px -2px 0px var(--kinetic-shadow), -2px 2px 0px var(--kinetic-shadow);">Master</span> the Pavement.</h1>
-          <p class="text-lg md:text-xl text-kinetic-muted mb-fluid-md max-w-2xl mx-auto leading-relaxed font-body">Hyderabad's premier action sports coaching. From static balance to transition carving across Skateboarding, Inline, and BMX.</p>
-          <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="brutal-btn brutal-btn-accent">Book a Session</button>
-            <a href="#pricing" class="tab-link brutal-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-tab="pricing">See Pricing</a>
-            <a href="#venues" class="tab-link brutal-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-tab="venues">Find a Venue</a>
-        </div>
+    <main class="pt-32"><div id="tab-home" class="block main-tab-content"><section class="relative py-[clamp(4rem,10vw,8rem)] px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border overflow-hidden">
+        <!-- Subtle Dot Grid Background Pattern -->
+        <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none" style="background-image: radial-gradient(var(--kinetic-text) 1px, transparent 1px); background-size: 24px 24px; background-position: center;"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+          <span class="inline-block px-4 py-1.5 bg-kinetic-surface-alt border border-kinetic-border rounded-full text-kinetic-text text-xs font-bold font-mono uppercase tracking-[0.2em] mb-8 shadow-sm">Elevate Your Flow</span>
+          
+          <h1 class="text-[clamp(3.5rem,8vw,7rem)] font-display font-bold mb-6 leading-[0.9] tracking-tighter uppercase flex flex-wrap justify-center items-center gap-y-4">
+            <span class="inline-block bg-kinetic-accent text-kinetic-bg px-6 pt-3 pb-1 -rotate-2 shadow-[6px_6px_0px_var(--kinetic-shadow)] border-2 border-kinetic-shadow mr-2 sm:mr-4">Master</span> 
+            <span>the Pavement.</span>
+          </h1>
+          
+          <p class="text-lg md:text-2xl text-kinetic-muted mb-12 max-w-3xl mx-auto leading-relaxed font-body font-medium">
+            Hyderabad's premier action sports coaching. From static balance to transition carving across Skateboarding, Inline, and BMX.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+            <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="w-full sm:w-auto group relative px-8 py-4 bg-kinetic-text text-kinetic-bg font-display font-bold text-lg uppercase tracking-wider rounded-none overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_var(--kinetic-accent)] border-2 border-kinetic-text flex items-center justify-center gap-2">
+              <span class="relative z-10">Book a Session</span>
+              <span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+            
+            <div class="flex items-center gap-4 w-full sm:w-auto justify-center">
+              <a href="#pricing" class="tab-link text-kinetic-text font-mono font-bold text-sm uppercase tracking-widest hover:text-kinetic-accent transition-colors underline-offset-8 hover:underline decoration-2" data-tab="pricing">See Pricing</a>
+              <span class="text-kinetic-muted/30">|</span>
+              <a href="#venues" class="tab-link text-kinetic-text font-mono font-bold text-sm uppercase tracking-widest hover:text-kinetic-accent transition-colors underline-offset-8 hover:underline decoration-2" data-tab="venues">Find Venue</a>
+            </div>
+          </div>
         </div>
       </section><section id="disciplines" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
         <div class="max-w-[1440px] mx-auto">
@@ -289,26 +307,193 @@
             <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">What We Teach</h2>
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <!-- Wall Ride Park -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">Skateboarding</h3>
+              <!-- Skateboard SVG -->
+              <div class="discipline-icon absolute -top-12 -right-6 w-36 h-36 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" class="w-full h-full animate-float-icon transition-all duration-300">
+                  <defs>
+                    <linearGradient id="deckGrip" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2a2a2a"/>
+                      <stop offset="100%" stop-color="#111111"/>
+                    </linearGradient>
+                    <linearGradient id="deckWood" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#e6ccb2"/>
+                      <stop offset="50%" stop-color="#ddb892"/>
+                      <stop offset="100%" stop-color="#9c6644"/>
+                    </linearGradient>
+                    <linearGradient id="deckGraphic" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#D85B2D"/>
+                      <stop offset="25%" stop-color="#ff7b47"/>
+                      <stop offset="75%" stop-color="#ff7b47"/>
+                      <stop offset="100%" stop-color="#D85B2D"/>
+                    </linearGradient>
+                    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#f8f9fa"/>
+                      <stop offset="50%" stop-color="#ced4da"/>
+                      <stop offset="100%" stop-color="#6c757d"/>
+                    </linearGradient>
+                    <linearGradient id="wheelUrethane" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="100%" stop-color="#d3d3d3"/>
+                    </linearGradient>
+                    <filter id="realShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+                    </filter>
+                  </defs>
+                  <g filter="url(#realShadow)">
+                    <!-- Grip Tape (Top Layer) -->
+                    <path d="M 12 34 Q 30 50 50 50 L 150 50 Q 170 50 188 34 A 3 3 0 0 1 192 37 Q 170 54 150 54 L 50 54 Q 30 54 8 37 A 3 3 0 0 1 12 34 Z" fill="url(#deckGrip)"/>
+                    
+                    <!-- Wood Plys (Middle Layer) -->
+                    <path d="M 8 37 Q 30 54 50 54 L 150 54 Q 170 54 192 37 A 2 2 0 0 1 193 39 Q 170 56 150 56 L 50 56 Q 30 56 7 39 A 2 2 0 0 1 8 37 Z" fill="url(#deckWood)"/>
+                    
+                    <!-- Graphic (Bottom Layer) -->
+                    <path d="M 7 39 Q 30 56 50 56 L 150 56 Q 170 56 193 39 A 3 3 0 0 1 192 43 Q 170 60 150 60 L 50 60 Q 30 60 8 43 A 3 3 0 0 1 7 39 Z" fill="url(#deckGraphic)"/>
+
+                    <!-- Hardware Bolts -->
+                    <!-- Left -->
+                    <rect x="45" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <rect x="52" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <!-- Right -->
+                    <rect x="146" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <rect x="153" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+
+                    <!-- Back Wheels -->
+                    <rect x="42" y="70" width="16" height="24" rx="4" fill="#777"/>
+                    <rect x="142" y="70" width="16" height="24" rx="4" fill="#777"/>
+
+                    <!-- LEFT TRUCK -->
+                    <!-- Baseplate -->
+                    <path d="M 40 59 L 60 59 L 58 64 L 42 64 Z" fill="url(#metal)"/>
+                    <!-- Hanger -->
+                    <path d="M 48 64 L 52 64 L 56 82 L 44 82 Z" fill="url(#metal)"/>
+                    <!-- Bushings -->
+                    <rect x="48" y="64" width="8" height="12" rx="3" fill="#e76f51" transform="rotate(15 52 70)"/>
+
+                    <!-- RIGHT TRUCK -->
+                    <!-- Baseplate -->
+                    <path d="M 140 59 L 160 59 L 158 64 L 142 64 Z" fill="url(#metal)"/>
+                    <!-- Hanger -->
+                    <path d="M 148 64 L 152 64 L 156 82 L 144 82 Z" fill="url(#metal)"/>
+                    <!-- Bushings -->
+                    <rect x="148" y="64" width="8" height="12" rx="3" fill="#e76f51" transform="rotate(-15 152 70)"/>
+
+                    <!-- Front Wheels -->
+                    <rect x="34" y="76" width="20" height="30" rx="6" fill="url(#wheelUrethane)"/>
+                    <rect x="146" y="76" width="20" height="30" rx="6" fill="url(#wheelUrethane)"/>
+                    
+                    <!-- Bearings -->
+                    <circle cx="44" cy="91" r="4.5" fill="#222"/>
+                    <circle cx="44" cy="91" r="2" fill="url(#metal)"/>
+                    
+                    <circle cx="156" cy="91" r="4.5" fill="#222"/>
+                    <circle cx="156" cy="91" r="2" fill="url(#metal)"/>
+                    
+                    <!-- Wheel Highlights / Shine -->
+                    <rect x="37" y="79" width="4" height="24" rx="2" fill="#fff" opacity="0.8"/>
+                    <rect x="149" y="79" width="4" height="24" rx="2" fill="#fff" opacity="0.8"/>
+                  </g>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Master the concrete waves. From static balance to ollies, flip tricks, and transition carving.</p>
             </div>
-            <!-- Emptyhead Skate Park -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
+            
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">Inline Skating</h3>
+              <!-- Inline Skate SVG -->
+              <div class="discipline-icon absolute -top-10 -right-6 w-28 h-28 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="w-full h-full text-kinetic-accent animate-float-icon transition-all duration-300" style="animation-delay: 0.2s;">
+                  <!-- Cuff Back -->
+                  <path d="M 35 15 C 35 10, 45 10, 50 15 L 52 35 C 55 45, 65 50, 75 52 C 80 53, 85 58, 85 65 L 25 65 C 20 40, 30 20, 35 15 Z" opacity="0.6"/>
+                  <path d="M 32 20 C 32 15, 42 15, 48 20 L 50 35 L 30 35 Z" opacity="0.8"/>
+                  <!-- Hard Shell Boot -->
+                  <path d="M 28 35 L 50 35 C 55 45, 65 50, 78 52 C 82 53, 85 58, 85 65 C 85 70, 80 72, 75 72 L 20 72 C 15 72, 18 55, 28 35 Z" opacity="0.95"/>
+                  <!-- Boot Details / Highlights -->
+                  <path d="M 28 35 L 32 35 C 32 50, 25 60, 22 72 L 20 72 C 15 72, 18 55, 28 35 Z" fill="#fff" opacity="0.2"/>
+                  <rect x="30" y="25" width="18" height="4" rx="2" fill="#fff" opacity="0.9"/>
+                  <rect x="35" y="45" width="20" height="5" rx="2" fill="#fff" opacity="0.9"/>
+                  <circle cx="48" cy="27" r="1.5" fill="#111"/>
+                  <circle cx="53" cy="47.5" r="1.5" fill="#111"/>
+                  <!-- Frame Shadow -->
+                  <path d="M 22 72 L 80 72 L 75 82 L 25 82 Z" opacity="0.5"/>
+                  <!-- Frame Main -->
+                  <path d="M 25 82 L 75 82 L 73 86 L 27 86 Z" opacity="0.9"/>
+                  <!-- Wheels -->
+                  <circle cx="32" cy="85" r="7" opacity="1"/>
+                  <circle cx="46" cy="85" r="7" opacity="1"/>
+                  <circle cx="60" cy="85" r="7" opacity="1"/>
+                  <circle cx="74" cy="85" r="7" opacity="1"/>
+                  <!-- Wheel Hubs/Bearings -->
+                  <circle cx="32" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="46" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="60" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="74" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="32" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="46" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="60" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="74" cy="85" r="1" fill="#111" opacity="0.8"/>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Speed, agility, and precision. Learn strides, crossovers, stopping mechanics, and freestyle slalom.</p>
             </div>
-            <!-- Primo Skatepark -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
+            
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">BMX</h3>
+              <!-- BMX SVG -->
+              <div class="discipline-icon absolute -top-10 -right-6 w-28 h-28 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="w-full h-full text-kinetic-accent animate-float-icon transition-all duration-300" style="animation-delay: 0.5s;">
+                  <!-- Tires -->
+                  <circle cx="25" cy="70" r="18" fill="none" stroke="currentColor" stroke-width="5.5" opacity="0.95"/>
+                  <circle cx="75" cy="70" r="18" fill="none" stroke="currentColor" stroke-width="5.5" opacity="0.95"/>
+                  <!-- Rims -->
+                  <circle cx="25" cy="70" r="15" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+                  <circle cx="75" cy="70" r="15" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+                  <!-- Hubs -->
+                  <circle cx="25" cy="70" r="2.5" opacity="1"/>
+                  <circle cx="75" cy="70" r="2.5" opacity="1"/>
+                  <!-- Spokes -->
+                  <path d="M 25 55 L 25 85 M 10 70 L 40 70 M 14 59 L 36 81 M 14 81 L 36 59" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+                  <path d="M 75 55 L 75 85 M 60 70 L 90 70 M 64 59 L 86 81 M 64 81 L 86 59" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+                  
+                  <!-- Chainstay & Seatstay -->
+                  <line x1="25" y1="70" x2="48" y2="70" stroke="currentColor" stroke-width="3.5" opacity="0.8"/>
+                  <line x1="25" y1="70" x2="40" y2="45" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+                  
+                  <!-- Main Diamond Frame -->
+                  <line x1="40" y1="45" x2="65" y2="40" stroke="currentColor" stroke-width="4.5" opacity="0.95"/>
+                  <line x1="48" y1="70" x2="65" y2="40" stroke="currentColor" stroke-width="5" opacity="0.95"/>
+                  
+                  <!-- Fork -->
+                  <line x1="75" y1="70" x2="65" y2="40" stroke="currentColor" stroke-width="4.5" opacity="0.9"/>
+                  <!-- Head Tube -->
+                  <line x1="64" y1="43" x2="66" y2="37" stroke="currentColor" stroke-width="6" opacity="1"/>
+                  <line x1="65" y1="40" x2="61" y2="30" stroke="currentColor" stroke-width="3.5" opacity="0.9"/>
+                  
+                  <!-- Handlebars -->
+                  <path d="M 61 30 L 61 22 L 53 22" fill="none" stroke="currentColor" stroke-width="3.5" opacity="1"/>
+                  <!-- Grips -->
+                  <line x1="50" y1="22" x2="56" y2="22" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+                  
+                  <!-- Seat post -->
+                  <line x1="48" y1="70" x2="40" y2="45" stroke="currentColor" stroke-width="4.5" opacity="0.9"/>
+                  <line x1="40" y1="45" x2="36" y2="33" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+                  
+                  <!-- Seat -->
+                  <path d="M 28 33 L 42 33 Q 45 35 40 37 L 30 36 Z" opacity="1"/>
+                  
+                  <!-- Sprocket / Crank -->
+                  <circle cx="48" cy="70" r="7" opacity="0.9"/>
+                  <circle cx="48" cy="70" r="3.5" fill="#fff" opacity="0.6"/>
+                  <line x1="48" y1="70" x2="55" y2="78" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" opacity="1"/>
+                  <line x1="52" y1="78" x2="58" y2="78" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+                  
+                  <!-- Chain -->
+                  <line x1="25" y1="66" x2="48" y2="64" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8"/>
+                  <line x1="25" y1="74" x2="48" y2="76" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8"/>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Two-wheeled progression. From basic pump track rhythm to bunny hops and manual control.</p>
             </div>
           </div>
         </div>
@@ -374,79 +559,150 @@
             <p class="mt-4 text-kinetic-muted max-w-2xl mx-auto font-body">Where we've coached across Hyderabad's premier residential complexes.</p>
           </div>
           <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <!-- Wall Ride Park -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
+            <!-- Hub 1 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Serene Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kondapur / Gachibowli</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted introductory skateboarding and inline skating workshops in this expansive ~19-acre community. Our coaching sessions brought action sports directly to the ~1,680 units.</p>
             </div>
-            <!-- Emptyhead Skate Park -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
+            <!-- Hub 2 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Sarovar Zenith</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Nallagandla</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran dedicated coaching sessions across this ~24.6-acre residential space. We introduced safe, structured inline skating and skateboarding fundamentals.</p>
             </div>
-            <!-- Primo Skatepark -->
-            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
-              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
-              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
-              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
-              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
+            <!-- Hub 3 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Sarovar Grande</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Nallagandla</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Led active youth workshops in this ~10.5-acre property. Our focus on certified safety gear and progressive learning helped residents master the concrete safely.</p>
+            </div>
+            <!-- Hub 4 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Hights I</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kondapur</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted action sports clinics for the residents, bringing our doorstep coaching model to life. Sessions focused on balance, agility, and fundamental skate mechanics.</p>
+            </div>
+            <!-- Hub 5 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">PBEL City</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Peerancheru</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran summer camp clinics and recurring coaching batches for residents. We transformed the community spaces into active learning zones for action sports.</p>
+            </div>
+            <!-- Hub 6 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Ananda Bay Hills</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Narsingi</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Provided structured doorstep coaching within this ~5.29-acre community. We introduced fundamental ramp transitions and flat-ground skills to the youth.</p>
+            </div>
+            <!-- Hub 7 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">My Home Tarkshya</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kokapet</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted safe, structured skating sessions for residents. Our coaches focused on foundational skills and proper safety protocols.</p>
+            </div>
+            <!-- Hub 8 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">My Home Navadweepa</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Madhapur / HITEC City</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran introductory and progression workshops for the community. We delivered professional action sports instruction directly to the residents' doorsteps.</p>
             </div>
           </div>
         </div>
-      </section><section id="alliances" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface-alt">
+      </section><section id="alliances" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface-alt border-t border-kinetic-border">
         <div class="max-w-[1440px] mx-auto">
           <div class="text-center mb-fluid-md">
             <span class="pill-tag mb-4">Ecosystem</span>
             <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Alliances &amp; Experience</h2>
           </div>
           
-          <div class="flex justify-center border-b border-kinetic-border mb-10">
-            <button class="tab-btn active px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors" data-target="brands">Brands &amp; Partners</button>
-            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted" data-target="events-hosted">Events Hosted</button>
-            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted" data-target="media">Media &amp; Features</button>
+          <!-- Interactive Tabs -->
+          <div class="flex flex-wrap justify-center border-b border-kinetic-border mb-10 overflow-x-auto hide-scrollbar gap-2 sm:gap-0">
+            <button class="tab-btn active px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-kinetic-text text-kinetic-text hover:text-kinetic-accent transition-colors whitespace-nowrap" data-target="brands">Brands &amp; Partners</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted whitespace-nowrap" data-target="events-hosted">Events Hosted</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted whitespace-nowrap" data-target="media">Media &amp; Features</button>
           </div>
 
-          <div id="brands" class="tab-content active grid-cols-[repeat(auto-fit,minmax(140px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-fluid-md">
-            <!-- Placeholders for media -->
-            <div class="aspect-video bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+          <!-- Brands Gallery -->
+          <div id="brands" class="tab-content grid grid-cols-2 md:grid-cols-4 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1528249227670-9ba48616014f?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Decathlon</span>
+              </div>
             </div>
-            <div class="aspect-video bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Vans</span>
+              </div>
             </div>
-            <div class="aspect-video bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518170886166-51f67fce57cb?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Red Bull</span>
+              </div>
             </div>
-            <div class="aspect-video bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Logo Placeholder</span>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">G-Shock</span>
+              </div>
             </div>
           </div>
 
-          <div id="events-hosted" class="tab-content grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <div class="aspect-[4/3] bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+          <!-- Events Hosted Gallery -->
+          <div id="events-hosted" class="tab-content hidden grid-cols-1 md:grid-cols-3 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Go Skateboarding Day</p>
+                <h3 class="text-white text-xl font-display font-bold">Annual Hyd Skate Jam</h3>
+              </div>
             </div>
-            <div class="aspect-[4/3] bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Community Outreach</p>
+                <h3 class="text-white text-xl font-display font-bold">Wall Ride Progression</h3>
+              </div>
             </div>
-            <div class="aspect-[4/3] bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Photo Placeholder</span>
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518880313888-2122b07f8279?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Youth Development</p>
+                <h3 class="text-white text-xl font-display font-bold">PBEL Summer Camp</h3>
+              </div>
             </div>
           </div>
 
-          <div id="media" class="tab-content grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
-            <div class="aspect-square bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+          <!-- Media Gallery -->
+          <div id="media" class="tab-content hidden grid-cols-1 md:grid-cols-3 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">newspaper</span>
+              <h3 class="text-2xl font-display font-bold mb-2">The Hindu</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Urban Gliding Hyderabad is reshaping the concrete landscape of the city, bringing structured extreme sports to the grassroots level."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Read Feature</span>
             </div>
-            <div class="aspect-square bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">article</span>
+              <h3 class="text-2xl font-display font-bold mb-2">Times of India</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Hyderabad's skate scene explodes with new talent as premium doorstep coaching programs gain massive traction."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Read Feature</span>
             </div>
-            <div class="aspect-square bg-kinetic-surface-alt flex items-center justify-center border border-kinetic-border">
-              <span class="text-kinetic-muted font-display text-xs uppercase tracking-widest">Media Placeholder</span>
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">play_circle</span>
+              <h3 class="text-2xl font-display font-bold mb-2">Red Bull TV</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Local crews in Hyderabad showcase immense progression at the newly built Wall Ride Park."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Watch Clip</span>
             </div>
           </div>
         </div>
@@ -617,16 +873,30 @@
 
     <!-- Initialization Scripts -->
     <script>
-      // Tab interaction
+      // Tab interaction (Alliances Section)
       const tabs = document.querySelectorAll('.tab-btn');
       const contents = document.querySelectorAll('.tab-content');
       tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-          tabs.forEach(t => { t.classList.remove('active'); t.classList.add('text-[#777]'); });
-          contents.forEach(c => c.classList.remove('active'));
-          tab.classList.add('active');
-          tab.classList.remove('text-[#777]');
-          document.getElementById(tab.dataset.target).classList.add('active');
+          // Reset all tabs
+          tabs.forEach(t => { 
+            t.classList.remove('active', 'border-kinetic-text', 'text-kinetic-text'); 
+            t.classList.add('border-transparent', 'text-kinetic-muted'); 
+          });
+          // Reset all contents (hide them)
+          contents.forEach(c => {
+            c.classList.remove('grid');
+            c.classList.add('hidden');
+          });
+          
+          // Activate clicked tab
+          tab.classList.add('active', 'border-kinetic-text', 'text-kinetic-text');
+          tab.classList.remove('border-transparent', 'text-kinetic-muted');
+          
+          // Show target content
+          const target = document.getElementById(tab.dataset.target);
+          target.classList.remove('hidden');
+          target.classList.add('grid');
         });
       });
 
