@@ -246,9 +246,9 @@
   <body class="antialiased">
     
     <!-- Header -->
-    <header class="fixed top-4 w-full z-50 px-4 sm:px-[clamp(1.25rem,5vw,4rem)] pointer-events-none">
-      <div class="pointer-events-auto max-w-[1440px] mx-auto flex items-center justify-between bg-kinetic-surface/95 backdrop-blur-md border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-full border h-16 md:h-20 px-3 md:px-6">
-        <a href="#home" class="tab-link flex items-center gap-3" data-tab="home">
+    <header class="fixed top-[max(0.5rem,env(safe-area-inset-top))] md:top-4 w-full z-50 px-[max(1rem,env(safe-area-inset-left))] sm:px-[clamp(1.25rem,5vw,4rem)] pointer-events-none transition-all duration-300">
+      <div class="pointer-events-auto w-full max-w-[1440px] mx-auto flex items-center justify-between bg-kinetic-surface/95 backdrop-blur-md border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-full border h-14 md:h-20 px-4 md:px-6">
+        <a href="#home" class="tab-link flex items-center gap-3 shrink-0" data-tab="home">
           <img src="src/assets/images/2_social_media_square.png" alt="UGH Logo" width="40" height="40" class="border-kinetic-border shadow-[2px_2px_0px_var(--kinetic-shadow)] h-10 w-10 rounded-lg border-2">
           
         </a>
@@ -264,14 +264,14 @@
         </nav>
         <div class="flex items-center md:hidden">
           <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer mr-3 font-mono font-bold text-xs uppercase tracking-widest">
-            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.1rem;">search</span> Search
+            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.2rem;">search</span> <span class="hidden min-[360px]:inline">Search</span>
           </button>
           <button id="mobile-menu-btn" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">more_vert</button>
         </div>
       <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
     </header>
 
-    <main class="pt-32"><div id="tab-home" class="block main-tab-content"><section class="relative py-[clamp(4rem,10vw,8rem)] px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border overflow-hidden">
+    <main class="pt-[calc(4.5rem+env(safe-area-inset-top))] md:pt-[calc(7rem+env(safe-area-inset-top))]"><div id="tab-home" class="block main-tab-content"><section class="relative pt-4 md:pt-8 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border overflow-hidden">
         <!-- Subtle Dot Grid Background Pattern -->
         <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none" style="background-image: radial-gradient(var(--kinetic-text) 1px, transparent 1px); background-size: 24px 24px; background-position: center;"></div>
         
@@ -497,7 +497,7 @@
             </div>
           </div>
         </div>
-      </section></div><div id="tab-impact" class="hidden main-tab-content"><section id="leadership" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+      </section></div><div id="tab-impact" class="hidden main-tab-content"><section id="leadership" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
         <div class="max-w-[1440px] mx-auto">
           <div class="text-center mb-fluid-lg">
             <span class="pill-tag mb-4">The Crew</span>
@@ -706,7 +706,7 @@
             </div>
           </div>
         </div>
-      </section></div><div id="tab-events" class="hidden main-tab-content"><section id="events" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+      </section></div><div id="tab-events" class="hidden main-tab-content"><section id="events" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
         <div class="max-w-[1440px] mx-auto">
           <div class="flex flex-col md:flex-row justify-between items-end mb-fluid-md gap-fluid-md">
             <div>
@@ -763,7 +763,7 @@
             </div>
           </div>
         </div>
-      </section></div><div id="tab-pricing" class="hidden main-tab-content"><section id="programs" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface text-kinetic-text">
+      </section></div><div id="tab-pricing" class="hidden main-tab-content"><section id="programs" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface text-kinetic-text">
         <div class="max-w-[1440px] mx-auto">
           <div class="text-center mb-fluid-lg">
             <h2 class="text-4xl md:text-5xl font-display font-bold">Pricing &amp; Plans</h2>
@@ -797,7 +797,7 @@
             </details>
           </div>
         </div>
-      </section></div><div id="tab-venues" class="hidden main-tab-content"><section id="safety" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border">
+      </section></div><div id="tab-venues" class="hidden main-tab-content"><section id="safety" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border">
         <div class="max-w-4xl mx-auto">
           <span class="text-kinetic-accent font-bold uppercase tracking-widest text-xs font-display">No Gear, No Skate</span>
           <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-fluid-sm">Safety &amp; Protection</h2>
