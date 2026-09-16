@@ -5,9 +5,9 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence, animate } from "motion/react";
-import heroImage from "./assets/images/2_social_media_square.png";
-import navLogo from "./assets/images/2_social_media_square.png";
-import footerLogo from "./assets/images/2_social_media_square.png";
+import heroImage from "./assets/images/regenerated_image_1778859272387.png";
+import navLogo from "./assets/images/regenerated_image_1778859275982.png";
+import footerLogo from "./assets/images/regenerated_image_1778859278835.png";
 import {
   Instagram,
   MessageCircle,
@@ -29,7 +29,6 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import { ContentData, Program } from "./types";
-import { contentData } from "./content";
 
 function AnimatedPoints({
   points,
@@ -81,23 +80,6 @@ export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeCategory, setActiveCategory] = useState<"kids" | "adults">("kids");
-  const [activeSection, setActiveSection] = useState<string>("");
-
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      const offsetTop = target.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      });
-      window.history.pushState(null, '', `#${targetId}`);
-      setActiveSection(targetId);
-    }
-    setIsMenuOpen(false);
-  };
-
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -133,35 +115,17 @@ export default function App() {
   };
 
   useEffect(() => {
-    setContent(contentData);
+    const fetchContent = () => {
+      fetch(`assets/content.json?t=${new Date().getTime()}`)
+        .then((res) => res.json())
+        .then((data) => setContent(data))
+        .catch((err) => console.error("Failed to load content", err));
+    };
+
+    fetchContent();
+    const interval = setInterval(fetchContent, 10000); // Check for updates every 10 seconds
+    return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      let maxVisible = 0;
-      let mostVisibleId = "";
-      
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // If we want exact ratio:
-          if (entry.intersectionRatio > maxVisible) {
-            maxVisible = entry.intersectionRatio;
-            mostVisibleId = entry.target.id;
-          }
-        }
-      });
-      
-      if (mostVisibleId) {
-        setActiveSection(mostVisibleId);
-      }
-    }, { threshold: [0.1, 0.5, 0.9], rootMargin: "-80px 0px 0px 0px" });
-
-    const sections = document.querySelectorAll("section[id]");
-    sections.forEach((s) => observer.observe(s));
-
-    return () => observer.disconnect();
-  }, []);
-
 
   const handleEnroll = (program: Program) => {
     if (!content) return;
@@ -239,29 +203,25 @@ export default function App() {
             <div className="hidden md:flex items-center gap-6 lg:gap-10">
               <a
                 href="#programs"
-                onClick={(e) => scrollToSection(e, "programs")}
-                className={`font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] transition-colors ${activeSection === "programs" ? "text-vibrant-orange" : "text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange"}`}
+                className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors"
               >
                 Programs
               </a>
               <a
-                href="#leaderboard"
-                onClick={(e) => scrollToSection(e, "leaderboard")}
-                className={`font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] transition-colors ${activeSection === "leaderboard" ? "text-vibrant-orange" : "text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange"}`}
-              >
-                Leaderboard
-              </a>
-              <a
                 href="#venues"
-                onClick={(e) => scrollToSection(e, "venues")}
-                className={`font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] transition-colors ${activeSection === "venues" ? "text-vibrant-orange" : "text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange"}`}
+                className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors"
               >
                 Venues
               </a>
               <a
+                href="#leaderboard"
+                className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors"
+              >
+                Leaderboard
+              </a>
+              <a
                 href="#about"
-                onClick={(e) => scrollToSection(e, "about")}
-                className={`font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] transition-colors ${activeSection === "about" ? "text-vibrant-orange" : "text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange"}`}
+                className="font-sans text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.2em] text-charcoal/50 dark:text-off-white/50 hover:text-vibrant-orange transition-colors"
               >
                 About
               </a>
@@ -344,15 +304,15 @@ export default function App() {
             </div>
 
             <div className="flex flex-col gap-6 flex-grow">
-              {["Programs", "Leaderboard", "Venues", "About"].map((item, i) => (
+              {["Programs", "Venues", "Leaderboard", "About"].map((item, i) => (
                 <motion.a
                   key={item}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + i * 0.1 }}
                   href={`#${item.toLowerCase().replace(" ", "")}`}
-                  onClick={(e) => scrollToSection(e, item.toLowerCase().replace(" ", ""))}
-                  className={`font-display text-4xl font-black tracking-tighter transition-colors ${activeSection === item.toLowerCase().replace(" ", "") ? "text-vibrant-orange" : "text-charcoal dark:text-off-white hover:text-vibrant-orange"}`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-display text-4xl font-black text-charcoal dark:text-off-white tracking-tighter hover:text-vibrant-orange transition-colors"
                 >
                   {item}
                 </motion.a>
@@ -467,7 +427,6 @@ export default function App() {
                 </button>
                 <a
                   href="#programs"
-                  onClick={(e) => scrollToSection(e, "programs")}
                   className="bg-white dark:bg-transparent text-charcoal dark:text-off-white font-sans text-xs md:text-sm uppercase tracking-[0.2em] px-8 md:px-10 py-5 rounded-full border border-border-gray dark:border-white/10 hover:border-charcoal dark:hover:border-white hover:bg-charcoal dark:hover:bg-white hover:text-white dark:hover:text-charcoal transition-all text-center font-bold shadow-soft flex items-center justify-center w-full sm:w-auto min-h-[52px]"
                 >
                   Curriculum
@@ -549,7 +508,7 @@ export default function App() {
                   Expert Coaching
                 </span>
                 <h2 className="mb-4 text-charcoal dark:text-off-white">
-                  Professional Skateboarding, Inline & BMX Coaching in Hyderabad
+                  Active Modules
                 </h2>
                 <p className="font-sans text-base md:text-lg text-charcoal/50 dark:text-off-white/50 font-medium text-balance">
                   Specialized training systems designed for rapid progression
@@ -655,6 +614,43 @@ export default function App() {
           </div>
         </section>
 
+        {/* Venues Section */}
+        <section
+          id="venues"
+          className="py-16 md:py-24 px-6 bg-light-sand dark:bg-zinc-800 relative overflow-hidden transition-colors duration-500"
+        >
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="mb-12 md:mb-16 text-center">
+              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-3 font-extrabold block">
+                Where We Teach
+              </span>
+              <h2 className="mb-4 text-charcoal dark:text-off-white font-display text-4xl md:text-5xl font-bold">
+                Our Venues
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="p-6 md:p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 rounded-[24px] shadow-sm hover:-translate-y-2 transition-all duration-300">
+                <span className="inline-block px-3 py-1 bg-deep-teal/5 dark:bg-deep-teal/10 text-deep-teal font-sans text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Public Access</span>
+                <h3 className="font-display text-2xl font-bold mb-2 text-charcoal dark:text-off-white">Wall Ride Park</h3>
+                <p className="text-vibrant-orange text-xs font-bold uppercase tracking-widest mb-4 font-sans">Hyderabad</p>
+                <p className="text-charcoal/50 dark:text-off-white/50 text-sm font-medium leading-relaxed">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
+              </div>
+              <div className="p-6 md:p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 rounded-[24px] shadow-sm hover:-translate-y-2 transition-all duration-300">
+                <span className="inline-block px-3 py-1 bg-deep-teal/5 dark:bg-deep-teal/10 text-deep-teal font-sans text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Public Access</span>
+                <h3 className="font-display text-2xl font-bold mb-2 text-charcoal dark:text-off-white">Emptyhead Skatepark</h3>
+                <p className="text-vibrant-orange text-xs font-bold uppercase tracking-widest mb-4 font-sans">Hyderabad</p>
+                <p className="text-charcoal/50 dark:text-off-white/50 text-sm font-medium leading-relaxed">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
+              </div>
+              <div className="p-6 md:p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 rounded-[24px] shadow-sm hover:-translate-y-2 transition-all duration-300">
+                <span className="inline-block px-3 py-1 bg-deep-teal/5 dark:bg-deep-teal/10 text-deep-teal font-sans text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Doorstep Coaching</span>
+                <h3 className="font-display text-2xl font-bold mb-2 text-charcoal dark:text-off-white">Residential Courts</h3>
+                <p className="text-vibrant-orange text-xs font-bold uppercase tracking-widest mb-4 font-sans">Hyderabad</p>
+                <p className="text-charcoal/50 dark:text-off-white/50 text-sm font-medium leading-relaxed">Where we've coached across Hyderabad's premier residential complexes. We strictly enforce a mandatory 4-point CE/EN certified protection policy to protect court surfaces.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Leaderboard Section */}
         <section
           id="leaderboard"
@@ -666,7 +662,7 @@ export default function App() {
                 Community Impact
               </span>
               <h2 className="mb-8 text-charcoal dark:text-off-white">
-                Expert Action Sports Coaches in Hyderabad
+                UGH Leaderboard
               </h2>
               
               <div className="grid grid-cols-2 sm:inline-flex sm:items-center justify-center gap-1 sm:gap-2 bg-light-sand dark:bg-white/5 p-1.5 rounded-full border border-border-gray dark:border-white/10 m-auto mt-4 w-full sm:w-auto">
@@ -771,67 +767,6 @@ export default function App() {
           </div>
         </section>
 
-        
-        {/* Venues Section */}
-        <section
-          id="venues"
-          className="py-16 md:py-24 px-6 bg-light-sand dark:bg-zinc-950 relative overflow-hidden transition-colors duration-500"
-        >
-          <div className="max-w-7xl mx-auto relative z-10">
-            <div className="mb-12 md:mb-16 text-center">
-              <span className="font-sans text-[10px] uppercase tracking-[0.4em] text-vibrant-orange mb-3 font-extrabold block">
-                Our Locations
-              </span>
-              <h2 className="mb-4 text-charcoal dark:text-off-white text-4xl md:text-5xl lg:text-5xl tracking-tighter">
-                Venues
-              </h2>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {/* Wall Ride Park */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="card-premium p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 hover:-translate-y-2 hover:shadow-premium group"
-              >
-                <h3 className="font-display text-2xl font-bold mb-2 uppercase text-charcoal dark:text-off-white">Wall Ride Park</h3>
-                <p className="font-sans text-vibrant-orange font-bold mb-4 uppercase tracking-wider text-xs">Peerancheru</p>
-                <p className="font-sans text-charcoal/70 dark:text-off-white/70 font-bold mb-3 text-sm">Public access, facility partner.</p>
-                <p className="font-sans text-charcoal/50 dark:text-off-white/50 text-sm leading-relaxed">Pump track loops, transition ramps, bowl section, gear rental on-site.</p>
-              </motion.div>
-
-              {/* Emptyhead Skatepark */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="card-premium p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 hover:-translate-y-2 hover:shadow-premium group"
-              >
-                <h3 className="font-display text-2xl font-bold mb-2 uppercase text-charcoal dark:text-off-white">Emptyhead Skatepark</h3>
-                <p className="font-sans text-vibrant-orange font-bold mb-4 uppercase tracking-wider text-xs">Indira Nagar Colony, Venkatapuram, Alwal</p>
-                <p className="font-sans text-charcoal/70 dark:text-off-white/70 font-bold mb-3 text-sm">Public access.</p>
-                <p className="font-sans text-charcoal/50 dark:text-off-white/50 text-sm leading-relaxed">Flatland street area, community jam spot.</p>
-              </motion.div>
-
-              {/* Residential Gated Society Courts */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="card-premium p-8 bg-white dark:bg-zinc-900 border border-border-gray dark:border-white/10 hover:-translate-y-2 hover:shadow-premium group"
-              >
-                <h3 className="font-display text-2xl font-bold mb-2 uppercase text-charcoal dark:text-off-white">Residential Gated Society Courts</h3>
-                <p className="font-sans text-vibrant-orange font-bold mb-4 uppercase tracking-wider text-xs">Kondapur / Gachibowli / Tellapur & surrounding hubs</p>
-                <p className="font-sans text-charcoal/70 dark:text-off-white/70 font-bold mb-3 text-sm">Private access, doorstep coaching.</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* About Section */}
         <section
           id="about"
@@ -850,7 +785,7 @@ export default function App() {
                     The Framework
                   </span>
                   <h2 className="mb-6 md:mb-8 text-charcoal dark:text-off-white text-4xl md:text-5xl lg:text-5xl tracking-tighter sm:leading-none">
-                    Frequently Asked Questions about Skating Classes
+                    About UGH
                   </h2>
                   <p className="font-sans text-lg md:text-xl font-medium text-charcoal/50 dark:text-off-white/50 leading-[1.6] text-balance mb-12">
                     Skate education, delivered to your doorstep. UGH transforms Hyderabad's residential complexes into private training grounds using IOC-certified methodologies.
@@ -984,12 +919,11 @@ export default function App() {
                 Explore
               </p>
               <ul className="space-y-4">
-                {["Programs", "Leaderboard", "Venues", "About"].map((link) => (
+                {["Programs", "Venues", "Leaderboard", "About", "Contact"].map((link) => (
                   <li key={link}>
                     <a
                       href={`#${link.toLowerCase()}`}
-                      onClick={(e) => scrollToSection(e, link.toLowerCase())}
-                      className={`font-sans text-sm font-bold transition-colors tracking-tight italic ${activeSection === link.toLowerCase() ? "text-vibrant-orange" : "text-white/50 hover:text-vibrant-orange"}`}
+                      className="font-sans text-sm font-bold text-white/50 hover:text-vibrant-orange transition-colors tracking-tight italic"
                     >
                       {link}
                     </a>

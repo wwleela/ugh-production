@@ -1,7 +1,0 @@
-const fs = require('fs');
-let html = fs.readFileSync('index.html', 'utf8');
-
-// just use brute force regex that matches anything looking like replace brutal-btn-accent
-html = html.replace(/b\.classList\.replace\([^)]+\)/g, "b.classList.remove('bg-kinetic-accent', 'text-kinetic-bg', 'border-kinetic-shadow'); b.classList.add('bg-kinetic-surface', 'text-kinetic-text', 'border-kinetic-border');");
-
-fs.writeFileSync('index.html', html);

@@ -1,0 +1,1467 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Urban Gliding Hyderabad (UGH) - Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops, plus vibrant community events across residential complexes.">
+    <link rel="canonical" href="https://ugh.co.in/">
+    <title>UGH - Urban Gliding Hyderabad</title>
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'kinetic-bg': 'var(--kinetic-bg)',
+              'kinetic-surface': 'var(--kinetic-surface)',
+              'kinetic-border': 'var(--kinetic-border)',
+              'kinetic-text': 'var(--kinetic-text)',
+              'kinetic-muted': 'var(--kinetic-muted)',
+              'kinetic-accent': 'var(--kinetic-accent)',
+              'kinetic-shadow': 'var(--kinetic-shadow)',
+              'kinetic-surface-alt': 'var(--kinetic-surface-alt)'
+            },
+            spacing: {
+              'fluid-xs': 'clamp(0.5rem, 1vw, 0.75rem)',
+              'fluid-sm': 'clamp(0.75rem, 1.5vw, 1.25rem)',
+              'fluid-md': 'clamp(1.5rem, 3vw, 2.5rem)',
+              'fluid-lg': 'clamp(3rem, 6vw, 5rem)',
+              'fluid-xl': 'clamp(5rem, 10vw, 8rem)',
+            },
+            fontSize: {
+              'fluid-h1': ['clamp(2.5rem, 6vw + 1rem, 5rem)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
+              'fluid-h2': ['clamp(1.8rem, 4vw + 0.5rem, 3.2rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+              'fluid-body': ['clamp(1rem, 0.95rem + 0.3vw, 1.15rem)', { lineHeight: '1.6' }],
+            },
+            fontFamily: {
+              display: ['Sora', 'sans-serif'],
+              body: ['Hanken Grotesk', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace']
+            },
+            borderRadius: {
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            },
+            boxShadow: {
+              'brutal': '4px 4px 0px var(--kinetic-shadow)',
+              'brutal-lg': '8px 8px 0px var(--kinetic-shadow)',
+              'brutal-hover': '12px 12px 0px var(--kinetic-shadow)',
+            }
+          }
+        }
+      }
+    </script>
+    
+            <style>
+      
+      :root {
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-left: env(safe-area-inset-left, 0px);
+        --safe-right: env(safe-area-inset-right, 0px);
+
+        --kinetic-bg: #F2EBE1;
+        --kinetic-surface: rgba(255, 255, 255, 0.6);
+        --kinetic-surface-alt: #E5DAC7;
+        --kinetic-border: rgba(42, 103, 102, 0.2); /* Teal with opacity */
+        --kinetic-text: #193D3C;
+        --kinetic-muted: #4A7A79;
+        --kinetic-accent: #D85B2D;
+        --kinetic-shadow: #2A6766;
+      }
+      .dark {
+        --kinetic-bg: #111A1A;
+        --kinetic-surface: rgba(42, 103, 102, 0.1);
+        --kinetic-surface-alt: rgba(42, 103, 102, 0.2);
+        --kinetic-border: rgba(42, 103, 102, 0.4);
+        --kinetic-text: #F2EBE1;
+        --kinetic-muted: #84A3A2;
+        --kinetic-accent: #D85B2D;
+        --kinetic-shadow: #080D0D;
+      }
+      
+      body { 
+        font-family: 'Hanken Grotesk', sans-serif; 
+        background-color: var(--kinetic-bg);
+        color: var(--kinetic-text);
+        background-image: radial-gradient(var(--kinetic-border) 1px, transparent 1px);
+        background-size: 24px 24px;
+        transition: background-color 0.4s, color 0.4s;
+        overflow-x: clip; /* Zero horizontal scroll */
+        -webkit-font-smoothing: antialiased;
+        min-height: 100dvh;
+      }
+      .dark body {
+        background-image: radial-gradient(rgba(242,235,225,0.05) 1px, transparent 1px);
+      }
+      
+      h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Sora', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      
+      html { scroll-behavior: smooth; }
+      
+      .brutal-card, .brutal-btn, .pill-tag {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      
+      .brutal-card {
+        background: var(--kinetic-surface);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--kinetic-border);
+        border-radius: 1.5rem;
+        box-shadow: 4px 4px 0px var(--kinetic-shadow);
+      }
+      .brutal-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 0px var(--kinetic-shadow);
+      }
+      
+      .brutal-btn {
+        background: var(--kinetic-text);
+        color: var(--kinetic-bg); /* Contrast text */
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        font-family: 'JetBrains Mono', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        min-height: 48px;
+        min-width: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .brutal-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 0px var(--kinetic-shadow);
+      }
+      .brutal-btn-accent {
+        background: var(--kinetic-accent);
+        color: #FFFFFF;
+        border: 2px solid var(--kinetic-shadow);
+      }
+      
+      .pill-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: var(--kinetic-surface-alt);
+        color: var(--kinetic-text);
+        border: 1px solid var(--kinetic-border);
+      }
+    
+      @keyframes float-icon {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        33% { transform: translateY(-8px) rotate(2deg); }
+        66% { transform: translateY(-4px) rotate(-2deg); }
+      }
+      .animate-float-icon {
+        animation: float-icon 5s ease-in-out infinite;
+        transform-origin: center center;
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.4));
+      }
+      .dark .animate-float-icon {
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.6));
+      }
+      .discipline-card:hover .animate-float-icon {
+        animation-duration: 2s;
+        filter: drop-shadow(0px 12px 24px rgba(216, 91, 45, 0.7));
+      }
+</style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SportsActivityLocation",
+          "name": "Urban Gliding Hyderabad (UGH)",
+          "description": "Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops.",
+          "url": "https://ugh.co.in/",
+          "telephone": "+916304895686",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+          },
+          "identifier": {
+            "@type": "PropertyValue",
+            "name": "MSME Udyam Registration",
+            "value": "UDYAM-TS-09-0222985"
+          },
+          "areaServed": [
+            "Gachibowli",
+            "Kokapet",
+            "Financial District",
+            "Narsingi",
+            "Tellapur",
+            "Peerancheru",
+            "Kondapur",
+            "Nallagandla",
+            "Madhapur"
+          ]
+        },
+        {
+          "@type": "Event",
+          "name": "Sunday Skateboarding Workshop",
+          "startDate": "2026-08-30T07:00:00+05:30",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Workshop Venue",
+            "address": "[VENUE ADDRESS — CONFIRM]"
+          },
+          "description": "Weekly recurring skateboarding workshop for all skill levels."
+        },
+        {
+          "@type": "Event",
+          "name": "Fam Jam",
+          "startDate": "2026-08-29T16:00:00+05:30",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Workshop Venue",
+            "address": "[VENUE ADDRESS — CONFIRM]"
+          },
+          "description": "Monthly skateboarding competition, beginner workshop, and youth culture event."
+        }
+      ]
+    }
+    </script>
+  
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+  <body class="antialiased">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 px-[max(0.75rem,var(--safe-left))] sm:px-[max(1.5rem,var(--safe-left))] md:px-[max(2rem,var(--safe-left))] pt-[max(0.75rem,var(--safe-top))] pointer-events-none transition-all duration-300">
+      <div class="pointer-events-auto w-full max-w-[1440px] mx-auto flex items-center justify-between bg-kinetic-surface/95 backdrop-blur-md border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-full border h-14 md:h-20 px-4 md:px-6">
+        <a href="#home" class="tab-link flex items-center gap-3 shrink-0" data-tab="home">
+          <img src="src/assets/images/2_social_media_square.png" alt="UGH Logo" width="40" height="40" class="border-kinetic-border shadow-[2px_2px_0px_var(--kinetic-shadow)] h-10 w-10 rounded-lg border-2">
+          
+        </a>
+                <nav class="hidden md:flex gap-fluid-md font-bold text-sm uppercase tracking-widest font-mono">
+          <a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="impact">Impact</a>
+          <a href="#events" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="events">Events</a>
+          <a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="pricing">Pricing</a>
+          <a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors" data-tab="venues">Venues</a>
+          <button id="theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">dark_mode</button>
+          <button id="wizard-cta" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer ml-2">
+            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.2rem;">search</span> Search
+          </button>
+        </nav>
+        <div class="flex items-center md:hidden">
+          <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer mr-3 font-mono font-bold text-xs uppercase tracking-widest">
+            <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.2rem;">search</span> <span class="hidden min-[360px]:inline">Search</span>
+          </button>
+          <button id="mobile-menu-btn" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">more_vert</button>
+        </div>
+      <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
+    </header>
+
+    <main class="transition-all duration-300 pt-[calc(5.5rem+var(--safe-top))] md:pt-[calc(7.5rem+var(--safe-top))]"><div id="tab-home" class="block main-tab-content"><section class="relative pt-4 md:pt-8 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border overflow-hidden">
+        <!-- Subtle Dot Grid Background Pattern -->
+        <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none" style="background-image: radial-gradient(var(--kinetic-text) 1px, transparent 1px); background-size: 24px 24px; background-position: center;"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+          <span class="inline-block px-4 py-1.5 bg-kinetic-surface-alt border border-kinetic-border rounded-full text-kinetic-text text-xs font-bold font-mono uppercase tracking-[0.2em] mb-8 shadow-sm">Elevate Your Flow</span>
+          
+          <h1 class="text-[clamp(3.5rem,8vw,7rem)] font-display font-bold mb-6 leading-[0.9] tracking-tighter uppercase flex flex-wrap justify-center items-center gap-y-4">
+            <span class="inline-block bg-kinetic-accent text-kinetic-bg px-6 pt-3 pb-1 -rotate-2 shadow-[6px_6px_0px_var(--kinetic-shadow)] border-2 border-kinetic-shadow mr-2 sm:mr-4">Master</span> 
+            <span>the Pavement.</span>
+          </h1>
+          
+          <p class="text-lg md:text-2xl text-kinetic-muted mb-12 max-w-3xl mx-auto leading-relaxed font-body font-medium">
+            Hyderabad's premier action sports coaching. From static balance to transition carving across Skateboarding, Inline, and BMX.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+            <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="w-full sm:w-auto group relative px-8 py-4 bg-kinetic-text text-kinetic-bg font-display font-bold text-lg uppercase tracking-wider rounded-none overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_var(--kinetic-accent)] border-2 border-kinetic-text flex items-center justify-center gap-2">
+              <span class="relative z-10">Book a Session</span>
+              <span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </button>
+            
+            <div class="flex items-center gap-4 w-full sm:w-auto justify-center">
+              <a href="#pricing" class="tab-link text-kinetic-text font-mono font-bold text-sm uppercase tracking-widest hover:text-kinetic-accent transition-colors underline-offset-8 hover:underline decoration-2" data-tab="pricing">See Pricing</a>
+              <span class="text-kinetic-muted/30">|</span>
+              <a href="#venues" class="tab-link text-kinetic-text font-mono font-bold text-sm uppercase tracking-widest hover:text-kinetic-accent transition-colors underline-offset-8 hover:underline decoration-2" data-tab="venues">Find Venue</a>
+            </div>
+          </div>
+        </div>
+      </section><section id="disciplines" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <span class="pill-tag mb-4">Core Disciplines</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">What We Teach</h2>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">Skateboarding</h3>
+              <!-- Skateboard SVG -->
+              <div class="discipline-icon absolute -top-12 -right-6 w-36 h-36 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" class="w-full h-full animate-float-icon transition-all duration-300">
+                  <defs>
+                    <linearGradient id="deckGrip" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#2a2a2a"/>
+                      <stop offset="100%" stop-color="#111111"/>
+                    </linearGradient>
+                    <linearGradient id="deckWood" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#e6ccb2"/>
+                      <stop offset="50%" stop-color="#ddb892"/>
+                      <stop offset="100%" stop-color="#9c6644"/>
+                    </linearGradient>
+                    <linearGradient id="deckGraphic" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#D85B2D"/>
+                      <stop offset="25%" stop-color="#ff7b47"/>
+                      <stop offset="75%" stop-color="#ff7b47"/>
+                      <stop offset="100%" stop-color="#D85B2D"/>
+                    </linearGradient>
+                    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#f8f9fa"/>
+                      <stop offset="50%" stop-color="#ced4da"/>
+                      <stop offset="100%" stop-color="#6c757d"/>
+                    </linearGradient>
+                    <linearGradient id="wheelUrethane" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#ffffff"/>
+                      <stop offset="100%" stop-color="#d3d3d3"/>
+                    </linearGradient>
+                    <filter id="realShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+                    </filter>
+                  </defs>
+                  <g filter="url(#realShadow)">
+                    <!-- Grip Tape (Top Layer) -->
+                    <path d="M 12 34 Q 30 50 50 50 L 150 50 Q 170 50 188 34 A 3 3 0 0 1 192 37 Q 170 54 150 54 L 50 54 Q 30 54 8 37 A 3 3 0 0 1 12 34 Z" fill="url(#deckGrip)"/>
+                    
+                    <!-- Wood Plys (Middle Layer) -->
+                    <path d="M 8 37 Q 30 54 50 54 L 150 54 Q 170 54 192 37 A 2 2 0 0 1 193 39 Q 170 56 150 56 L 50 56 Q 30 56 7 39 A 2 2 0 0 1 8 37 Z" fill="url(#deckWood)"/>
+                    
+                    <!-- Graphic (Bottom Layer) -->
+                    <path d="M 7 39 Q 30 56 50 56 L 150 56 Q 170 56 193 39 A 3 3 0 0 1 192 43 Q 170 60 150 60 L 50 60 Q 30 60 8 43 A 3 3 0 0 1 7 39 Z" fill="url(#deckGraphic)"/>
+
+                    <!-- Hardware Bolts -->
+                    <!-- Left -->
+                    <rect x="45" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <rect x="52" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <!-- Right -->
+                    <rect x="146" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+                    <rect x="153" y="55" width="2" height="3" fill="#fff" opacity="0.6"/>
+
+                    <!-- Back Wheels -->
+                    <rect x="42" y="70" width="16" height="24" rx="4" fill="#777"/>
+                    <rect x="142" y="70" width="16" height="24" rx="4" fill="#777"/>
+
+                    <!-- LEFT TRUCK -->
+                    <!-- Baseplate -->
+                    <path d="M 40 59 L 60 59 L 58 64 L 42 64 Z" fill="url(#metal)"/>
+                    <!-- Hanger -->
+                    <path d="M 48 64 L 52 64 L 56 82 L 44 82 Z" fill="url(#metal)"/>
+                    <!-- Bushings -->
+                    <rect x="48" y="64" width="8" height="12" rx="3" fill="#e76f51" transform="rotate(15 52 70)"/>
+
+                    <!-- RIGHT TRUCK -->
+                    <!-- Baseplate -->
+                    <path d="M 140 59 L 160 59 L 158 64 L 142 64 Z" fill="url(#metal)"/>
+                    <!-- Hanger -->
+                    <path d="M 148 64 L 152 64 L 156 82 L 144 82 Z" fill="url(#metal)"/>
+                    <!-- Bushings -->
+                    <rect x="148" y="64" width="8" height="12" rx="3" fill="#e76f51" transform="rotate(-15 152 70)"/>
+
+                    <!-- Front Wheels -->
+                    <rect x="34" y="76" width="20" height="30" rx="6" fill="url(#wheelUrethane)"/>
+                    <rect x="146" y="76" width="20" height="30" rx="6" fill="url(#wheelUrethane)"/>
+                    
+                    <!-- Bearings -->
+                    <circle cx="44" cy="91" r="4.5" fill="#222"/>
+                    <circle cx="44" cy="91" r="2" fill="url(#metal)"/>
+                    
+                    <circle cx="156" cy="91" r="4.5" fill="#222"/>
+                    <circle cx="156" cy="91" r="2" fill="url(#metal)"/>
+                    
+                    <!-- Wheel Highlights / Shine -->
+                    <rect x="37" y="79" width="4" height="24" rx="2" fill="#fff" opacity="0.8"/>
+                    <rect x="149" y="79" width="4" height="24" rx="2" fill="#fff" opacity="0.8"/>
+                  </g>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Master the concrete waves. From static balance to ollies, flip tricks, and transition carving.</p>
+            </div>
+            
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">Inline Skating</h3>
+              <!-- Inline Skate SVG -->
+              <div class="discipline-icon absolute -top-10 -right-6 w-28 h-28 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="w-full h-full text-kinetic-accent animate-float-icon transition-all duration-300" style="animation-delay: 0.2s;">
+                  <!-- Cuff Back -->
+                  <path d="M 35 15 C 35 10, 45 10, 50 15 L 52 35 C 55 45, 65 50, 75 52 C 80 53, 85 58, 85 65 L 25 65 C 20 40, 30 20, 35 15 Z" opacity="0.6"/>
+                  <path d="M 32 20 C 32 15, 42 15, 48 20 L 50 35 L 30 35 Z" opacity="0.8"/>
+                  <!-- Hard Shell Boot -->
+                  <path d="M 28 35 L 50 35 C 55 45, 65 50, 78 52 C 82 53, 85 58, 85 65 C 85 70, 80 72, 75 72 L 20 72 C 15 72, 18 55, 28 35 Z" opacity="0.95"/>
+                  <!-- Boot Details / Highlights -->
+                  <path d="M 28 35 L 32 35 C 32 50, 25 60, 22 72 L 20 72 C 15 72, 18 55, 28 35 Z" fill="#fff" opacity="0.2"/>
+                  <rect x="30" y="25" width="18" height="4" rx="2" fill="#fff" opacity="0.9"/>
+                  <rect x="35" y="45" width="20" height="5" rx="2" fill="#fff" opacity="0.9"/>
+                  <circle cx="48" cy="27" r="1.5" fill="#111"/>
+                  <circle cx="53" cy="47.5" r="1.5" fill="#111"/>
+                  <!-- Frame Shadow -->
+                  <path d="M 22 72 L 80 72 L 75 82 L 25 82 Z" opacity="0.5"/>
+                  <!-- Frame Main -->
+                  <path d="M 25 82 L 75 82 L 73 86 L 27 86 Z" opacity="0.9"/>
+                  <!-- Wheels -->
+                  <circle cx="32" cy="85" r="7" opacity="1"/>
+                  <circle cx="46" cy="85" r="7" opacity="1"/>
+                  <circle cx="60" cy="85" r="7" opacity="1"/>
+                  <circle cx="74" cy="85" r="7" opacity="1"/>
+                  <!-- Wheel Hubs/Bearings -->
+                  <circle cx="32" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="46" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="60" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="74" cy="85" r="3" fill="#fff" opacity="0.7"/>
+                  <circle cx="32" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="46" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="60" cy="85" r="1" fill="#111" opacity="0.8"/>
+                  <circle cx="74" cy="85" r="1" fill="#111" opacity="0.8"/>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Speed, agility, and precision. Learn strides, crossovers, stopping mechanics, and freestyle slalom.</p>
+            </div>
+            
+            <div class="discipline-card relative p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border hover:border-kinetic-accent transition-colors">
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-4 uppercase break-words pr-8 sm:pr-0">BMX</h3>
+              <!-- BMX SVG -->
+              <div class="discipline-icon absolute -top-10 -right-6 w-28 h-28 z-10 pointer-events-none opacity-0" style="opacity: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="currentColor" class="w-full h-full text-kinetic-accent animate-float-icon transition-all duration-300" style="animation-delay: 0.5s;">
+                  <!-- Tires -->
+                  <circle cx="25" cy="70" r="18" fill="none" stroke="currentColor" stroke-width="5.5" opacity="0.95"/>
+                  <circle cx="75" cy="70" r="18" fill="none" stroke="currentColor" stroke-width="5.5" opacity="0.95"/>
+                  <!-- Rims -->
+                  <circle cx="25" cy="70" r="15" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+                  <circle cx="75" cy="70" r="15" fill="none" stroke="#fff" stroke-width="1.5" opacity="0.4"/>
+                  <!-- Hubs -->
+                  <circle cx="25" cy="70" r="2.5" opacity="1"/>
+                  <circle cx="75" cy="70" r="2.5" opacity="1"/>
+                  <!-- Spokes -->
+                  <path d="M 25 55 L 25 85 M 10 70 L 40 70 M 14 59 L 36 81 M 14 81 L 36 59" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+                  <path d="M 75 55 L 75 85 M 60 70 L 90 70 M 64 59 L 86 81 M 64 81 L 86 59" stroke="#fff" stroke-width="0.5" opacity="0.5"/>
+                  
+                  <!-- Chainstay & Seatstay -->
+                  <line x1="25" y1="70" x2="48" y2="70" stroke="currentColor" stroke-width="3.5" opacity="0.8"/>
+                  <line x1="25" y1="70" x2="40" y2="45" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+                  
+                  <!-- Main Diamond Frame -->
+                  <line x1="40" y1="45" x2="65" y2="40" stroke="currentColor" stroke-width="4.5" opacity="0.95"/>
+                  <line x1="48" y1="70" x2="65" y2="40" stroke="currentColor" stroke-width="5" opacity="0.95"/>
+                  
+                  <!-- Fork -->
+                  <line x1="75" y1="70" x2="65" y2="40" stroke="currentColor" stroke-width="4.5" opacity="0.9"/>
+                  <!-- Head Tube -->
+                  <line x1="64" y1="43" x2="66" y2="37" stroke="currentColor" stroke-width="6" opacity="1"/>
+                  <line x1="65" y1="40" x2="61" y2="30" stroke="currentColor" stroke-width="3.5" opacity="0.9"/>
+                  
+                  <!-- Handlebars -->
+                  <path d="M 61 30 L 61 22 L 53 22" fill="none" stroke="currentColor" stroke-width="3.5" opacity="1"/>
+                  <!-- Grips -->
+                  <line x1="50" y1="22" x2="56" y2="22" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+                  
+                  <!-- Seat post -->
+                  <line x1="48" y1="70" x2="40" y2="45" stroke="currentColor" stroke-width="4.5" opacity="0.9"/>
+                  <line x1="40" y1="45" x2="36" y2="33" stroke="currentColor" stroke-width="3" opacity="0.8"/>
+                  
+                  <!-- Seat -->
+                  <path d="M 28 33 L 42 33 Q 45 35 40 37 L 30 36 Z" opacity="1"/>
+                  
+                  <!-- Sprocket / Crank -->
+                  <circle cx="48" cy="70" r="7" opacity="0.9"/>
+                  <circle cx="48" cy="70" r="3.5" fill="#fff" opacity="0.6"/>
+                  <line x1="48" y1="70" x2="55" y2="78" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" opacity="1"/>
+                  <line x1="52" y1="78" x2="58" y2="78" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+                  
+                  <!-- Chain -->
+                  <line x1="25" y1="66" x2="48" y2="64" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8"/>
+                  <line x1="25" y1="74" x2="48" y2="76" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.8"/>
+                </svg>
+              </div>
+              <p class="text-kinetic-muted leading-relaxed relative z-20">Two-wheeled progression. From basic pump track rhythm to bunny hops and manual control.</p>
+            </div>
+          </div>
+        </div>
+      </section></div><div id="tab-impact" class="hidden main-tab-content"><section id="leadership" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <span class="pill-tag mb-4">The Crew</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold uppercase">Skate Coaches</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-fluid-md max-w-5xl mx-auto">
+            <!-- Coach 1 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Coach Leela</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Founder / Experienced Skater</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Making action sports accessible at the doorstep.</p>
+              </div>
+            </div>
+            <!-- Coach 2 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Tribhuvan Kokkula</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Vice-Chairman</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Vice-Chairman of the Skateboarding Sub-Committee (2026–2027 term).</p>
+              </div>
+            </div>
+            <!-- Coach 3 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Ronnie</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Park Manager</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Wallride Park Manager, pro skateboarder, and experienced coach.</p>
+              </div>
+            </div>
+            <!-- Coach 4 -->
+            <div class="brutal-card p-4 md:p-6 flex flex-row gap-4 items-center text-left h-full">
+              <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-kinetic-border flex-shrink-0 bg-kinetic-muted"></div>
+              <div class="min-w-0 flex-1 flex flex-col justify-center">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <h3 class="text-lg md:text-xl font-display font-bold uppercase break-words">Pixie</h3>
+                  <span class="pill-tag bg-kinetic-surface-alt text-[10px] md:text-xs border-kinetic-border text-kinetic-text px-2 py-1 whitespace-normal text-left break-words">Pro Skater</span>
+                </div>
+                <p class="text-kinetic-muted text-sm leading-snug font-body break-words mt-1">Pro skateboarder and founder of GirlsSk8Hyd, empowering women in action sports.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><section id="community" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <span class="pill-tag mb-4">Community Impact</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold uppercase">Training Hubs</h2>
+            <p class="mt-4 text-kinetic-muted max-w-2xl mx-auto font-body">Where we've coached across Hyderabad's premier residential complexes.</p>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
+            <!-- Hub 1 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Serene Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kondapur / Gachibowli</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted introductory skateboarding and inline skating workshops in this expansive ~19-acre community. Our coaching sessions brought action sports directly to the ~1,680 units.</p>
+            </div>
+            <!-- Hub 2 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Sarovar Zenith</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Nallagandla</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran dedicated coaching sessions across this ~24.6-acre residential space. We introduced safe, structured inline skating and skateboarding fundamentals.</p>
+            </div>
+            <!-- Hub 3 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Sarovar Grande</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Nallagandla</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Led active youth workshops in this ~10.5-acre property. Our focus on certified safety gear and progressive learning helped residents master the concrete safely.</p>
+            </div>
+            <!-- Hub 4 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Aparna Hights I</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kondapur</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted action sports clinics for the residents, bringing our doorstep coaching model to life. Sessions focused on balance, agility, and fundamental skate mechanics.</p>
+            </div>
+            <!-- Hub 5 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">PBEL City</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Peerancheru</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran summer camp clinics and recurring coaching batches for residents. We transformed the community spaces into active learning zones for action sports.</p>
+            </div>
+            <!-- Hub 6 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">Ananda Bay Hills</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Narsingi</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Provided structured doorstep coaching within this ~5.29-acre community. We introduced fundamental ramp transitions and flat-ground skills to the youth.</p>
+            </div>
+            <!-- Hub 7 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">My Home Tarkshya</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Kokapet</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Conducted safe, structured skating sessions for residents. Our coaches focused on foundational skills and proper safety protocols.</p>
+            </div>
+            <!-- Hub 8 -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col hover:-translate-y-1 transition-transform">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Doorstep Coaching</span>
+              <h3 class="text-xl sm:text-2xl font-display font-bold mb-1 break-words">My Home Navadweepa</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Madhapur / HITEC City</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Ran introductory and progression workshops for the community. We delivered professional action sports instruction directly to the residents' doorsteps.</p>
+            </div>
+          </div>
+        </div>
+      </section><section id="alliances" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface-alt border-t border-kinetic-border">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-md">
+            <span class="pill-tag mb-4">Ecosystem</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Alliances &amp; Experience</h2>
+          </div>
+          
+          <!-- Interactive Tabs -->
+          <div class="flex flex-wrap justify-center border-b border-kinetic-border mb-10 overflow-x-auto hide-scrollbar gap-2 sm:gap-0">
+            <button class="tab-btn active px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-kinetic-text text-kinetic-text hover:text-kinetic-accent transition-colors whitespace-nowrap" data-target="brands">Brands &amp; Partners</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted whitespace-nowrap" data-target="events-hosted">Events Hosted</button>
+            <button class="tab-btn px-6 py-4 font-display font-bold uppercase tracking-widest text-sm border-b-2 border-transparent hover:text-kinetic-accent transition-colors text-kinetic-muted whitespace-nowrap" data-target="media">Media &amp; Features</button>
+          </div>
+
+          <!-- Brands Gallery -->
+          <div id="brands" class="tab-content grid grid-cols-2 md:grid-cols-4 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1528249227670-9ba48616014f?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Decathlon</span>
+              </div>
+            </div>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Vans</span>
+              </div>
+            </div>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518170886166-51f67fce57cb?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">Red Bull</span>
+              </div>
+            </div>
+            <div class="group relative aspect-video bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg hover:border-kinetic-accent transition-colors shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?q=80&w=600&auto=format&fit=crop" alt="Brand Partner" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0" />
+              <div class="absolute inset-0 flex items-center justify-center bg-kinetic-bg/50 group-hover:bg-transparent transition-colors">
+                <span class="text-kinetic-text font-display font-bold text-sm uppercase tracking-widest group-hover:opacity-0 transition-opacity drop-shadow-md">G-Shock</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Events Hosted Gallery -->
+          <div id="events-hosted" class="tab-content hidden grid-cols-1 md:grid-cols-3 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Go Skateboarding Day</p>
+                <h3 class="text-white text-xl font-display font-bold">Annual Hyd Skate Jam</h3>
+              </div>
+            </div>
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Community Outreach</p>
+                <h3 class="text-white text-xl font-display font-bold">Wall Ride Progression</h3>
+              </div>
+            </div>
+            <div class="group relative aspect-[4/3] bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm">
+              <img src="https://images.unsplash.com/photo-1518880313888-2122b07f8279?q=80&w=800&auto=format&fit=crop" alt="Event" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                <p class="text-white text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Youth Development</p>
+                <h3 class="text-white text-xl font-display font-bold">PBEL Summer Camp</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Media Gallery -->
+          <div id="media" class="tab-content hidden grid-cols-1 md:grid-cols-3 gap-fluid-md animate-fade-in">
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">newspaper</span>
+              <h3 class="text-2xl font-display font-bold mb-2">The Hindu</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Urban Gliding Hyderabad is reshaping the concrete landscape of the city, bringing structured extreme sports to the grassroots level."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Read Feature</span>
+            </div>
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">article</span>
+              <h3 class="text-2xl font-display font-bold mb-2">Times of India</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Hyderabad's skate scene explodes with new talent as premium doorstep coaching programs gain massive traction."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Read Feature</span>
+            </div>
+            <div class="group relative aspect-square bg-kinetic-surface border border-kinetic-border overflow-hidden rounded-lg shadow-sm flex flex-col items-center justify-center p-8 text-center hover:border-kinetic-accent transition-colors">
+              <span class="material-symbols-outlined text-4xl text-kinetic-accent mb-4">play_circle</span>
+              <h3 class="text-2xl font-display font-bold mb-2">Red Bull TV</h3>
+              <p class="text-kinetic-muted text-sm line-clamp-3">"Local crews in Hyderabad showcase immense progression at the newly built Wall Ride Park."</p>
+              <span class="mt-6 text-xs font-bold uppercase tracking-widest border-b border-kinetic-accent text-kinetic-text pb-1">Watch Clip</span>
+            </div>
+          </div>
+        </div>
+      </section></div><div id="tab-events" class="hidden main-tab-content"><section id="events" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-fluid-md gap-fluid-md">
+            <div>
+              <span class="pill-tag mb-4">The Schedule</span>
+              <h2 class="text-4xl md:text-5xl font-display font-bold uppercase mt-2">Monthly Events</h2>
+            </div>
+            <div class="flex gap-2">
+              <span class="pill-tag bg-kinetic-surface border-kinetic-border">Aug 2026</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-fluid-md">
+            <!-- Featured Event -->
+            <div class="lg:col-span-2 brutal-card overflow-hidden flex flex-col">
+              <div class="bg-kinetic-muted h-48 sm:h-64 flex items-center justify-center border-b-2 border-kinetic-border relative">
+                 <span class="absolute top-4 left-4 pill-tag bg-kinetic-accent text-black border-black shadow-[2px_2px_0px_#000]">Featured</span>
+                 <span class="material-symbols-outlined text-6xl text-kinetic-bg">skateboarding</span>
+              </div>
+              <div class="p-8 flex-1 flex flex-col">
+                <div class="flex flex-wrap gap-3 mb-4">
+                  <span class="font-mono text-xs uppercase font-bold text-kinetic-text bg-kinetic-surface border border-kinetic-border px-2 py-1 rounded">Aug 29, 2026</span>
+                  <span class="font-mono text-xs uppercase font-bold text-kinetic-text bg-kinetic-surface border border-kinetic-border px-2 py-1 rounded">4:00 PM Onwards</span>
+                </div>
+                <h3 class="text-fluid-h2 font-display font-bold mb-2 uppercase">Fam Jam</h3>
+                <p class="font-mono text-sm text-kinetic-accent font-bold uppercase mb-4 flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">location_on</span> [VENUE ADDRESS — CONFIRM]
+                </p>
+                <p class="text-kinetic-muted font-body mb-8 leading-relaxed flex-1">
+                  Monthly skateboarding competition, beginner workshop, and youth culture event. Join us for an evening of progression, local music, and breakdance performances.
+                </p>
+                <button onclick="window.open('https://wa.me/916304895686?text=Hi%2C%20I%20want%20to%20inquire%20about%20the%20Fam%20Jam%20event.', '_blank')" class="brutal-btn brutal-btn-accent w-full text-center">RSVP / Inquire</button>
+              </div>
+            </div>
+            
+            <!-- Upcoming List -->
+            <div class="flex flex-col gap-fluid-md">
+              <h3 class="text-fluid-h2 font-display font-bold uppercase mb-2">Upcoming This Week</h3>
+              
+              <!-- List Item -->
+              <div class="brutal-card p-6 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <span class="font-mono text-xs font-bold uppercase">Sundays</span>
+                  <span class="pill-tag">Morning</span>
+                </div>
+                <h4 class="text-xl font-display font-bold uppercase mb-2">Sunday Skateboarding Workshop</h4>
+                <p class="font-mono text-xs text-kinetic-accent font-bold uppercase mb-4">[VENUE ADDRESS — CONFIRM]</p>
+                <p class="text-kinetic-muted text-sm font-body mb-fluid-sm">Our recurring weekend action sports clinic. Fundamental skateboarding and progressive ramp skills.</p>
+                <button onclick="window.open('https://wa.me/916304895686?text=Hi%2C%20I%20want%20to%20inquire%20about%20the%20Sunday%20Skateboarding%20Workshop.', '_blank')" class="brutal-btn w-full text-center text-xs py-2">Book Slot</button>
+              </div>
+              
+              <div class="brutal-card p-6 flex flex-col justify-center items-center text-center bg-kinetic-surface-alt border-dashed border-2">
+                 <p class="text-kinetic-muted font-mono text-sm uppercase">More dates dropping soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section></div><div id="tab-pricing" class="hidden main-tab-content"><section id="programs" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface text-kinetic-text">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <h2 class="text-4xl md:text-5xl font-display font-bold">Pricing &amp; Plans</h2>
+            <p class="text-kinetic-muted mt-4 text-lg">Choose the structure that fits your progression path.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-fluid-md" id="pricing-grid">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section><section id="faq" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)]">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <h2 class="text-4xl md:text-5xl font-display font-bold">FAQs</h2>
+          </div>
+          <div class="space-y-4">
+            <details class="p-6 bg-kinetic-surface border border-kinetic-border cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What gear is mandatory? <span class="text-kinetic-accent text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-kinetic-muted text-sm leading-relaxed">A certified helmet, wrist guards, elbow pads, and knee pads are non-negotiable for every class. No exceptions.</p>
+            </details>
+            <details class="p-6 bg-kinetic-surface border border-kinetic-border cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What is the age limit? <span class="text-kinetic-accent text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-kinetic-muted text-sm leading-relaxed">We teach Junior (5-12 yrs), Senior (13-17 yrs), and Adult gliders. Everyone is welcome to learn.</p>
+            </details>
+            <details class="p-6 bg-kinetic-surface border border-kinetic-border cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What happens if it rains? <span class="text-kinetic-accent text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-kinetic-muted text-sm leading-relaxed">In case of rain, sessions will be rescheduled to a make-up day, ensuring you don't miss out on your training.</p>
+            </details>
+            <details class="p-6 bg-kinetic-surface border border-kinetic-border cursor-pointer group">
+              <summary class="font-display font-bold text-lg list-none flex justify-between items-center">What should I bring to my first session? <span class="text-kinetic-accent text-2xl group-open:rotate-45 transition-transform">+</span></summary>
+              <p class="mt-4 text-kinetic-muted text-sm leading-relaxed">Please wear comfortable athletic clothing and closed-toe shoes. All necessary protective gear is provided, or you must bring your own per our mandatory safety policy.</p>
+            </details>
+          </div>
+        </div>
+      </section></div><div id="tab-venues" class="hidden main-tab-content"><section id="safety" class="pt-6 md:pt-10 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] text-center border-b border-kinetic-border">
+        <div class="max-w-4xl mx-auto">
+          <span class="text-kinetic-accent font-bold uppercase tracking-widest text-xs font-display">No Gear, No Skate</span>
+          <h2 class="text-4xl md:text-5xl font-display font-bold mt-2 mb-fluid-sm">Safety &amp; Protection</h2>
+          <p class="text-kinetic-muted text-lg mb-fluid-md leading-relaxed">We strictly enforce a mandatory 4-point CE/EN certified protection policy. All skaters must use non-marking PU wheels (82A-86A) to protect court surfaces.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-8">
+            <div class="p-6 md:p-8 bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-2xl flex flex-col items-center text-center h-full transition-transform hover:-translate-y-1">
+              <div class="flex-1 flex items-center justify-center min-h-[180px] md:min-h-[220px] w-full mb-6">
+                <img src="src/assets/images/regenerated_image_1788371653081.jpg" alt="Skating Helmet" class="max-h-[180px] md:max-h-[220px] w-auto object-contain drop-shadow-md mix-blend-multiply dark:mix-blend-normal rounded-lg">
+              </div>
+              <h4 class="font-display font-bold text-2xl mb-2 uppercase tracking-tight">Helmet</h4>
+              <p class="text-kinetic-muted text-sm md:text-base leading-relaxed">A certified, well-fitted helmet is required to protect against impacts.</p>
+            </div>
+            <div class="p-6 md:p-8 bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] rounded-2xl flex flex-col items-center text-center h-full transition-transform hover:-translate-y-1">
+              <div class="flex-1 flex items-center justify-center min-h-[180px] md:min-h-[220px] w-full mb-6">
+                <img src="src/assets/images/regenerated_image_1788371655775.jpg" alt="Safety Kit Pads" class="max-h-[180px] md:max-h-[220px] w-auto object-contain drop-shadow-md mix-blend-multiply dark:mix-blend-normal rounded-lg">
+              </div>
+              <h4 class="font-display font-bold text-2xl mb-2 uppercase tracking-tight">Full Pad Kit</h4>
+              <p class="text-kinetic-muted text-sm md:text-base leading-relaxed">Wrist guards, elbow pads, and knee pads are essential to prevent scrapes and fractures.</p>
+            </div>
+          </div>
+        </div>
+      </section><section id="venues" class="py-fluid-xl px-[clamp(1.25rem,5vw,4rem)] bg-kinetic-surface-alt border-b border-kinetic-border">
+        <div class="max-w-[1440px] mx-auto">
+          <div class="text-center mb-fluid-lg">
+            <span class="pill-tag mb-4">Where We Teach</span>
+            <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Our Public Venues</h2>
+          </div>
+          <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-fluid-md">
+            <!-- Wall Ride Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Wall Ride Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">India's first Swiss-made pump track. Rewarded for bringing skate culture to the state, featuring ramps and bowls for ultimate progression.</p>
+            </div>
+            <!-- Emptyhead Skate Park -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Emptyhead Skate Park</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">Known for its unmatched vibe, seamlessly blending music, dance, and skateboarding into a unique cultural experience.</p>
+            </div>
+            <!-- Primo Skatepark -->
+            <div class="p-6 sm:p-8 bg-kinetic-surface border border-kinetic-border h-full flex flex-col">
+              <span class="inline-block self-start px-3 py-1 bg-kinetic-surface-alt text-kinetic-text text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 border border-kinetic-border break-words">Public Access</span>
+              <h3 class="text-2xl sm:text-3xl font-display font-bold mb-1 break-words">Primo Skatepark</h3>
+              <p class="text-kinetic-accent text-xs font-bold uppercase tracking-widest mb-4 font-display break-words">Hyderabad</p>
+              <p class="text-kinetic-muted text-sm flex-1 break-words">A dedicated skate park and shop built specifically to grow and support the local skateboarding culture and community.</p>
+            </div>
+          </div>
+        </div>
+      </section></div></main>
+
+    <!-- Footer -->
+    <footer class="bg-kinetic-surface text-kinetic-text py-fluid-lg px-[clamp(1.25rem,5vw,4rem)] border-t border-kinetic-border text-center md:text-left">
+      <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-fluid-md">
+        <div>
+          <div class="mb-fluid-sm">
+            <img src="src/assets/images/2_social_media_square.png" alt="UGH Logo" width="64" height="64" class="h-16 w-16 rounded-xl border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] inline-block">
+          </div>
+          <h2 class="text-fluid-h2 font-display font-bold tracking-tighter mb-2 uppercase">Urban Gliding Hyderabad</h2>
+          <p class="text-kinetic-muted text-xs font-mono">MSME: UDYAM-TS-09-0222985</p>
+        </div>
+        <div class="text-sm text-kinetic-muted font-body">
+          <p class="mb-2">WhatsApp: <a href="https://wa.me/916304895686" class="text-kinetic-text hover:text-kinetic-accent transition-colors font-bold font-mono">+91 630 489 5686</a></p>
+          <p class="font-mono text-xs">© 2026 Urban Gliding Hyderabad.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Sticky Nav -->
+    
+
+    <!-- Initialization Scripts -->
+    <script>
+      // Tab interaction (Alliances Section)
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Reset all tabs
+          tabs.forEach(t => { 
+            t.classList.remove('active', 'border-kinetic-text', 'text-kinetic-text'); 
+            t.classList.add('border-transparent', 'text-kinetic-muted'); 
+          });
+          // Reset all contents (hide them)
+          contents.forEach(c => {
+            c.classList.remove('grid');
+            c.classList.add('hidden');
+          });
+          
+          // Activate clicked tab
+          tab.classList.add('active', 'border-kinetic-text', 'text-kinetic-text');
+          tab.classList.remove('border-transparent', 'text-kinetic-muted');
+          
+          // Show target content
+          const target = document.getElementById(tab.dataset.target);
+          target.classList.remove('hidden');
+          target.classList.add('grid');
+        });
+      });
+
+      // Pricing Data & Rendering
+      const programs = [
+        { name: "Drop-in Session", price: "599", period: "session", desc: "Single coached session, no commitment.", features: ["Introduction to fundamentals", "Ages 5+ welcome"], badge: null },
+        { name: "Month-in Session", price: "5,999", period: "month", desc: "8 coached classes + unlimited monthly access to skate parks.", features: ["8 coached classes", "Unlimited park access", "Personal progression roadmap"], badge: "Featured" },
+        { name: "Residential — Standard", price: "4,999", period: "month", desc: "8 classes per month, at your society.", features: ["8 on-site society classes", "Group learning dynamics", "Convenient doorstep coaching"], badge: null },
+        { name: "Residential — Plus", price: "6,999", period: "month", desc: "8 classes + 3 skate park sessions per month.", features: ["8 on-site society classes", "3 skate park sessions", "Best of both worlds"], badge: "Comprehensive" },
+        { name: "UGH VIP Skate Plan", price: "26,000 (M1)", period: "flagship", desc: "Month 1: 10 classes + 3 park sessions. Renewal: 20k. Includes mobile skatepark & VIP kit.", features: ["Doorstep mobile skatepark van", "Curated board + armor kit", "Personalized video vlog"], badge: "VIP" }
+      ];
+
+      const grid = document.getElementById('pricing-grid');
+      programs.forEach(p => {
+        const msg = encodeURIComponent(`Hi Coach Leela, I want to enroll in ${p.name}.`);
+        const isFeatured = p.badge === 'Featured';
+        const isVIP = p.badge === 'VIP';
+        
+        let cardClass = 'brutal-card p-8 flex flex-col relative';
+        let btnClass = 'brutal-btn w-full mt-auto';
+        let badgeClass = 'pill-tag absolute -top-3 left-1/2 -translate-x-1/2';
+        let checkClass = 'text-kinetic-accent font-bold';
+        
+        if (isFeatured) {
+          cardClass += ' border-kinetic-accent shadow-brutal-lg';
+          btnClass = 'brutal-btn brutal-btn-accent w-full mt-auto';
+          badgeClass += ' bg-kinetic-accent text-black border-black';
+        } else if (isVIP) {
+          cardClass += ' lg:col-span-4 md:col-span-2 max-w-3xl mx-auto w-full mt-8 bg-kinetic-text text-kinetic-bg border-kinetic-border shadow-brutal-lg';
+          btnClass = 'brutal-btn w-full mt-auto bg-kinetic-bg text-kinetic-text border-kinetic-border';
+          badgeClass += ' bg-kinetic-bg text-kinetic-text border-kinetic-border';
+          checkClass = 'text-kinetic-bg font-bold';
+        } else {
+          badgeClass += ' bg-kinetic-surface-alt text-kinetic-text border-kinetic-border';
+        }
+        
+        grid.innerHTML += `
+          <div class="${cardClass}">
+            ${p.badge ? `<span class="${badgeClass}">${p.badge}</span>` : ''}
+            <h3 class="text-2xl sm:text-3xl font-display font-bold mb-2 uppercase break-words">${p.name}</h3>
+            <div class="mb-4">
+              <span class="text-3xl sm:text-4xl font-display font-bold break-words">₹${p.price}</span>
+              ${p.period !== 'flagship' ? `<span class="text-sm font-mono text-kinetic-muted">/${p.period}</span>` : ''}
+            </div>
+            <p class="text-sm font-body opacity-80 mb-8 min-h-[40px] leading-relaxed">${p.desc}</p>
+            <ul class="space-y-3 mb-8 flex-1">
+              ${p.features.map(f => `<li class="flex items-start gap-3 text-sm font-body"><span class="${checkClass} text-lg leading-none">✓</span> <span>${f}</span></li>`).join('')}
+            </ul>
+            <button onclick="window.open('https://wa.me/916304895686?text=${msg}', '_blank')" class="${btnClass}">
+              Book on WhatsApp
+            </button>
+          </div>
+        `;
+      });
+    </script>
+  
+    
+
+    <!-- Booking Wizard Modal -->
+    <div id="wizard-modal" class="fixed inset-0 z-[100] hidden bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="brutal-card bg-kinetic-surface w-full max-w-lg max-h-[90vh] flex flex-col relative overflow-hidden">
+        <!-- Header -->
+        <div class="p-6 border-b-2 border-kinetic-border flex justify-between items-center bg-kinetic-surface-alt">
+          <h3 class="text-fluid-h2 font-display font-bold uppercase">Session Matcher</h3>
+          <button id="wizard-close" class="material-symbols-outlined hover:text-kinetic-accent">close</button>
+        </div>
+        
+        <!-- Content Area -->
+        <div id="wizard-content" class="p-6 flex-1 overflow-y-auto flex flex-col gap-fluid-md">
+          
+          <!-- Step 1: Discipline & Level -->
+          <div id="step-1" class="wizard-step flex flex-col gap-fluid-md">
+            <div>
+              <p class="font-body text-lg font-bold mb-3">1. Select Discipline</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Skateboarding">Skateboarding</button>
+                <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Inline">Inline</button>
+                <button class="brutal-btn w-full text-sm discipline-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="BMX">BMX</button>
+              </div>
+            </div>
+            <div id="level-container" class="hidden opacity-0 transition-opacity duration-300">
+              <p class="font-body text-lg font-bold mb-3">2. Select Level</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button class="brutal-btn w-full text-sm level-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="First-timer">First-timer</button>
+                <button class="brutal-btn w-full text-sm level-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Beginner">Beginner</button>
+                <button class="brutal-btn w-full text-sm level-btn bg-kinetic-surface text-kinetic-text border-kinetic-border" data-val="Intermediate">Intermediate</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Live Session Matching & Weather -->
+          <div id="step-2" class="wizard-step hidden flex-col gap-4">
+            <div id="matching-loader" class="w-full flex flex-col gap-2 animate-pulse">
+              <div class="bg-kinetic-surface-alt p-4 rounded-xl border-2 border-kinetic-border">
+                <!-- Skeleton Pill -->
+                <div class="h-6 w-24 bg-kinetic-border rounded-full mb-3"></div>
+                <!-- Skeleton Title -->
+                <div class="h-7 w-3/4 bg-kinetic-border rounded-md mb-2"></div>
+                <!-- Skeleton Date -->
+                <div class="h-4 w-1/2 bg-kinetic-surface rounded-md mb-3"></div>
+                <!-- Skeleton Venue -->
+                <div class="h-4 w-2/3 bg-kinetic-surface rounded-md mb-5"></div>
+                
+                <!-- Skeleton Insight Box -->
+                <div class="bg-kinetic-surface border-l-4 border-kinetic-border p-3 flex flex-col gap-2">
+                  <div class="h-3 w-1/3 bg-kinetic-border rounded-md mb-1"></div>
+                  <div class="h-4 w-full bg-kinetic-surface-alt rounded-md"></div>
+                  <div class="h-4 w-5/6 bg-kinetic-surface-alt rounded-md"></div>
+                </div>
+              </div>
+              <!-- Skeleton Button -->
+              <div class="h-[48px] w-full bg-kinetic-surface-alt border-2 border-kinetic-border rounded-full mt-2"></div>
+            </div>
+            <div id="matching-result" class="hidden flex-col gap-4">
+              <!-- Result injected here -->
+            </div>
+          </div>
+
+          <!-- Step 3: Checkout -->
+          <div id="step-3" class="wizard-step hidden flex-col gap-4 items-center py-6 text-center">
+            <h4 class="text-fluid-h2 font-display font-bold uppercase mb-2">Secure Your Slot</h4>
+            <p class="font-body text-kinetic-muted mb-fluid-sm">One-tap login to confirm your booking.</p>
+            <button id="google-login-btn" class="brutal-btn brutal-btn-accent flex items-center gap-2 w-full justify-center">
+               <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" height="20" class="w-5 h-5 bg-white rounded-full p-0.5">
+               Login with Google
+            </button>
+          </div>
+          
+          <!-- Step 4: Success -->
+          <div id="step-4" class="wizard-step hidden flex-col gap-4 items-center py-6 text-center">
+            <div class="w-16 h-16 rounded-full bg-kinetic-accent text-black flex items-center justify-center mb-4 border-2 border-kinetic-border shadow-brutal">
+              <span class="material-symbols-outlined text-3xl">check_circle</span>
+            </div>
+            <h4 class="text-fluid-h2 font-display font-bold uppercase mb-2">Confirmed</h4>
+            <div id="pass-details" class="w-full text-left bg-kinetic-surface-alt p-4 rounded-xl border-2 border-kinetic-border mb-fluid-sm font-mono text-sm">
+              <!-- Pass details injected here -->
+            </div>
+            <button id="whatsapp-sync-btn" class="brutal-btn brutal-btn-accent w-full text-center flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined">chat</span> Sync to WhatsApp
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+      import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+      import { getFirestore, collection, query, where, getDocs, addDoc, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+      const firebaseConfig = {
+        projectId: "gen-lang-client-0630904832",
+        appId: "1:943677205699:web:95c0d34ec3423545df0676",
+        apiKey: "AIzaSyCORDZA6324SOcT66dZZeWzzFi18q33sPI",
+        authDomain: "gen-lang-client-0630904832.firebaseapp.com",
+        databaseURL: "(default)",
+        storageBucket: "gen-lang-client-0630904832.firebasestorage.app",
+        messagingSenderId: "943677205699"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      
+      // IMPORTANT: Get Firestore using the custom database ID
+      const db = getFirestore(app, "ai-studio-remixugh-da813190-27e8-46b4-aefc-4f75a901755e");
+      const provider = new GoogleAuthProvider();
+
+      // State
+      let selection = { discipline: null, level: null, workshop: null };
+
+      // DOM Elements
+      const cta = document.getElementById('wizard-cta');
+      const modal = document.getElementById('wizard-modal');
+      const closeBtn = document.getElementById('wizard-close');
+      const steps = document.querySelectorAll('.wizard-step');
+      
+      // Step 1
+      const discBtns = document.querySelectorAll('.discipline-btn');
+      const levelContainer = document.getElementById('level-container');
+      const levelBtns = document.querySelectorAll('.level-btn');
+      
+      // Step 2
+      const loader = document.getElementById('matching-loader');
+      const resultContainer = document.getElementById('matching-result');
+      
+      // Step 3
+      const loginBtn = document.getElementById('google-login-btn');
+      
+      // Step 4
+      const passDetails = document.getElementById('pass-details');
+      const whatsappBtn = document.getElementById('whatsapp-sync-btn');
+
+      // Functions
+      function showStep(stepNum) {
+        steps.forEach((s, idx) => {
+          if (idx + 1 === stepNum) {
+            s.classList.remove('hidden');
+            s.classList.add('flex');
+          } else {
+            s.classList.add('hidden');
+            s.classList.remove('flex');
+          }
+        });
+      }
+
+      function openModal() {
+        modal.classList.remove('hidden');
+        showStep(1);
+        // Reset selections
+        discBtns.forEach(b => b.classList.replace('brutal-btn-accent', 'bg-kinetic-surface'));
+        levelBtns.forEach(b => b.classList.replace('brutal-btn-accent', 'bg-kinetic-surface'));
+        levelContainer.classList.add('hidden', 'opacity-0');
+      }
+
+      cta.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+
+      // Discipline Selection
+      discBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          discBtns.forEach(b => {
+             b.classList.remove('brutal-btn-accent', 'text-black', 'border-black');
+             b.classList.add('bg-kinetic-surface', 'text-kinetic-text', 'border-kinetic-border');
+          });
+          e.target.classList.remove('bg-kinetic-surface', 'text-kinetic-text', 'border-kinetic-border');
+          e.target.classList.add('brutal-btn-accent', 'text-black', 'border-black');
+          
+          selection.discipline = e.target.dataset.val;
+          levelContainer.classList.remove('hidden');
+          setTimeout(() => levelContainer.classList.remove('opacity-0'), 50);
+        });
+      });
+
+      // Level Selection
+      levelBtns.forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          levelBtns.forEach(b => {
+             b.classList.remove('brutal-btn-accent', 'text-black', 'border-black');
+             b.classList.add('bg-kinetic-surface', 'text-kinetic-text', 'border-kinetic-border');
+          });
+          e.target.classList.remove('bg-kinetic-surface', 'text-kinetic-text', 'border-kinetic-border');
+          e.target.classList.add('brutal-btn-accent', 'text-black', 'border-black');
+          
+          selection.level = e.target.dataset.val;
+          
+          // Proceed to Step 2
+          showStep(2);
+          loader.classList.remove('hidden');
+          resultContainer.classList.add('hidden');
+          
+          await matchSession();
+        });
+      });
+
+      async function matchSession() {
+        try {
+          // Query Firestore for upcoming sessions
+          const q = query(collection(db, "workshops"), where("discipline", "==", selection.discipline), where("is_active", "==", true));
+          const querySnapshot = await getDocs(q);
+          
+          let workshop = null;
+          if (!querySnapshot.empty) {
+            // Pick first available
+            const docSnap = querySnapshot.docs[0];
+            workshop = { id: docSnap.id, ...docSnap.data() };
+          } else {
+            // Mock a default if none in DB for demo purposes
+            const nextSun = new Date();
+            nextSun.setDate(nextSun.getDate() + (7 - nextSun.getDay()));
+            workshop = {
+              id: "mock_123",
+              title: "Fundamentals Workshop",
+              venue: "Wall Ride Park",
+              discipline: selection.discipline,
+              date_time: { toDate: () => nextSun },
+              price_inr: 599
+            };
+          }
+          
+          selection.workshop = workshop;
+          
+          // Verify weather via Backend Gemini
+          const dateStr = workshop.date_time.toDate().toLocaleString();
+          const response = await fetch('/api/verify-weather', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              venue: workshop.venue,
+              date_time: dateStr,
+              discipline: workshop.discipline
+            })
+          });
+          
+          const data = await response.json();
+          const weatherMsg = data.reply || "Weather looks clear. You're good to go.";
+          
+          loader.classList.add('hidden');
+          resultContainer.classList.remove('hidden');
+          resultContainer.classList.add('flex');
+          
+          resultContainer.innerHTML = `
+            <div class="bg-kinetic-surface-alt p-4 rounded-xl border-2 border-kinetic-border">
+              <span class="pill-tag bg-kinetic-accent text-black border-black mb-2">Match Found</span>
+              <h4 class="text-xl font-display font-bold uppercase mb-1">${workshop.title}</h4>
+              <p class="font-mono text-xs mb-3 text-kinetic-muted">${dateStr}</p>
+              <p class="font-mono text-sm mb-4"><span class="material-symbols-outlined text-sm">location_on</span> ${workshop.venue}</p>
+              
+              <!-- Gemini AI Insight -->
+              <div class="bg-kinetic-surface border-l-4 border-kinetic-accent p-3">
+                <p class="text-xs font-mono text-kinetic-muted uppercase mb-1">AI Concierge Insight:</p>
+                <p class="text-sm font-body italic">"${weatherMsg}"</p>
+              </div>
+            </div>
+            <button id="proceed-checkout-btn" class="brutal-btn brutal-btn-accent w-full mt-2">Proceed to Checkout (₹${workshop.price_inr})</button>
+          `;
+          
+          document.getElementById('proceed-checkout-btn').addEventListener('click', () => {
+            showStep(3);
+          });
+          
+        } catch (error) {
+          console.error("Match error:", error);
+          loader.classList.add('hidden');
+          resultContainer.classList.remove('hidden');
+          resultContainer.classList.add('flex');
+          resultContainer.innerHTML = `<p class="text-red-500 font-mono text-sm">Error finding session. Please try again.</p>`;
+        }
+      }
+
+      // Step 3 Checkout
+      loginBtn.addEventListener('click', async () => {
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+          
+          // Save User Profile
+          await setDoc(doc(db, "users", user.uid), {
+            name: user.displayName,
+            email: user.email,
+            phone: user.phoneNumber || "",
+            discipline_pref: selection.discipline
+          }, { merge: true });
+          
+          // Create Booking
+          const bookingRef = await addDoc(collection(db, "bookings"), {
+            user_uid: user.uid,
+            workshop_id: selection.workshop.id,
+            phone: user.phoneNumber || "",
+            status: "confirmed",
+            timestamp: new Date()
+          });
+          
+          // Show Success Pass
+          showStep(4);
+          
+          passDetails.innerHTML = `
+            <div class="flex justify-between border-b border-kinetic-border pb-2 mb-2">
+              <span class="text-kinetic-muted uppercase">Pass ID:</span>
+              <span class="font-bold">#${bookingRef.id.substring(0,6).toUpperCase()}</span>
+            </div>
+            <div class="flex justify-between border-b border-kinetic-border pb-2 mb-2">
+              <span class="text-kinetic-muted uppercase">Name:</span>
+              <span class="font-bold">${user.displayName}</span>
+            </div>
+            <div class="flex justify-between border-b border-kinetic-border pb-2 mb-2">
+              <span class="text-kinetic-muted uppercase">Session:</span>
+              <span class="font-bold">${selection.workshop.title}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-kinetic-muted uppercase">Venue:</span>
+              <span class="font-bold">${selection.workshop.venue}</span>
+            </div>
+          `;
+          
+          // Setup WhatsApp Sync
+          whatsappBtn.onclick = () => {
+            const msg = `Hi UGH Team! I just confirmed my booking for ${selection.workshop.title} at ${selection.workshop.venue}. Pass ID: #${bookingRef.id.substring(0,6).toUpperCase()}. See you there!`;
+            window.open(`https://wa.me/916304895686?text=${encodeURIComponent(msg)}`, '_blank');
+          };
+          
+        } catch (error) {
+          console.error("Auth/Booking Error:", error);
+          alert("Login failed. Please try again.");
+        }
+      });
+      
+    </script>
+
+  
+
+
+<script>
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  
+  // Check for saved user preference, if any, on load of the website
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      if (themeToggleBtn) themeToggleBtn.textContent = 'light_mode';
+  } else {
+      document.documentElement.classList.remove('dark')
+      if (themeToggleBtn) themeToggleBtn.textContent = 'dark_mode';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', function() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+            themeToggleBtn.textContent = 'dark_mode';
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+            themeToggleBtn.textContent = 'light_mode';
+        }
+    });
+  }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.main-tab-content');
+    const tabLinks = document.querySelectorAll('a.tab-link'); // limit to a tags or specific ones? Actually there are buttons too, wait.
+
+    function switchTab(tabId) {
+        tabs.forEach(tab => {
+            if(tab.id === 'tab-' + tabId) {
+                tab.classList.remove('hidden');
+                tab.classList.add('block');
+            } else {
+                tab.classList.remove('block');
+                tab.classList.add('hidden');
+            }
+        });
+        
+        tabLinks.forEach(link => {
+            if(link.dataset.tab === tabId) {
+                link.classList.add('text-kinetic-accent');
+            } else {
+                link.classList.remove('text-kinetic-accent');
+            }
+        });
+        window.scrollTo(0, 0);
+    }
+
+    tabLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tabId = link.dataset.tab;
+            history.pushState(null, null, '#' + tabId);
+            switchTab(tabId);
+            // On mobile, maybe hide the mobile menu if there was one, but here we don't have one
+        });
+    });
+
+    // Handle initial load
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['home', 'impact', 'events', 'pricing', 'venues'].includes(hash)) {
+        switchTab(hash);
+    } else {
+        switchTab('home');
+    }
+    
+    // Handle back button
+    window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '');
+        if (hash && ['home', 'impact', 'events', 'pricing', 'venues'].includes(hash)) {
+            switchTab(hash);
+        } else {
+            switchTab('home');
+        }
+    });
+});
+</script>
+
+    <!-- GSAP ScrollTrigger Logic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+          gsap.registerPlugin(ScrollTrigger);
+          
+          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          const cards = document.querySelectorAll('.discipline-card');
+          
+          cards.forEach((card, index) => {
+            const icon = card.querySelector('.discipline-icon');
+            if (!icon) return;
+            
+            if (prefersReducedMotion) {
+              // Accessibility: Show icons directly without animation
+              gsap.set(icon, { opacity: 1 });
+              return;
+            }
+            
+            // Alternate direction: even cards left, odd cards right
+            const isEven = index % 2 === 0;
+            const startX = isEven ? -80 : 80;
+            const startY = -120;
+            const startRot = isEven ? -25 : 25;
+            
+            gsap.set(icon, { 
+              x: startX, 
+              y: startY, 
+              rotation: startRot, 
+              scale: 1,
+              transformOrigin: "center center"
+            });
+            
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: card,
+                start: "top 85%", // Starts entering viewport
+                end: "top 45%",   // Finishes landing 
+                scrub: 0.5        // Scrubbing with physical weight
+              }
+            });
+            
+            // 1. Arced flight in
+            tl.to(icon, {
+              x: 0,
+              opacity: 1,
+              rotation: 0,
+              duration: 0.7,
+              ease: "power2.out"
+            }, 0)
+            .to(icon, {
+              y: 0,
+              duration: 0.7,
+              ease: "back.out(1.2)" // Slight overshoot for arc trajectory
+            }, 0);
+            
+            // 2. Landing Squash
+            tl.to(icon, {
+              scaleY: 0.85,
+              scaleX: 1.15,
+              duration: 0.15,
+              transformOrigin: "bottom center",
+              ease: "power1.out"
+            }, 0.7)
+            .to(icon, {
+              scaleY: 1,
+              scaleX: 1,
+              duration: 0.15,
+              ease: "power1.in"
+            }, 0.85);
+            
+            // 3. Card physical reaction (nudge down)
+            tl.to(card, {
+              y: 4,
+              duration: 0.15,
+              ease: "power1.out"
+            }, 0.7)
+            .to(card, {
+              y: 0,
+              duration: 0.15,
+              ease: "power1.in"
+            }, 0.85);
+          });
+        }
+      });
+    </script>
+<script>document.addEventListener('DOMContentLoaded', () => {    const mobileMenuBtn = document.getElementById('mobile-menu-btn');    const mobileDropdown = document.getElementById('mobile-dropdown');    if(mobileMenuBtn && mobileDropdown) {        mobileMenuBtn.addEventListener('click', (e) => {            e.stopPropagation();            mobileDropdown.classList.toggle('hidden');        });        document.addEventListener('click', (e) => {            if (!mobileDropdown.contains(e.target) && !mobileMenuBtn.contains(e.target)) {                mobileDropdown.classList.add('hidden');            }        });        const dropLinks = mobileDropdown.querySelectorAll('a, button');        dropLinks.forEach(link => {            link.addEventListener('click', () => {                mobileDropdown.classList.add('hidden');            });        });    }    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');    const themeToggleBtn = document.getElementById('theme-toggle');    if (mobileThemeToggleBtn) {        mobileThemeToggleBtn.addEventListener('click', function() {            if (themeToggleBtn) themeToggleBtn.click();            mobileThemeToggleBtn.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';        });    }});</script></body></html>

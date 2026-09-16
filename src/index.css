@@ -162,7 +162,3 @@ html {
     transform: translateY(0);
   }
 }
-
-section[id] {
-  scroll-margin-top: 100px;
-}
