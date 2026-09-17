@@ -2,6 +2,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Urban Gliding Hyderabad (UGH) - Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops, plus vibrant community events across residential complexes.">
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="UGH - Urban Gliding Hyderabad">
+    <meta property="og:description" content="Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops.">
+    <meta property="og:site_name" content="Urban Gliding Hyderabad">
+    <meta property="og:url" content="https://ugh.co.in/">
+    
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UGH - Urban Gliding Hyderabad">
+    <meta name="twitter:description" content="Hyderabad's premier doorstep skating coach. Professional skateboarding, inline skating, and BMX workshops.">
+    
+    <!-- Mobile & PWA tags -->
+    <meta name="theme-color" content="#F2EBE1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#111A1A" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://ugh.co.in/">
     <title>UGH - Urban Gliding Hyderabad</title>
     
@@ -57,129 +72,7 @@
       }
     </script>
     
-            <style>
-      
-      :root {
-        --safe-top: env(safe-area-inset-top, 0px);
-        --safe-left: env(safe-area-inset-left, 0px);
-        --safe-right: env(safe-area-inset-right, 0px);
-
-        --kinetic-bg: #F2EBE1;
-        --kinetic-surface: rgba(255, 255, 255, 0.6);
-        --kinetic-surface-alt: #E5DAC7;
-        --kinetic-border: rgba(42, 103, 102, 0.2); /* Teal with opacity */
-        --kinetic-text: #193D3C;
-        --kinetic-muted: #4A7A79;
-        --kinetic-accent: #D85B2D;
-        --kinetic-shadow: #2A6766;
-      }
-      .dark {
-        --kinetic-bg: #111A1A;
-        --kinetic-surface: rgba(42, 103, 102, 0.1);
-        --kinetic-surface-alt: rgba(42, 103, 102, 0.2);
-        --kinetic-border: rgba(42, 103, 102, 0.4);
-        --kinetic-text: #F2EBE1;
-        --kinetic-muted: #84A3A2;
-        --kinetic-accent: #D85B2D;
-        --kinetic-shadow: #080D0D;
-      }
-      
-      body { 
-        font-family: 'Hanken Grotesk', sans-serif; 
-        background-color: var(--kinetic-bg);
-        color: var(--kinetic-text);
-        background-image: radial-gradient(var(--kinetic-border) 1px, transparent 1px);
-        background-size: 24px 24px;
-        transition: background-color 0.4s, color 0.4s;
-        overflow-x: clip; /* Zero horizontal scroll */
-        -webkit-font-smoothing: antialiased;
-        min-height: 100dvh;
-      }
-      .dark body {
-        background-image: radial-gradient(rgba(242,235,225,0.05) 1px, transparent 1px);
-      }
-      
-      h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Sora', sans-serif; }
-      .font-mono { font-family: 'JetBrains Mono', monospace; }
-      
-      html { scroll-behavior: smooth; }
-      
-      .brutal-card, .brutal-btn, .pill-tag {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-      }
-      
-      .brutal-card {
-        background: var(--kinetic-surface);
-        backdrop-filter: blur(16px);
-        border: 1px solid var(--kinetic-border);
-        border-radius: 1.5rem;
-        box-shadow: 4px 4px 0px var(--kinetic-shadow);
-      }
-      .brutal-card:hover {
-        transform: translate(-4px, -4px);
-        box-shadow: 8px 8px 0px var(--kinetic-shadow);
-      }
-      
-      .brutal-btn {
-        background: var(--kinetic-text);
-        color: var(--kinetic-bg); /* Contrast text */
-        border: 2px solid transparent;
-        border-radius: 9999px;
-        font-family: 'JetBrains Mono', monospace;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-weight: 700;
-        font-size: 0.875rem;
-        padding: 0.75rem 1.5rem;
-        min-height: 48px;
-        min-width: 48px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .brutal-btn:hover {
-        transform: translateY(-4px);
-        box-shadow: 0px 4px 0px var(--kinetic-shadow);
-      }
-      .brutal-btn-accent {
-        background: var(--kinetic-accent);
-        color: #FFFFFF;
-        border: 2px solid var(--kinetic-shadow);
-      }
-      
-      .pill-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        background: var(--kinetic-surface-alt);
-        color: var(--kinetic-text);
-        border: 1px solid var(--kinetic-border);
-      }
-    
-      @keyframes float-icon {
-        0%, 100% { transform: translateY(0) rotate(0deg); }
-        33% { transform: translateY(-8px) rotate(2deg); }
-        66% { transform: translateY(-4px) rotate(-2deg); }
-      }
-      .animate-float-icon {
-        animation: float-icon 5s ease-in-out infinite;
-        transform-origin: center center;
-        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.4));
-      }
-      .dark .animate-float-icon {
-        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.6));
-      }
-      .discipline-card:hover .animate-float-icon {
-        animation-duration: 2s;
-        filter: drop-shadow(0px 12px 24px rgba(216, 91, 45, 0.7));
-      }
-</style>
+    <link rel="stylesheet" href="/public/css/styles.css">
     
     <script type="application/ld+json">
     {
@@ -271,9 +164,9 @@
           <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="hover:text-kinetic-accent transition-colors flex items-center gap-1 cursor-pointer mr-3 font-mono font-bold text-xs uppercase tracking-widest">
             <span class="material-symbols-outlined text-kinetic-accent" style="font-size: 1.2rem;">search</span> <span class="hidden min-[360px]:inline">Search</span>
           </button>
-          <button id="mobile-menu-btn" class="material-symbols-outlined hover:text-kinetic-accent transition-colors">more_vert</button>
+          <button id="mobile-menu-btn" class="material-symbols-outlined hover:text-kinetic-accent transition-colors p-2 -mr-2 w-12 h-12 flex items-center justify-center">more_vert</button>
         </div>
-      <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
+      <div id="mobile-dropdown" class="hidden md:hidden absolute top-[calc(100%+8px)] right-4 bg-kinetic-surface border border-kinetic-border rounded-xl shadow-lg p-4 flex flex-col gap-4 z-50 min-w-[150px]"><a href="#impact" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block py-2 text-right" data-tab="impact">Impact</a><a href="#events" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block py-2 text-right" data-tab="events">Events</a><a href="#pricing" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block py-2 text-right" data-tab="pricing">Pricing</a><a href="#venues" class="tab-link hover:text-kinetic-accent transition-colors font-mono text-sm uppercase tracking-widest block py-2 text-right" data-tab="venues">Venues</a><button id="mobile-theme-toggle" class="material-symbols-outlined hover:text-kinetic-accent transition-colors text-right">dark_mode</button></div></div>
     </header>
 
     <main class="transition-all duration-300 pt-[calc(5.5rem+var(--safe-top))] md:pt-[calc(7.5rem+var(--safe-top))]">
@@ -588,6 +481,13 @@
              <!-- Wallride Park Logo -->
              <img src="/src/assets/images/regenerated_image_1789593359927.jpg" alt="Wallride Park" class="h-12 md:h-16 w-auto object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-300 rounded-lg opacity-80 group-hover:opacity-100 mix-blend-multiply dark:mix-blend-normal" />
            </div>
+           <div class="group relative flex items-center justify-center">
+             <!-- Communities Hyderabad Logo -->
+             <svg class="h-10 md:h-14 w-auto drop-shadow-sm group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100 text-kinetic-text mix-blend-multiply dark:mix-blend-normal" viewBox="0 0 280 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+               <text x="50%" y="50%" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" text-anchor="middle" letter-spacing="-1">Communities.</text>
+               <text x="50%" y="85%" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="14" text-anchor="middle" letter-spacing="8">hyderabad</text>
+             </svg>
+           </div>
         </div>
         <div class="mt-8 pt-8 border-t border-kinetic-border/50">
            <p class="text-xs text-kinetic-muted uppercase tracking-wider mb-4">Past Collaborations</p>
@@ -603,137 +503,10 @@
 
 <!-- IMPACT TAB -->
 <div id="tab-impact" class="hidden main-tab-content">
-  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-6 uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Action Sports Programs for <span class="text-kinetic-accent">Hyderabad Schools</span></h2>
-      <p class="text-lg text-kinetic-muted mb-12">
-        UGH offers structured action sports classes and workshops for schools across Hyderabad &mdash; introducing students to skateboarding, inline skating, and BMX.
-      </p>
-      
-      <div class="bg-kinetic-surface border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] p-8 md:p-12 text-left mb-12 focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">
-        <h3 class="text-2xl font-bold uppercase mb-4 text-kinetic-accent">Noble Practices Initiative</h3>
-        <p class="mb-6 font-medium">A free program that has already taught 60+ students in Gachibowli foundational skateboarding instruction and safety gear at no cost.</p>
-        <p class="text-kinetic-muted text-sm">Action sports offer kids physical development, discipline, competitive pathways, and even the chance to represent India at national and international levels.</p>
-      </div>
-      
-      <div class="inline-block p-6 bg-kinetic-surface-alt border border-kinetic-border text-center w-full max-w-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">
-         <h4 class="font-bold text-lg uppercase mb-2">Want this at your school?</h4>
-         <p class="text-sm text-kinetic-muted">Reach out to your school management to bring a UGH action sports program to your students.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- EVENTS TAB -->
-<div id="tab-events" class="hidden main-tab-content">
-  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+  <section class="py-12 px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-12 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Hyderabad Skateboarding & <span class="text-kinetic-accent">BMX Events</span></h2>
-      
-      <p class="text-center text-lg mb-12 text-kinetic-muted">Wall Ride Park's two flagship local competitions, which UGH helps run:</p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div tabindex="0" class="bg-kinetic-surface p-8 border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] relative focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="text-3xl font-display font-bold uppercase mb-4">Fam Jam</h3>
-          <p class="text-kinetic-muted">Wall Ride Park's core local skateboarding competition. Beyond the contest itself, Fam Jam brings music, rap, flow, and art together &mdash; the full curated skateboarding culture comes alive at this event.</p>
-        </div>
-        
-        <div tabindex="0" class="bg-kinetic-surface p-8 border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] relative focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="text-3xl font-display font-bold uppercase mb-4">Rev Jam</h3>
-          <p class="text-kinetic-muted">A step up in scale: Rev Jam draws national participants from cities like Mumbai, Bangalore, and Delhi to challenge Hyderabad's skateboarding scene, with the same curated-culture energy as Fam Jam.</p>
-        </div>
-      </div>
-      
-      <div tabindex="0" class="bg-kinetic-bg p-8 border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-        <h3 class="text-2xl font-bold uppercase mb-6 border-b border-kinetic-border pb-4">Upcoming / Recurring Events</h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg" tabindex="0">
-             <div class="bg-kinetic-surface-alt p-3 border border-kinetic-border min-w-[120px] text-center font-bold text-sm uppercase">Weekly<br><span class="text-kinetic-accent">7-9 AM</span></div>
-             <div>
-                <h4 class="font-bold text-lg">UGH Skateboarding Workshop</h4>
-                <p class="text-kinetic-muted text-sm">Wallride Park & community venues</p>
-             </div>
-          </li>
-          <li class="flex items-start gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg" tabindex="0">
-             <div class="bg-kinetic-surface-alt p-3 border border-kinetic-border min-w-[120px] text-center font-bold text-sm uppercase">Monthly<br><span class="text-kinetic-accent">Event</span></div>
-             <div>
-                <h4 class="font-bold text-lg">Fam Jam</h4>
-                <p class="text-kinetic-muted text-sm">Competition and community event</p>
-             </div>
-          </li>
-          <li class="flex items-start gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg" tabindex="0">
-             <div class="bg-kinetic-surface-alt p-3 border border-kinetic-border min-w-[120px] text-center font-bold text-sm uppercase">Ongoing<br><span class="text-kinetic-accent">Booking</span></div>
-             <div>
-                <h4 class="font-bold text-lg">BMX & Residential Workshops</h4>
-                <p class="text-kinetic-muted text-sm">Book for your community</p>
-             </div>
-          </li>
-        </ul>
-      </div>
-      
-    </div>
-  </section>
-</div>
-
-<!-- PRICING TAB -->
-<div id="tab-pricing" class="hidden main-tab-content">
-  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-bg">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-12 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Coaching Fees & <span class="text-kinetic-accent">Skatepark Plans</span></h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <!-- Drop-in -->
-        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="font-bold uppercase text-lg mb-2">Drop-in Session</h3>
-          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;599 <span class="text-sm text-kinetic-muted">/ session</span></div>
-          <p class="text-sm text-kinetic-muted flex-grow">Intro to fundamentals, ages 5+</p>
-        </div>
-        
-        <!-- Month-in -->
-        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="font-bold uppercase text-lg mb-2">Month-in Session</h3>
-          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;5,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
-          <p class="text-sm text-kinetic-muted flex-grow">8 coached classes, unlimited park access, personal progression roadmap</p>
-        </div>
-
-        <!-- Residential Standard -->
-        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="font-bold uppercase text-lg mb-2">Residential (Standard)</h3>
-          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;4,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
-          <p class="text-sm text-kinetic-muted flex-grow">8 on-site society classes</p>
-        </div>
-
-        <!-- Residential Plus -->
-        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-          <h3 class="font-bold uppercase text-lg mb-2">Residential (Plus)</h3>
-          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;6,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
-          <p class="text-sm text-kinetic-muted flex-grow">8 society classes + 3 skate park sessions</p>
-        </div>
-      </div>
-      
-      <!-- VIP Plan -->
-      <div tabindex="0" class="bg-kinetic-text text-kinetic-bg border-4 border-kinetic-accent p-8 md:p-12 shadow-[12px_12px_0px_var(--kinetic-accent)] relative overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-         <div class="absolute top-0 right-0 bg-kinetic-accent text-kinetic-bg font-bold uppercase text-xs px-4 py-1 tracking-widest rounded-bl-lg">Flagship</div>
-         <h3 class="text-3xl font-display font-bold uppercase mb-4">UGH VIP Skate Plan</h3>
-         <div class="text-4xl font-display font-bold text-kinetic-accent mb-6">&#8377;26,000 <span class="text-lg text-kinetic-bg/70">Month 1</span> <span class="text-base font-normal ml-2 opacity-80">(Renews &#8377;20,000/mo)</span></div>
-         <p class="text-lg mb-6 max-w-3xl">A fully mobile skatepark van &mdash; fitted with skate ramps &mdash; delivered directly to your doorstep for classes, plus a skateboard and exclusive VIP merchandise included.</p>
-         <ul class="space-y-2 mb-8 font-medium">
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-kinetic-accent">done</span> Month 1 covers 10 classes and 3 skate park sessions</li>
-            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-kinetic-accent">done</span> Personal video progress recording capturing growth</li>
-         </ul>
-         <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="bg-kinetic-accent text-kinetic-bg px-8 py-3 font-bold uppercase tracking-widest hover:bg-kinetic-bg hover:text-kinetic-accent border-2 border-transparent hover:border-kinetic-accent transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-bg focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-text">Inquire About VIP</button>
-      </div>
-
-    </div>
-  </section>
-</div>
-
-<!-- VENUES TAB -->
-<div id="tab-venues" class="hidden main-tab-content">
-  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-6 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Doorstep Skateboarding <span class="text-kinetic-accent">Workshops in Hyderabad</span></h2>
-      <p class="text-center text-lg text-kinetic-muted mb-12 max-w-3xl mx-auto">UGH runs free introductory workshops at residential communities across Hyderabad to give families hands-on experience with action sports, right at their doorstep.</p>
+      <h2 class="text-[clamp(1.5rem,4vw,2.5rem)] leading-tight font-display font-bold mb-6 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">UGH Doorstep <span class="text-kinetic-accent">Workshops</span></h2>
+      <p class="text-center text-lg text-kinetic-muted mb-12 max-w-4xl mx-auto">UGH (Urban Gliding Hyderabad) offers free action sports and skating workshops at residential communities, apartments, and villas across Hyderabad, giving children, adults, beginners, and families a hands-on opportunity to experience skateboarding, inline skating, and urban sports right at their doorstep.</p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
         <div tabindex="0" class="p-4 bg-kinetic-surface border border-kinetic-border flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-kinetic-accent"><span class="material-symbols-outlined text-kinetic-accent">location_on</span> <span class="font-bold">Aparna Serene Park</span>, Kondapur</div>
@@ -748,17 +521,278 @@
         <div tabindex="0" class="p-4 bg-kinetic-surface border border-kinetic-border flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-kinetic-accent"><span class="material-symbols-outlined text-kinetic-accent">location_on</span> <span class="font-bold">The Botanika</span>, Gachibowli</div>
       </div>
       
-      <div tabindex="0" class="text-center p-8 bg-kinetic-surface-alt border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
+      <div tabindex="0" class="text-center p-8 bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
          <h3 class="text-2xl font-bold uppercase mb-4">Is your apartment missing?</h3>
-         <p class="text-kinetic-muted mb-6 max-w-2xl mx-auto">If your community doesn't have a UGH workshop yet, tap below to bring a free doorstep skateboarding, inline skating, or BMX workshop to your residential apartment in Hyderabad.</p>
-         <button onclick="document.getElementById('wizard-modal').classList.remove('hidden')" class="inline-flex px-8 py-4 bg-kinetic-text text-kinetic-bg font-bold uppercase tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[6px_6px_0px_var(--kinetic-accent)] border-2 border-kinetic-text items-center justify-center gap-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
-            Book a Free Residential Workshop <span class="material-symbols-outlined">arrow_forward</span>
-         </button>
+         <p class="text-kinetic-muted mb-6 max-w-2xl mx-auto">Bring a free doorstep skateboarding or inline skating workshop to your apartment, villa, or residential community in Hyderabad with UGH. Tap below to book your free action sports workshop.</p>
+         <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20book%20a%20free%20doorstep%20workshop." target="_blank" rel="noopener noreferrer" class="inline-flex px-8 py-4 bg-kinetic-text text-kinetic-bg font-bold uppercase tracking-wider hover:scale-105 active:scale-95 transition-all shadow-[6px_6px_0px_var(--kinetic-accent)] border-2 border-kinetic-text items-center justify-center gap-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
+            Book a Free Workshop <span class="material-symbols-outlined">arrow_forward</span>
+         </a>
+      </div>
+    </div>
+  </section>
+  <section class="pt-8 md:pt-16 pb-12 px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-6 uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Action Sports Programs for <span class="text-kinetic-accent">Hyderabad Schools</span></h2>
+      <p class="text-lg text-kinetic-muted mb-12">
+        UGH offers structured action sports classes and workshops for schools across Hyderabad, introducing students to skateboarding, inline skating, and urban sports through safe, beginner-friendly training and hands-on sessions.
+      </p>
+      
+      <div class="bg-kinetic-surface border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg flex flex-col" tabindex="0">
+        <div class="p-8 md:p-12">
+          <h3 class="text-2xl font-bold uppercase mb-4 text-kinetic-accent">Noble Practices Initiative</h3>
+          <p class="mb-6 font-medium">UGH’s free school skateboarding program has already introduced 60+ students at Sresht The School to foundational skateboarding skills, safety practices, and protective gear.</p>
+          <p class="text-kinetic-muted text-sm">Action sports like skateboarding and inline skating help students develop physical skills, discipline, confidence, and pathways toward national and international competitions, including opportunities to represent India.</p>
+        </div>
+        <div class="p-6 md:p-8 bg-kinetic-surface-alt border-t-2 border-kinetic-border text-center">
+           <h4 class="font-bold text-lg uppercase mb-2">Want this at your school?</h4>
+           <p class="text-sm text-kinetic-muted">Reach out to your school management to bring a UGH action sports program to your students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- EVENTS TAB -->
+<div id="tab-events" class="hidden main-tab-content">
+  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-surface-alt">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-12 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Hyderabad Action Sports Competitions & <span class="text-kinetic-accent">Curated Skating Events</span></h2>
+      
+      <p class="text-center text-lg mb-12 text-kinetic-muted">Wall Ride Park's two flagship local competitions, which UGH helps run:</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div tabindex="0" class="group bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:shadow-[12px_12px_0px_var(--kinetic-accent)] hover:-translate-y-2 transition-all duration-300 flex flex-col focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg cursor-pointer">
+          <div class="w-full aspect-[4/3] bg-kinetic-surface-alt border-b-2 border-kinetic-border flex flex-col items-center justify-center relative overflow-hidden">
+             <img src="/src/assets/images/regenerated_image_1789625785270.jpg" alt="Fam Jam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="text-kinetic-accent font-bold uppercase tracking-wider text-xs mb-3">Local Flagship</div>
+            <h3 class="text-3xl font-display font-bold uppercase mb-4 group-hover:text-kinetic-accent transition-colors">Fam Jam</h3>
+            <p class="text-kinetic-muted text-sm md:text-base leading-relaxed line-clamp-4">Wall Ride Park's core local skateboarding competition. Beyond the contest itself, Fam Jam brings music, rap, flow, and art together &mdash; the full curated skateboarding culture comes alive at this event.</p>
+          </div>
+        </div>
+        
+        <div tabindex="0" class="group bg-kinetic-surface border-2 border-kinetic-border shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:shadow-[12px_12px_0px_var(--kinetic-accent)] hover:-translate-y-2 transition-all duration-300 flex flex-col focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg cursor-pointer">
+          <div class="w-full aspect-[4/3] bg-kinetic-surface-alt border-b-2 border-kinetic-border flex flex-col items-center justify-center relative overflow-hidden">
+             <img src="/src/assets/images/regenerated_image_1789625762327.png" alt="Rev Jam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="text-kinetic-accent font-bold uppercase tracking-wider text-xs mb-3">National Qualifier</div>
+            <h3 class="text-3xl font-display font-bold uppercase mb-4 group-hover:text-kinetic-accent transition-colors">Rev Jam</h3>
+            <p class="text-kinetic-muted text-sm md:text-base leading-relaxed line-clamp-4">A step up in scale: Rev Jam draws national participants from cities like Mumbai, Bangalore, and Delhi to challenge Hyderabad's skateboarding scene, with the same curated-culture energy as Fam Jam.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div tabindex="0" class="bg-kinetic-bg p-8 border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
+        <h3 class="text-2xl font-bold uppercase mb-6 border-b border-kinetic-border pb-4">Upcoming / Recurring Events</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Event Card 1 -->
+          <div class="group bg-kinetic-surface border-2 border-kinetic-border flex flex-col focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--kinetic-accent)] transition-all cursor-pointer" tabindex="0">
+              <div class="w-full aspect-[4/3] bg-kinetic-surface-alt border-b-2 border-kinetic-border overflow-hidden relative">
+                  <img src="/src/assets/images/regenerated_image_1789621962773.jpg" alt="Skateboarding Workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-4 left-4 bg-kinetic-bg text-kinetic-text border-2 border-kinetic-border px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-[2px_2px_0px_var(--kinetic-accent)]">
+                      Weekly &bull; 7-9 AM
+                  </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                  <h4 class="font-display font-bold text-xl uppercase mb-3 group-hover:text-kinetic-accent transition-colors">UGH Skateboarding Workshop</h4>
+                  <p class="text-kinetic-muted text-sm mb-6 flex-grow leading-relaxed">Join UGH’s weekly skateboarding workshop at Wallride Park, Hyderabad. Learn skateboarding basics, improve your skills, and build confidence with beginner-friendly training and advanced coaching for experienced skaters looking to refine their technique and flow.</p>
+                  <button class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-sm tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text">
+                      Register Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </button>
+              </div>
+          </div>
+
+          <!-- Event Card 2 -->
+          <div class="group bg-kinetic-surface border-2 border-kinetic-border flex flex-col focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--kinetic-accent)] transition-all cursor-pointer" tabindex="0">
+              <div class="w-full aspect-[4/3] bg-kinetic-surface-alt border-b-2 border-kinetic-border overflow-hidden relative">
+                  <img src="/src/assets/images/regenerated_image_1789621966958.jpg" alt="BMX Workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-4 left-4 bg-kinetic-bg text-kinetic-text border-2 border-kinetic-border px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-[2px_2px_0px_var(--kinetic-accent)]">
+                      Weekly &bull; 7-9 AM
+                  </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                  <h4 class="font-display font-bold text-xl uppercase mb-3 group-hover:text-kinetic-accent transition-colors">BMX Workshop</h4>
+                  <p class="text-kinetic-muted text-sm mb-6 flex-grow leading-relaxed">Experience BMX riding in Hyderabad with professional BMX rider and coach Agasthi. Learn essential BMX bike control, ramp riding, pump track skills, balance, and riding techniques in a safe, beginner-friendly environment. Perfect for beginners, young riders, and action sports enthusiasts looking to learn BMX and improve their skills.</p>
+                  <button class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-sm tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text">
+                      Register Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </button>
+              </div>
+          </div>
+
+          <!-- Event Card 3 -->
+          <div class="group bg-kinetic-surface border-2 border-kinetic-border flex flex-col focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg hover:-translate-y-1 hover:shadow-[8px_8px_0px_var(--kinetic-accent)] transition-all cursor-pointer" tabindex="0">
+              <div class="w-full aspect-[4/3] bg-kinetic-surface-alt border-b-2 border-kinetic-border overflow-hidden relative">
+                  <img src="/src/assets/images/IMG_20260718_183530928.jpg" alt="Community Meetup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div class="absolute top-4 left-4 bg-kinetic-bg text-kinetic-text border-2 border-kinetic-border px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-[2px_2px_0px_var(--kinetic-accent)]">
+                      Inclusive
+                  </div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                  <h4 class="font-display font-bold text-xl uppercase mb-3 group-hover:text-kinetic-accent transition-colors">Community Meetups</h4>
+                  <p class="text-kinetic-muted text-sm mb-6 flex-grow leading-relaxed">Connect with Hyderabad’s local skateboarding and action sports community through UGH and Wallride Park. Join regular skate meetups, skate jams, community sessions, and open skate days for beginners, intermediate, and advanced skaters of all skill levels.</p>
+                  <a href="https://chat.whatsapp.com/H9iqeF4p6sXHS9WPMfMR2H?mode=gi_t" target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-sm tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text">
+                      Join Group <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+<!-- PRICING TAB -->
+<div id="tab-pricing" class="hidden main-tab-content">
+  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border bg-kinetic-bg">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-12 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Coaching Fees & <span class="text-kinetic-accent">Skatepark Plans</span></h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <!-- Drop-in -->
+        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg group">
+          <h3 class="font-bold uppercase text-lg mb-2">Drop-in Session</h3>
+          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;749 <span class="text-sm text-kinetic-muted">/ session</span></div>
+          <p class="text-sm text-kinetic-muted mb-4 font-bold border-b border-kinetic-border pb-4">Book a single 2-hour coached session in Hyderabad with no long-term commitment. Perfect for beginners and first-time riders.</p>
+          <ul class="text-sm text-kinetic-muted flex-grow mb-6 space-y-2">
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Learn fundamentals and basic skills</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Open to ages 4+ to 999</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> 2-hour coached session</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Skateboard included</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Safe, friendly, beginner-focused</li>
+          </ul>
+          <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20inquire%20about%20the%20Drop-in%20Session." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-xs tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text mt-auto">
+            Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+        
+        <!-- Month-in -->
+        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg group">
+          <div class="bg-kinetic-accent text-kinetic-bg font-bold uppercase text-[10px] px-2 py-1 tracking-widest inline-block w-fit mb-2">Featured</div>
+          <h3 class="font-bold uppercase text-lg mb-2">Month-in sessions</h3>
+          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;5,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
+          <p class="text-sm text-kinetic-muted mb-4 font-bold border-b border-kinetic-border pb-4">Choose Skateboarding, BMX, or Inline Skating and train for a month with professional coaching at Wallride Park Hyderabad.</p>
+          <ul class="text-sm text-kinetic-muted flex-grow mb-6 space-y-2">
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> 8 coached classes</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Unlimited monthly Wallride Park access</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Learn action sports fundamentals &amp; skills</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Safe, beginner-friendly training environment</li>
+          </ul>
+          <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20inquire%20about%20the%20Month-in%20sessions." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-xs tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text mt-auto">
+            Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Residential Standard -->
+        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg group">
+          <h3 class="font-bold uppercase text-lg mb-2">Residential Skating Classes</h3>
+          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;4,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
+          <p class="text-sm text-kinetic-muted mb-4 font-bold border-b border-kinetic-border pb-4">Get 8 action sports classes per month at your residential apartment, villa, or society in Hyderabad, with convenient doorstep coaching by UGH.</p>
+          <ul class="text-sm text-kinetic-muted flex-grow mb-6 space-y-2">
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> 8 on-site residential classes per month</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Learn skateboarding, inline skating, or other action sports</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Group learning for children and beginners</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Convenient doorstep coaching at your society</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Safe, friendly, beginner-focused training</li>
+          </ul>
+          <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20inquire%20about%20the%20Residential%20Skating%20Classes." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-xs tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text mt-auto">
+            Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Residential Plus -->
+        <div tabindex="0" class="flex flex-col bg-kinetic-surface border-2 border-kinetic-border p-6 shadow-[4px_4px_0px_var(--kinetic-shadow)] hover:-translate-y-1 transition-transform focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg group">
+          <div class="bg-kinetic-accent text-kinetic-bg font-bold uppercase text-[10px] px-2 py-1 tracking-widest inline-block w-fit mb-2">Comprehensive</div>
+          <h3 class="font-bold uppercase text-lg mb-2">Residential Plus Skating Program</h3>
+          <div class="text-3xl font-display font-bold text-kinetic-accent mb-4">&#8377;6,999 <span class="text-sm text-kinetic-muted">/ month</span></div>
+          <p class="text-sm text-kinetic-muted mb-4 font-bold border-b border-kinetic-border pb-4">Get 8 doorstep skating classes at your residential community plus 3 skate park sessions every month with UGH (Urban Gliding Hyderabad).</p>
+          <ul class="text-sm text-kinetic-muted flex-grow mb-6 space-y-2">
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> 8 on-site apartment or society classes</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> 3 skate park training sessions</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Learn skateboarding, inline skating, and action sports</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> Convenient residential coaching &amp; professional skate park training</li>
+            <li class="flex gap-2 items-start"><span class="material-symbols-outlined text-kinetic-accent text-sm">done</span> A complete mix of doorstep learning and skate park experience</li>
+          </ul>
+          <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20inquire%20about%20the%20Residential%20Plus%20Skating%20Program." target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-kinetic-bg border-2 border-kinetic-border text-kinetic-text font-bold uppercase text-xs tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors flex items-center justify-center gap-2 group-hover:border-kinetic-text mt-auto">
+            Inquire Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- VIP Plan -->
+      <div tabindex="0" class="bg-kinetic-text text-kinetic-bg border-4 border-kinetic-accent p-8 md:p-12 shadow-[12px_12px_0px_var(--kinetic-accent)] relative overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-bg">
+         <div class="absolute top-0 right-0 bg-kinetic-accent text-kinetic-bg font-bold uppercase text-xs px-4 py-1 tracking-widest rounded-bl-lg">Flagship</div>
+         <h3 class="text-3xl font-display font-bold uppercase mb-4">UGH VIP Mobile Skatepark Plan</h3>
+         <div class="text-4xl font-display font-bold text-kinetic-accent mb-6">&#8377;26,000 <span class="text-lg text-kinetic-bg/70">Month 1</span> <span class="text-base font-normal ml-2 opacity-80">(Renews &#8377;20,000/mo)</span></div>
+         <p class="text-lg mb-6 max-w-3xl text-kinetic-bg/90">Bring a <strong>mobile skatepark experience to your doorstep in Hyderabad</strong> with UGH. The VIP plan includes a fully equipped skatepark van with skate ramps, professional skateboarding coaching, a skateboard, and exclusive UGH VIP merchandise.</p>
+         <ul class="space-y-3 mb-8 font-medium">
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> 10 coached classes + 3 skate park sessions in Month 1</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> Mobile skate ramps delivered to your residential community</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> Personal video progress recording to track skating development</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> Skateboard included</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> Exclusive VIP merchandise included</li>
+            <li class="flex items-start gap-2"><span class="material-symbols-outlined text-kinetic-accent mt-0.5">done</span> Convenient doorstep skateboarding training in Hyderabad</li>
+         </ul>
+         <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/916304895686?text=Hi%20UGH%20team,%20I'd%20like%20to%20inquire%20about%20the%20UGH%20VIP%20Mobile%20Skatepark%20Plan." target="_blank" rel="noopener noreferrer" class="bg-kinetic-accent text-kinetic-bg px-8 py-3 font-bold uppercase tracking-widest hover:bg-kinetic-bg hover:text-kinetic-accent border-2 border-transparent hover:border-kinetic-accent transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-bg focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-text inline-flex items-center justify-center gap-2">Inquire About VIP</a>
+            <a href="https://www.instagram.com/urbangliding.hyd?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="bg-transparent text-kinetic-bg px-8 py-3 font-bold uppercase tracking-widest hover:bg-kinetic-bg hover:text-kinetic-accent border-2 border-kinetic-bg transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-bg focus-visible:ring-offset-2 focus-visible:ring-offset-kinetic-text inline-flex items-center justify-center gap-2"><span class="material-symbols-outlined">open_in_new</span> Instagram</a>
+         </div>
       </div>
 
     </div>
   </section>
 </div>
+
+<!-- VENUES TAB -->
+<div id="tab-venues" class="hidden main-tab-content">
+  <section class="pt-8 md:pt-16 pb-fluid-xl px-[clamp(1.25rem,5vw,4rem)] border-b border-kinetic-border">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-[clamp(1.75rem,5vw,3.5rem)] leading-tight font-display font-bold mb-6 text-center uppercase tracking-tight focus:outline-none focus-visible:ring-4 focus-visible:ring-kinetic-accent focus-visible:ring-offset-4 focus-visible:ring-offset-kinetic-bg" tabindex="0">Hyderabad <span class="text-kinetic-accent">Skate Parks</span></h2>
+      <p class="text-center text-lg text-kinetic-muted mb-12 max-w-3xl mx-auto">Explore the premier skateboarding and action sports facilities available in Hyderabad, offering dedicated spaces for progression and community.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- Wallride Park -->
+        <div class="bg-kinetic-surface border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] flex flex-col group focus-within:ring-4 focus-within:ring-kinetic-accent focus-within:ring-offset-2 focus-within:ring-offset-kinetic-bg" tabindex="0">
+           <div class="h-64 bg-kinetic-surface-alt border-b-2 border-kinetic-border overflow-hidden relative">
+              <img src="/src/assets/images/regenerated_image_1789593359927.jpg" alt="Wallride Park Logo" class="absolute inset-0 w-full h-full object-contain p-8 mix-blend-multiply dark:mix-blend-normal group-hover:scale-105 transition-transform duration-500" />
+           </div>
+           <div class="p-8 flex flex-col flex-grow">
+              <div class="flex items-center gap-2 mb-2 text-kinetic-accent font-bold uppercase tracking-wider text-sm">
+                 <span class="material-symbols-outlined text-base">location_on</span> Peeran Cheruvu
+              </div>
+              <h3 class="text-2xl font-display font-bold uppercase mb-4">WallRide Park</h3>
+              <p class="text-kinetic-muted mb-6 flex-grow">Opened in 2017, WallRide Park is India's first asphalt pump track and Telangana's first concrete skatepark. Built to foster action sports in Hyderabad, it features a diverse environment for riders of all skill levels, including quarter pipes, banks, transitions, a funbox, manual pads, and a central pyramid.</p>
+              <a href="https://wallridepark.com" target="_blank" class="inline-flex py-3 px-6 bg-transparent border-2 border-kinetic-text font-bold uppercase tracking-wider hover:bg-kinetic-text hover:text-kinetic-bg transition-colors items-center justify-center gap-2 w-full mt-auto">
+                 Visit Website <span class="material-symbols-outlined text-sm">open_in_new</span>
+              </a>
+           </div>
+        </div>
+
+        <!-- Emptyhead Skatepark -->
+        <div class="bg-kinetic-surface border-2 border-kinetic-border shadow-[8px_8px_0px_var(--kinetic-shadow)] flex flex-col group focus-within:ring-4 focus-within:ring-kinetic-accent focus-within:ring-offset-2 focus-within:ring-offset-kinetic-bg" tabindex="0">
+           <div class="h-64 bg-kinetic-surface-alt border-b-2 border-kinetic-border flex items-center justify-center relative overflow-hidden">
+              <span class="material-symbols-outlined text-6xl text-kinetic-border opacity-50 group-hover:scale-110 group-hover:text-kinetic-accent transition-all duration-500">skateboarding</span>
+           </div>
+           <div class="p-8 flex flex-col flex-grow">
+              <div class="flex items-center gap-2 mb-2 text-kinetic-accent font-bold uppercase tracking-wider text-sm">
+                 <span class="material-symbols-outlined text-base">location_on</span> Hyderabad
+              </div>
+              <h3 class="text-2xl font-display font-bold uppercase mb-4">Emptyhead Skatepark</h3>
+              <p class="text-kinetic-muted mb-6 flex-grow">A dedicated space for the skateboarding community in Hyderabad. Built for skaters, by skaters, Emptyhead provides essential features like ledges, rails, and smooth flatground for practicing tricks, finding flow, and building local action sports culture.</p>
+              <button class="inline-flex py-3 px-6 bg-kinetic-surface-alt border-2 border-kinetic-border text-kinetic-muted font-bold uppercase tracking-wider cursor-not-allowed items-center justify-center gap-2 w-full mt-auto">
+                 More Info Soon
+              </button>
+           </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
 </main>
 
     
@@ -1209,173 +1243,11 @@
   
 
 
-<script>
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  
-  // Check for saved user preference, if any, on load of the website
-  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      if (themeToggleBtn) themeToggleBtn.textContent = 'light_mode';
-  } else {
-      document.documentElement.classList.remove('dark')
-      if (themeToggleBtn) themeToggleBtn.textContent = 'dark_mode';
-  }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', function() {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            localStorage.setItem('color-theme', 'light');
-            themeToggleBtn.textContent = 'dark_mode';
-        } else {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem('color-theme', 'dark');
-            themeToggleBtn.textContent = 'light_mode';
-        }
-    });
-  }
-</script>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.main-tab-content');
-    const tabLinks = document.querySelectorAll('a.tab-link'); // limit to a tags or specific ones? Actually there are buttons too, wait.
 
-    function switchTab(tabId) {
-        tabs.forEach(tab => {
-            if(tab.id === 'tab-' + tabId) {
-                tab.classList.remove('hidden');
-                tab.classList.add('block');
-            } else {
-                tab.classList.remove('block');
-                tab.classList.add('hidden');
-            }
-        });
-        
-        tabLinks.forEach(link => {
-            if(link.dataset.tab === tabId) {
-                link.classList.add('text-kinetic-accent');
-            } else {
-                link.classList.remove('text-kinetic-accent');
-            }
-        });
-        window.scrollTo(0, 0);
-    }
-
-    tabLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const tabId = link.dataset.tab;
-            history.pushState(null, null, '#' + tabId);
-            switchTab(tabId);
-            // On mobile, maybe hide the mobile menu if there was one, but here we don't have one
-        });
-    });
-
-    // Handle initial load
-    const hash = window.location.hash.replace('#', '');
-    if (hash && ['home', 'impact', 'events', 'pricing', 'venues'].includes(hash)) {
-        switchTab(hash);
-    } else {
-        switchTab('home');
-    }
-    
-    // Handle back button
-    window.addEventListener('popstate', () => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash && ['home', 'impact', 'events', 'pricing', 'venues'].includes(hash)) {
-            switchTab(hash);
-        } else {
-            switchTab('home');
-        }
-    });
-});
-</script>
 
     <!-- GSAP ScrollTrigger Logic -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-          gsap.registerPlugin(ScrollTrigger);
-          
-          const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          const cards = document.querySelectorAll('.discipline-card');
-          
-          cards.forEach((card, index) => {
-            const icon = card.querySelector('.discipline-icon');
-            if (!icon) return;
-            
-            if (prefersReducedMotion) {
-              // Accessibility: Show icons directly without animation
-              gsap.set(icon, { opacity: 1 });
-              return;
-            }
-            
-            // Alternate direction: even cards left, odd cards right
-            const isEven = index % 2 === 0;
-            const startX = isEven ? -80 : 80;
-            const startY = -120;
-            const startRot = isEven ? -25 : 25;
-            
-            gsap.set(icon, { 
-              x: startX, 
-              y: startY, 
-              rotation: startRot, 
-              scale: 1,
-              transformOrigin: "center center"
-            });
-            
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: card,
-                start: "top 85%", // Starts entering viewport
-                end: "top 45%",   // Finishes landing 
-                scrub: 0.5        // Scrubbing with physical weight
-              }
-            });
-            
-            // 1. Arced flight in
-            tl.to(icon, {
-              x: 0,
-              opacity: 1,
-              rotation: 0,
-              duration: 0.7,
-              ease: "power2.out"
-            }, 0)
-            .to(icon, {
-              y: 0,
-              duration: 0.7,
-              ease: "back.out(1.2)" // Slight overshoot for arc trajectory
-            }, 0);
-            
-            // 2. Landing Squash
-            tl.to(icon, {
-              scaleY: 0.85,
-              scaleX: 1.15,
-              duration: 0.15,
-              transformOrigin: "bottom center",
-              ease: "power1.out"
-            }, 0.7)
-            .to(icon, {
-              scaleY: 1,
-              scaleX: 1,
-              duration: 0.15,
-              ease: "power1.in"
-            }, 0.85);
-            
-            // 3. Card physical reaction (nudge down)
-            tl.to(card, {
-              y: 4,
-              duration: 0.15,
-              ease: "power1.out"
-            }, 0.7)
-            .to(card, {
-              y: 0,
-              duration: 0.15,
-              ease: "power1.in"
-            }, 0.85);
-          });
-        }
-      });
-    </script>
-<script>document.addEventListener('DOMContentLoaded', () => {    const mobileMenuBtn = document.getElementById('mobile-menu-btn');    const mobileDropdown = document.getElementById('mobile-dropdown');    if(mobileMenuBtn && mobileDropdown) {        mobileMenuBtn.addEventListener('click', (e) => {            e.stopPropagation();            mobileDropdown.classList.toggle('hidden');        });        document.addEventListener('click', (e) => {            if (!mobileDropdown.contains(e.target) && !mobileMenuBtn.contains(e.target)) {                mobileDropdown.classList.add('hidden');            }        });        const dropLinks = mobileDropdown.querySelectorAll('a, button');        dropLinks.forEach(link => {            link.addEventListener('click', () => {                mobileDropdown.classList.add('hidden');            });        });    }    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');    const themeToggleBtn = document.getElementById('theme-toggle');    if (mobileThemeToggleBtn) {        mobileThemeToggleBtn.addEventListener('click', function() {            if (themeToggleBtn) themeToggleBtn.click();            mobileThemeToggleBtn.textContent = document.documentElement.classList.contains('dark') ? 'light_mode' : 'dark_mode';        });    }});</script></body></html>
+    
+    <script src="/public/js/main.js"></script>
+</body></html>

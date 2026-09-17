@@ -1,0 +1,123 @@
+            
+      
+      :root {
+        --safe-top: env(safe-area-inset-top, 0px);
+        --safe-left: env(safe-area-inset-left, 0px);
+        --safe-right: env(safe-area-inset-right, 0px);
+
+        --kinetic-bg: #F2EBE1;
+        --kinetic-surface: rgba(255, 255, 255, 0.6);
+        --kinetic-surface-alt: #E5DAC7;
+        --kinetic-border: rgba(42, 103, 102, 0.2); /* Teal with opacity */
+        --kinetic-text: #193D3C;
+        --kinetic-muted: #4A7A79;
+        --kinetic-accent: #D85B2D;
+        --kinetic-shadow: #2A6766;
+      }
+      .dark {
+        --kinetic-bg: #111A1A;
+        --kinetic-surface: rgba(42, 103, 102, 0.1);
+        --kinetic-surface-alt: rgba(42, 103, 102, 0.2);
+        --kinetic-border: rgba(42, 103, 102, 0.4);
+        --kinetic-text: #F2EBE1;
+        --kinetic-muted: #84A3A2;
+        --kinetic-accent: #D85B2D;
+        --kinetic-shadow: #080D0D;
+      }
+      
+      body { 
+        font-family: 'Hanken Grotesk', sans-serif; 
+        background-color: var(--kinetic-bg);
+        color: var(--kinetic-text);
+        background-image: radial-gradient(var(--kinetic-border) 1px, transparent 1px);
+        background-size: 24px 24px;
+        transition: background-color 0.4s, color 0.4s;
+        overflow-x: clip; /* Zero horizontal scroll */
+        -webkit-font-smoothing: antialiased;
+        min-height: 100dvh;
+      }
+      .dark body {
+        background-image: radial-gradient(rgba(242,235,225,0.05) 1px, transparent 1px);
+      }
+      
+      h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Sora', sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', monospace; }
+      
+      html { scroll-behavior: smooth; }
+      
+      .brutal-card, .brutal-btn, .pill-tag {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      
+      .brutal-card {
+        background: var(--kinetic-surface);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--kinetic-border);
+        border-radius: 1.5rem;
+        box-shadow: 4px 4px 0px var(--kinetic-shadow);
+      }
+      .brutal-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 0px var(--kinetic-shadow);
+      }
+      
+      .brutal-btn {
+        background: var(--kinetic-text);
+        color: var(--kinetic-bg); /* Contrast text */
+        border: 2px solid transparent;
+        border-radius: 9999px;
+        font-family: 'JetBrains Mono', monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        min-height: 48px;
+        min-width: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .brutal-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 4px 0px var(--kinetic-shadow);
+      }
+      .brutal-btn-accent {
+        background: var(--kinetic-accent);
+        color: #FFFFFF;
+        border: 2px solid var(--kinetic-shadow);
+      }
+      
+      .pill-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: var(--kinetic-surface-alt);
+        color: var(--kinetic-text);
+        border: 1px solid var(--kinetic-border);
+      }
+    
+      @keyframes float-icon {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        33% { transform: translateY(-8px) rotate(2deg); }
+        66% { transform: translateY(-4px) rotate(-2deg); }
+      }
+      .animate-float-icon {
+        animation: float-icon 5s ease-in-out infinite;
+        transform-origin: center center;
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.4));
+      }
+      .dark .animate-float-icon {
+        filter: drop-shadow(0px 8px 16px rgba(216, 91, 45, 0.6));
+      }
+      .discipline-card:hover .animate-float-icon {
+        animation-duration: 2s;
+        filter: drop-shadow(0px 12px 24px rgba(216, 91, 45, 0.7));
+      }
+
